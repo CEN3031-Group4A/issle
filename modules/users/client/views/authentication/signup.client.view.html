@@ -1,67 +1,78 @@
 <div data-ng-controller="AuthenticationController">
-  <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
-    <h3 class="text-center">Sign up</h3>
-    <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
-      <fieldset>
-        <div class ="form-group">
-          <div data-ng-show="error" class="text-center text-danger">
-            <div class= "alert alert-danger" role= "alert">
-              <strong data-ng-bind="error"></strong>
+  <body>
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
+      <h3 class="text-center">Create a new account</h3>
+      <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+        <fieldset>
+          <div class ="form-group">
+            <div data-ng-show="error" class="text-center text-danger">
+              <div class= "alert alert-danger" role= "alert">
+                <strong data-ng-bind="error"></strong>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-lg">
+          <div class="form-group">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">
+                  <i class = "text-muted glyphicon glyphicon-star"></i>
+                </span>
+                <input type="text" required id="firstName" name="firstName" class="form-control"
+                     data-ng-model="credentials.firstName" placeholder="First Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group input-group-lg">
               <span class="input-group-addon">
                 <i class = "text-muted glyphicon glyphicon-star"></i>
               </span>
-              <input type="text" required id="firstName" name="firstName" class="form-control"
-                   data-ng-model="credentials.firstName" placeholder="First Name">
+              <input type="text" id="lastName" name="lastName" class="form-control"
+                   data-ng-model="credentials.lastName" placeholder="Last Name">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon">
-              <i class = "text-muted glyphicon glyphicon-star"></i>
-            </span>
-            <input type="text" id="lastName" name="lastName" class="form-control"
-                 data-ng-model="credentials.lastName" placeholder="Last Name">
+          <div class="form-group">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">
+                <i class = "text-muted glyphicon glyphicon-envelope"></i>
+              </span>
+              <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email"
+                   placeholder="Email">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon">
-              <i class = "text-muted glyphicon glyphicon-envelope"></i>
-            </span>
-            <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email"
-                 placeholder="Email">
+          <div class="form-group">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">
+                <i class = "text-muted glyphicon glyphicon-education"></i>
+              </span>
+              <input type="text" id="school" name="school" class="form-control"
+                   data-ng-model="credentials.school" placeholder="School">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon">
-              <i class = "text-muted glyphicon glyphicon-user"></i>
-            </span>
-            <input type="text" id="username" name="username" class="form-control"
-                 data-ng-model="credentials.username" placeholder="Username">
+          <div class="form-group">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">
+                <i class = "text-muted glyphicon glyphicon-user"></i>
+              </span>
+              <input type="text" id="username" name="username" class="form-control"
+                   data-ng-model="credentials.username" placeholder="Username">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon">
-              <i class = "text-muted glyphicon glyphicon-asterisk"></i>
-            </span>
-            <input type="password" id="password" name="password" class="form-control"
-                 data-ng-model="credentials.password" placeholder="Password">
+          <div class="form-group">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">
+                <i class = "text-muted glyphicon glyphicon-asterisk"></i>
+              </span>
+              <input type="password" id="password" name="password" class="form-control"
+                   data-ng-model="credentials.password" placeholder="Password">
+            </div>
           </div>
-        </div>
-        <div class="text-center form-group">
-          <button type="submit" class="btn btn-lg btn-success btn-block">Sign up</button>
-        </div>
-        <div class = "text-center form-group">
-          or&nbsp; <a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
-        </div>
-      </fieldset>
-    </form>
-  </div>
+          <div class="text-center form-group">
+            <button type="submit" class="btn btn-lg btn-warning btn-block">Sign up</button>
+          </div>
+          <div class = "text-center form-group">
+            or&nbsp; <a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
 </div>

@@ -39,5 +39,8 @@
   border: 15px solid;
   border-radius: 15px;
   border-color: white;
-  margin-top: 50px;
+  margin-top: 0px;
+}
+body{
+  background-color: #FDDF9B;
 }

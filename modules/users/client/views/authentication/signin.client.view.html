@@ -1,40 +1,42 @@
 <section class = "row" data-ng-controller="AuthenticationController">
-  <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
-    <h3 class="text-center">Login</h3>
-    <form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
-      <fieldset>
-        <div class = "form-group">
-          <alert type="danger" data-ng-show="error" class="text-center text-danger">
-            <span data-ng-bind="error"></span>
-          </alert>
-        </div>
-        <div class = "form-group">
-          <div class="input-group input-group-lg">
-          <span class="input-group-addon">
-            <i class = "text-muted glyphicon glyphicon-user"></i>
-          </span>
-          <input type="text" id="username" name="username" class="form-control"
-               data-ng-model="credentials.username" placeholder="Username">
+  <body>
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
+      <h3 class="text-center">Login</h3>
+      <form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
+        <fieldset>
+          <div class = "form-group">
+            <alert type="danger" data-ng-show="error" class="text-center text-danger">
+              <span data-ng-bind="error"></span>
+            </alert>
           </div>
-        </div>
-        <div class = "form-group">
-          <div class="input-group input-group-lg">
+          <div class = "form-group">
+            <div class="input-group input-group-lg">
             <span class="input-group-addon">
-              <i class = "text-muted glyphicon glyphicon-asterisk"></i>
+              <i class = "text-muted glyphicon glyphicon-user"></i>
             </span>
-            <input type="password" id="password" name="password" class="form-control"
-                 data-ng-model="credentials.password" placeholder="Password">
+            <input type="text" id="username" name="username" class="form-control"
+                 data-ng-model="credentials.username" placeholder="Username">
+            </div>
           </div>
-        </div>
-      </br>
-        <div class="text-center form-group">
-          <button type="submit" class="btn btn-success btn-lg btn-block">Log in</button>
-        </div>
-        <div class="text-center forgot-password">
-          <a data-ui-sref="password.forgot">Forgot your password?</a> &nbsp; Or &nbsp;
-          <a data-ui-sref="authentication.signup">Sign up</a>
-        </div>
-      </fieldset>
-    </form>
-  </div>
+          <div class = "form-group">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">
+                <i class = "text-muted glyphicon glyphicon-asterisk"></i>
+              </span>
+              <input type="password" id="password" name="password" class="form-control"
+                   data-ng-model="credentials.password" placeholder="Password">
+            </div>
+          </div>
+        </br>
+          <div class="text-center form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Log in</button>
+          </div>
+          <div class="text-center forgot-password">
+            <a data-ui-sref="password.forgot">Forgot your password?</a> &nbsp; Or &nbsp;
+            <a data-ui-sref="authentication.signup">Sign up</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
 </div>
