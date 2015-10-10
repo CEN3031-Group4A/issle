@@ -1,6 +1,20 @@
 .content {
-  margin-top: 50px;
+  margin-top: -20px;
 }
+
+#landing .container{
+	width: 4000px;
+	height: 1000px;
+}
+
+#landing-photo .jumbotron {
+	/*margin-left: -15px !important;*/
+	background-image: url(../img/homepage/chalkboard.jpg);
+	/*background-size: cover;*/
+	/*background-size: 100% !important;*/
+}
+
+
 .undecorated-link:hover {
   text-decoration: none;
 }
@@ -104,3 +118,6 @@ a:hover .header-profile-image {
     background-color: #fbc650;
   }
 }
+
+
+
