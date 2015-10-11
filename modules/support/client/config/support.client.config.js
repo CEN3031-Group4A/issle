@@ -1,30 +1,19 @@
 'use strict';
 
-// Config HTTP Error Handling
-angular.module('support').config(['$httpProvider',
-  function ($httpProvider) {
-    // Set the httpProvider "not authorized" interceptor
-    $httpProvider.interceptors.push(['$q', '$location', 'Authentication',
-      function ($q, $location, Authentication) {
-        return {
-          responseError: function (rejection) {
-            switch (rejection.status) {
-              case 401:
-                // Deauthenticate the global user
-                Authentication.user = null;
+// Configuring the Supports module
+angular.module('support').run(['Menus',
+	function(Menus) {
+		// Add the Supports dropdown item
+		Menus.addMenuItem('topbar', {
+			title: 'Support',
+			state: 'support',
+			type: 'dropdown'
+		});
 
-                // Redirect to signin page
-                $location.path('signin');
-                break;
-              case 403:
-                // Add unauthorized behaviour
-                break;
-            }
-
-            return $q.reject(rejection);
-          }
-        };
-      }
-    ]);
-  }
+		// Add the dropdown list item
+		Menus.addSubMenuItem('topbar', 'support', {
+			title: 'Support Page',
+			state: 'support'
+		});
+	}
 ]);
