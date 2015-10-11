@@ -59,7 +59,6 @@ var UserSchema = new Schema({
   school: {
     type: String,
     trim: true,
-    unique: true,
     default: '',
   },
   username: {
