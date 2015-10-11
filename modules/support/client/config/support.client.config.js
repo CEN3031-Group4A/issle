@@ -1,7 +1,7 @@
 'use strict';
 
 // Configuring the Supports module
-angular.module('support').run(['Menus',
+angular.module('supports').run(['Menus',
 	function(Menus) {
 		// Add the Supports dropdown item
 		Menus.addMenuItem('topbar', {
@@ -12,8 +12,14 @@ angular.module('support').run(['Menus',
 
 		// Add the dropdown list item
 		Menus.addSubMenuItem('topbar', 'support', {
-			title: 'Support Page',
-			state: 'support'
+			title: 'FAQ',
+			state: 'faq'
 		});
+
+        // Add the dropdown list item
+        Menus.addSubMenuItem('topbar', 'support', {
+            title: 'About Us',
+            state: 'about'
+        });
 	}
 ]);
