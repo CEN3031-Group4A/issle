@@ -91,3 +91,37 @@ a {
 .panel-gold {
 	border-color: #fbc650;
 }
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 40px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.row.featurette {
+    height: 70%;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 50px;
+    }
+}
