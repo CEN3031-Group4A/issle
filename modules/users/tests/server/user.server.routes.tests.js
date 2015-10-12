@@ -37,6 +37,7 @@ describe('User CRUD tests', function () {
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
+      school: 'test test school',
       username: credentials.username,
       password: credentials.password,
       provider: 'local'
