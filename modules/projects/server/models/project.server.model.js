@@ -7,6 +7,10 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 var SubjectSchema = new Schema({
+	subjectName: {
+		type: String,
+		default: ''
+	},
 	mainIdea: {
 		type: String,
 		default: ''
@@ -78,7 +82,16 @@ var ProjectSchema = new Schema({
 		}
 	},
 	essentialDetails: {
-		subjectDetails: {
+		mathDetails: {
+			type: [SubjectSchema]
+		},
+		scienceDetails: {
+			type: [SubjectSchema]
+		},
+		litDetails: {
+			type: [SubjectSchema]
+		},
+		ssDetails: {
 			type: [SubjectSchema]
 		},
 		communicateFindings: {
