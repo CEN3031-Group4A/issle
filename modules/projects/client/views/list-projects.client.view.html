@@ -1,6 +1,32 @@
-<section data-ng-controller="list-projectsController" data-ng-init="find()">
+<section data-ng-controller="ProjectsController" data-ng-init="find()">
+  <div class="page-header">
+		<h1 data-ng-bind="project.name"></h1>
+
+		<p>Constraints = {{project.ask.constraints}}</p>
+
+	</div>
+	<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
+		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="project.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="project.user.displayName"></span>
+		</em>
+	</small>
   
-    <div ng-app="app" ng-controller = "MainCtrl">
+  
+  
+  
+  
+  <br><br><br><br>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
@@ -14,11 +40,7 @@
                   <div class="panel-heading"></div>
                   <div class="panel-body">
                     
-                    
-                    
-                    
-                    
-                    
+                  
                   <div ng-controller="DropdownCtrl">
                     
                      <!-- Simple dropdown -->
@@ -125,6 +147,5 @@
       </div>
     </div>
   </div>
-  
   
 </section>
