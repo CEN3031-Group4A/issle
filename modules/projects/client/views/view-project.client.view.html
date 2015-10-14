@@ -1,18 +1,75 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
+	<div class = "container" id="list">
 	<div class="page-header">
-		<h1 data-ng-bind="project.name"></h1>
+		<h1 id = "listheader" data-ng-bind="project.name"></h1>
 
-		<p>Constraints = {{project.ask.constraints}}</p>
-
-	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
-		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
+		<h4 id ="greyColor">Grade(s) {{project.grades.gradeMin}} - {{project.grades.gradeMax}}</h4>
+		<h2 id = "listheader">Ask</h2>
+		<h3>Goal</h3>
+		<h4 id ="greyColor">{{project.ask.goal}}</h4>
+		</br>
+		<h3>Major Problem/Underlying Statement</h3>
+		<h4 id ="greyColor">{{project.ask.problemStatement}}</h4>
+		</br>
+		<h3>How can your students solve this problem?</h3>
+		<h4 id ="greyColor">{{project.ask.solvingProblem}}</h4>
+		</br>
+		<h3>Constraints</h3>
+		<h4 id ="greyColor">{{project.ask.constraints}}</h4>
+		</br>
+		<h2 id = "listheader">Imagine</h2>
+		<h3>What are some solutions? Brainstorm ideas.</h3>
+		<h4 id ="greyColor">{{project.imagine.brainstorm}}</h4>
+		</br>
+		<h2 id = "listheader">Plan</h2>
+		<h3>Draw a diagram or any other representation of your project.</h3>
+		<h4 id ="greyColor">{{project.imagine.plan}}</h4>
+		</br>
+		<h3>List the materials you need.</h3>
+		<h4 id ="greyColor">{{project.imagine.materials}}</h4>
+		</br>
+		<h2 id = "listheader">Main Idea- Mathematics</h2>
+		<h4 id ="greyColor">{{project.essentialDetails.mathDetails[0].mainIdea}}</h4>
+		</br>
+		<h3>Essential Details & What students will do:</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.mathDetails[0].details}}</h4>
+		</br>
+		<h3>Linked Math Standard(s):</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.mathDetails[0].standards}}</h4>
+		</br>
+		<h2 id = "listheader">Main Idea- Science</h2>
+		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails[0].mainIdea}}</h4>
+		</br>
+		<h3>Essential Details & What students will do:</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails[0].details}}</h4>
+		</br>
+		<h3>Linked Science Standard(s):</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails[0].standards}}</h4>
+		</br>
+		<h2 id = "listheader">Main Idea- Literature</h2>
+		<h4 id ="greyColor">{{project.essentialDetails.litDetails[0].mainIdea}}</h4>
+		</br>
+		<h3>Essential Details & What students will do:</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.litDetails[0].details}}</h4>
+		</br>
+		<h3>Linked Literature Standard(s):</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.litDetails[0].standards}}</h4>
+		</br>
+		<h2 id = "listheader">Main Idea- Social Studies</h2>
+		<h4 id ="greyColor">{{project.essentialDetails.ssDetails[0].mainIdea}}</h4>
+		</br>
+		<h3>Essential Details & What students will do:</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.ssDetails[0].details}}</h4>
+		</br>
+		<h3>Linked Social Studies Standard(s):</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.ssDetails[0].standards}}</h4>
+		</br>
+		<h2 id="listheader">How will students communicate findings?</h3>
+		<h4 id ="greyColor">{{project.essentialDetails.communicateFindings}}</h4>
+		</br>
+		
+		
+	
 	<small>
 		<em class="text-muted">
 			Posted on
@@ -21,4 +78,16 @@
 			<span data-ng-bind="project.user.displayName"></span>
 		</em>
 	</small>
+	
+		<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
+		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+		</div>
+	
+	</div>
+	</div>
 </section>
