@@ -13,13 +13,13 @@ angular.module('supports').run(['Menus',
 		// Add the dropdown list item
 		Menus.addSubMenuItem('topbar', 'support', {
 			title: 'FAQ',
-			state: 'faq'
+			state: 'support.faq'
 		});
 
         // Add the dropdown list item
         Menus.addSubMenuItem('topbar', 'support', {
             title: 'About Us',
-            state: 'about'
+            state: 'support.about'
         });
 	}
 ]);

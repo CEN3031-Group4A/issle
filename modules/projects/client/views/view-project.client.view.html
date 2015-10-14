@@ -1,6 +1,9 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="project.name"></h1>
+
+		<p>Constraints = {{project.ask.constraints}}</p>
+
 	</div>
 	<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
 		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
