@@ -152,17 +152,45 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			
 		];
 		
-		$scope.toggle_include_grade = function(item){
-			item.include = !item.include;
-			if(item.include){
-				item.checkbox = "glyphicon glyphicon-check"
-			} else {item.checkbox = "glyphicon glyphicon-unchecked"}
-		};
+		$scope.included_grades = [];
+		$scope.min_grade = null;	//no narrowing down yet
+		$scope.max_grade = null;
 		
+		//This whole method's buggy as hell. Will need to fix.
+		$scope.toggle_include_grade = function(item){
+			item.include = !item.include;	//toggle include
+			if(item.include){	//wasn't included, now should be
+				$scope.included_grades.push(item.num);
+				item.checkbox = "glyphicon glyphicon-check"
+			} else {			//was included, now shouldn't be
+				var index = $scope.included_grades.indexOf(item);
+    			$scope.included_grades.splice(index, 1);
+				item.checkbox = "glyphicon glyphicon-unchecked"
+			};
+			if($scope.included_grades.length == 0) {
+				$scope.max_grade = 0
+				$scope.min_grade = 0;
+			} else {
+				$scope.min_grade = Math.min.apply(null, $scope.included_grades);
+				$scope.max_grade = Math.max.apply(null, $scope.included_grades);
+			};
+			
+		};
 		
 		$scope.show_grades = false;
 		$scope.toggle_show_grades = function(){
 			$scope.show_grades = true;
+		};
+		
+		$scope.categories = [
+			//Will hold any topics specified
+		];
+		
+		$scope.add_category = function(){
+			$scope.categories.push(
+		        {
+		          
+		        });
 		};
 	}
 ]);
