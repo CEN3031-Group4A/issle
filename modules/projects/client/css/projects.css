@@ -101,3 +101,17 @@ a {
 .panel-gold {
 	border-color: #fbc650;
 }
+
+/* List Project CSS */
+ #list.container{
+	background-color:white;
+}
+
+#greyColor{
+	color:grey;
+}
+
+#listheader{
+	font-weight: ;
+	color: #64bed8;
+}
