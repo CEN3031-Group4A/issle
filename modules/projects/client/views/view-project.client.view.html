@@ -4,6 +4,7 @@
 		<h1 id = "listheader" data-ng-bind="project.name"></h1>
 
 		<h4 id ="greyColor">Grade(s) {{project.grades.gradeMin}} - {{project.grades.gradeMax}}</h4>
+		<h2 id = "listheader">Ask</h2>
 		<h3>Goal</h3>
 		<h4 id ="greyColor">{{project.ask.goal}}</h4>
 		</br>
@@ -28,40 +29,40 @@
 		<h4 id ="greyColor">{{project.imagine.materials}}</h4>
 		</br>
 		<h2 id = "listheader">Main Idea- Mathematics</h2>
-		<h4 id ="greyColor">{{project.essentialDetails.mathDetails.mainIdea}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.mathDetails[0].mainIdea}}</h4>
 		</br>
 		<h3>Essential Details & What students will do:</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.mathDetails.details}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.mathDetails[0].details}}</h4>
 		</br>
 		<h3>Linked Math Standard(s):</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.mathDetails.standards}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.mathDetails[0].standards}}</h4>
 		</br>
 		<h2 id = "listheader">Main Idea- Science</h2>
-		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails.mainIdea}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails[0].mainIdea}}</h4>
 		</br>
 		<h3>Essential Details & What students will do:</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails.details}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails[0].details}}</h4>
 		</br>
 		<h3>Linked Science Standard(s):</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails.standards}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.scienceDetails[0].standards}}</h4>
 		</br>
 		<h2 id = "listheader">Main Idea- Literature</h2>
-		<h4 id ="greyColor">{{project.essentialDetails.litDetails.mainIdea}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.litDetails[0].mainIdea}}</h4>
 		</br>
 		<h3>Essential Details & What students will do:</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.litDetails.details}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.litDetails[0].details}}</h4>
 		</br>
 		<h3>Linked Literature Standard(s):</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.litDetails.standards}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.litDetails[0].standards}}</h4>
 		</br>
 		<h2 id = "listheader">Main Idea- Social Studies</h2>
-		<h4 id ="greyColor">{{project.essentialDetails.ssDetails.mainIdea}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.ssDetails[0].mainIdea}}</h4>
 		</br>
 		<h3>Essential Details & What students will do:</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.ssDetails.details}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.ssDetails[0].details}}</h4>
 		</br>
 		<h3>Linked Social Studies Standard(s):</h3>
-		<h4 id ="greyColor">{{project.essentialDetails.ssDetails.standards}}</h4>
+		<h4 id ="greyColor">{{project.essentialDetails.ssDetails[0].standards}}</h4>
 		</br>
 		<h2 id="listheader">How will students communicate findings?</h3>
 		<h4 id ="greyColor">{{project.essentialDetails.communicateFindings}}</h4>
