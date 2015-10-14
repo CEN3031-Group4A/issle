@@ -62,6 +62,10 @@ var ProjectSchema = new Schema({
 			type: String,
 			default: ''
 		},
+        solvingProblem: {
+            type: String,
+            default: ''
+        },
 		constraints: {
 			type: String,
 			default: ''

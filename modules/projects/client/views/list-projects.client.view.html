@@ -3,7 +3,7 @@
         <h1>Projects</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="project in projects" data-ng-href="/#!/projects/{{project._id}}" class="list-group-item">
+        <a data-ng-repeat="project in projects" data-ng-href="/#!/projects/{{project._id}}" myService.set(project) class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="project.created | date:'medium'"></span>
