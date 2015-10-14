@@ -29,7 +29,9 @@
 
             <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main">
 
-                <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
+               <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
+              <h4 class="sub-header">Grade(s) : <input type="number" min="1" max="12" placeholder="3" data-ng-model="grades.gradeMin">
+                - <input type="number" min="1" max="12" placeholder="5" data-ng-model="grades.gradeMax"></h4>
 
                 <div class="panel panel-blue">
                     <div class="panel-heading">
@@ -38,22 +40,20 @@
                     <div class="panel-body">
                         <a name="1"><font size = "3">Describe your goal:</font></a>
                         <span class="glyphicon glyphicon-question-sign" 
-                        data-toggle="tooltip" data-original-title="Share" title ="Try imaginig a simple learning objective that you  want your students to gain from completing the assignment in mind. Make sure that this objective is broad enough so you can expand on it later. For example, 'I want to teach my students the science behind roller coasters' is a good, generic goal.">
+                        data-toggle="tooltip" data-original-title="Share" title ="Try imagining a simple learning objective that you  want your students to gain from completing the assignment in mind. Make sure that this objective is broad enough so you can expand on it later. For example, 'I want to teach my students the science behind roller coasters' is a good, generic goal.">
                         </span>
                         <br>
                         <textarea class="form-control" rows="8" data-ng-model="ask.goal"></textarea>
 
-                        <a name="2"><font size = "3">What's the problem?</font></a>
+                        <a name="2"><font size = "3">What's the major problem or underlying question?</font></a>
                         <span class="glyphicon glyphicon-question-sign"
-                        data-toggle="tooltip" data-original-title="Share" title ="Identify a simple problem or question that ties in to your goal. Focus on this for the rest of the document. ">
-                        </span>
+                        data-toggle="tooltip" data-original-title="Share" title ="Identify a simple problem or question that ties in to your goal. Focus on this for the rest of the document. Relating back to the roller coasters, a major problem would be how Roller Coasters overcome gravity."> </span>
                         <br>
                         <textarea class="form-control" rows="4" data-ng-model="ask.problemStatement"></textarea>
                         <br>
-                        How did
-                        <input type="text" class="form-control" placeholder=""> solve the problem:
+                        <a name="2"><font size = "3">How can your students solve this problem?</font></a>
                         <br>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" rows="3" data-ng-model="ask.solvingProblem"></textarea>
                         <br>
                         <a name="3"><font size = "3">List your constraints:</font></a><span class="glyphicon glyphicon-question-sign"
                         data-toggle="tooltip" data-original-title="Share" title ="What constraints you? Money? The objects required to complete the task? Specific materials or utensils? List everything you can think of."></span>
@@ -75,7 +75,7 @@
                         <textarea class="form-control" rows="4" data-ng-model="imagine.brainstorm"></textarea>
                         <br>
                         <h3>Plan</h3>
-                        <font size="3">Draw a diagram of the model you are going to build. Label the lengths of the model.</font><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                        <font size="3">Draw a diagram or any other representation of your project.</font><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
                         <br>
                         <textarea class="form-control" rows="4" data-ng-model="imagine.plan"></textarea>
                         <br>
@@ -103,6 +103,9 @@
                         <span data-ng-init="essentialDetails.mathDetails.subjectName = 'Mathematics'"></span>
                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.mathDetails.mainIdea"> Essential Details & What students will do:
                         <textarea class="form-control" rows="4" data-ng-model="essentialDetails.mathDetails.details"></textarea>
+                         Linked Math Standard(s): 
+                         <input type="text" class="form-control" placeholder="">
+                        <br>
                         <br>
 
                         <a name="7"><font size = "3">Main Idea-science:</font></a><span class="glyphicon glyphicon-question-sign"
@@ -111,14 +114,20 @@
                         <span data-ng-init="essentialDetails.scienceDetails.subjectName = 'Science'"></span>
                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.scienceDetails.mainIdea"> Essential Details & What students will do:
                         <textarea class="form-control" rows="4" data-ng-model="essentialDetails.scienceDetails.details"></textarea>
+                        Linked Science Standard(s): 
+                         <input type="text" class="form-control" placeholder="">
                         <br>
-
+                        <br>
+                        
                         <a name="8"><font size = "3">Main Idea-literature:</font></a><span class="glyphicon glyphicon-question-sign"
                         data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a literature standard. You can look at the examples for some ideas or search standards for more information."></span>
                         <br>
                         <span data-ng-init="essentialDetails.litDetails.subjectName = 'Literature'"></span>
                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.litDetails.mainIdea"> Essential Details & What students will do:
                         <textarea class="form-control" rows="4" data-ng-model="essentialDetails.litDetails.details"></textarea>
+                        Linked Literature Standard(s): 
+                         <input type="text" class="form-control" placeholder="">
+                        <br>
                         <br>
 
                         <a name="9"><font size = "3">Main Idea-social studies:</font></a><span class="glyphicon glyphicon-question-sign"
@@ -127,7 +136,11 @@
                         <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> Essential Details & What students will do:
                         <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        Linked SocialStudies Standard(s): 
+                         <input type="text" class="form-control" placeholder="">
                         <br>
+                        <br>
+                        
                         <a>
                        <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
                         data-toggle="tooltip" data-original-title="Share" title ="Be sure that this method of communication is feasible. Presentations, diagrams, reports or demos are some common ways to present findings."></span>
