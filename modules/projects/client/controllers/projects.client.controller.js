@@ -67,5 +67,102 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				projectId: $stateParams.projectId
 			});
 		};
+		
+		
+		//Project search stuff
+		$scope.grades = [
+			{
+				num: 12,
+				name: "12th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 11,
+				name: "11th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 10,
+				name: "10th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 9,
+				name: "9th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 8,
+				name: "8th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 7,
+				name: "7th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 6,
+				name: "6th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 5,
+				name: "5th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 4,
+				name: "4th Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 3,
+				name: "3rd Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 2,
+				name: "2nd Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 1,
+				name: "1st Grade",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			{
+				num: 0,
+				name: "Kindergarden",
+				checkbox: "glyphicon glyphicon-unchecked",
+				include: false,
+			},
+			
+		];
+		
+		$scope.toggle_include_grade = function(item){
+			item.include = !item.include;
+			if(item.include){
+				item.checkbox = "glyphicon glyphicon-check"
+			} else {item.checkbox = "glyphicon glyphicon-unchecked"}
+		};
+		
+		
+		$scope.show_grades = false;
+		$scope.toggle_show_grades = function(){
+			$scope.show_grades = true;
+		};
 	}
 ]);

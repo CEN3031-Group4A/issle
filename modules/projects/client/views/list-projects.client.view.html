@@ -1,32 +1,4 @@
 <section data-ng-controller="ProjectsController" data-ng-init="find()">
-  <div class="page-header">
-		<h1 data-ng-bind="project.name"></h1>
-
-		<p>Constraints = {{project.ask.constraints}}</p>
-
-	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
-		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="project.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="project.user.displayName"></span>
-		</em>
-	</small>
-  
-  
-  
-  
-  
-  <br><br><br><br>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
@@ -39,51 +11,8 @@
                 <div class="panel panel-blue">
                   <div class="panel-heading"></div>
                   <div class="panel-body">
-                    
                   
-                  <div ng-controller="DropdownCtrl">
-                    
-                     <!-- Simple dropdown -->
-                        <span uib-dropdown on-toggle="toggled(open)">
-                          <a id="simple-dropdown" uib-dropdown-toggle>
-                            Click me for a dropdown, yo!
-                          </a>
-                          <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
-                            <li ng-repeat="choice in items">
-                              <a >{{choice}}</a>
-                            </li>
-                          </ul>
-                        </span>
-                    
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                  <!--
-                  <div class=" dropdown btn-group">
-                    <button class="btn btn-blue dropdown-toggle" 
-                            id="by_class_dropdown"
-                            type="button"           data-toggle="dropdown" 
-                            aria-haspopup="true"    aria-expanded="true">
-                      
-                      List of Subjects [check boxes]   <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </div> -->
+                  <!-- grade stuff here -->
 
                   </div>
                 </div>
@@ -95,19 +24,26 @@
                 <div class="panel panel-blue">
                   <div class="panel-heading"></div>
                   <div class="panel-body">
-
-                  <div class="btn-group">
-                    <button class="btn btn-blue dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      List of Grades [check boxes]  <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      ...
-                    </ul>
+                    <h4>Select one or more grades</h4>
+                    
+    
+                    <div class="list-group">
+                        <div ng-repeat="grade in grades">
+                          <button type="button" class="list-group-item" ng-click="toggle_include_grade(grade)">
+                            <div class="col-xs-6"> 
+                              <a class="gold" ng-class="grade.checkbox" ></a> 
+                            </div>
+                            <div class="col-xs-6">
+                              {{grade.name}}
+                            </div>
+                          </button>
+                        </div>
+                      </div>
                   </div>
-
-                  </div>
+                  <div class="panel-body" ng-hide="show_grades"> </div>
                 </div>
               </div>
+
 
               <div class="col-xs-4 col-sm-4 placeholder">
                 <span style="font-size:5em;" class="blue glyphicon glyphicon-list-alt" aria-hidden="true"></span>
@@ -147,5 +83,10 @@
       </div>
     </div>
   </div>
+  
+  <!--animations-->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-animate.js"></script>
+  
   
 </section>
