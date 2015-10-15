@@ -69,7 +69,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 		
 		
-		//Project search stuff
+		//This is list-projects stuff now:
+		
 		$scope.grades = [
 			{
 				num: 12,
