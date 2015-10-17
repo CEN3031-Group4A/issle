@@ -1,3 +1,13 @@
+
+/* Cloned from support page's CSS for consistent look*/
+
+#by_class_dropdown{
+	
+}
+
+/* Size + header  CSS*/
+
+
 .sub-header {
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
@@ -27,7 +37,7 @@
 
 /* Nav-sidebar + text CSS*/
 .nav-sidebar {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     margin-left: -20px;
     margin-right: -21px;
 }
@@ -44,10 +54,10 @@ li {
     padding-right: 20px;
 }
 .nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
-    padding-bottom: 0px;
-    padding-top: 2px;
     background-color: #64bed8;
     color: #fff;
+    padding-bottom: 0px;
+    padding-top: 2px;
     height: 40px;
 }
 a {
@@ -82,6 +92,16 @@ a {
 }
 .gold {
     color: #fbc650;
+}
+.btn-blue{
+	border-color: #64bed8;
+	background-color: #64bed8;
+	color: #fff;
+}
+.btn-gold{
+	border-color: #fbc650;
+	background-color: #fbc650;
+	color: #fff;
 }
 
 /* Panel CSS*/
