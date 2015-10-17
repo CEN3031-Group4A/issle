@@ -31,7 +31,7 @@
 		padding: 20px;
 		position: fixed;
 		top: 51px;
-		z-index: 1000;
+		z-index: 0 !important;
 	}
 }
 
