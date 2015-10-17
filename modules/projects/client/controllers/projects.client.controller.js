@@ -70,84 +70,85 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		
 		
 		//This is list-projects stuff now:
+
 		
 		$scope.grades = [
 			{
 				num: 12,
-				name: "12th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '12th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 11,
-				name: "11th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '11th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 10,
-				name: "10th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '10th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 9,
-				name: "9th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '9th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 8,
-				name: "8th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '8th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 7,
-				name: "7th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '7th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 6,
-				name: "6th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '6th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 5,
-				name: "5th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '5th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 4,
-				name: "4th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '4th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 3,
-				name: "3rd Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '3rd Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 2,
-				name: "2nd Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '2nd Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 1,
-				name: "1st Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '1st Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 0,
-				name: "Kindergarden",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: 'Kindergarden',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			
@@ -162,15 +163,15 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			item.include = !item.include;	//toggle include
 			if(item.include){	//wasn't included, now should be
 				$scope.included_grades.push(item.num);
-				item.checkbox = "glyphicon glyphicon-check"
+				item.checkbox = 'glyphicon glyphicon-check';
 			} else {			//was included, now shouldn't be
 				var index = $scope.included_grades.indexOf(item.num);
     			$scope.included_grades.splice(index, 1);
-				item.checkbox = "glyphicon glyphicon-unchecked"
+				item.checkbox = 'glyphicon glyphicon-unchecked';
 			};
 			
-			if($scope.included_grades.length == 0) {
-				$scope.max_grade = 0
+			if($scope.included_grades.length === 0) {
+				$scope.max_grade = 0;
 				$scope.min_grade = 0;
 			} else {
 				$scope.min_grade = Math.min.apply(null, $scope.included_grades);
