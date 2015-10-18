@@ -9,7 +9,11 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 		$scope.create = function() {
 			// Create new Standard object
 			var standard = new Standards ({
-				name: this.name
+				benchmark: this.benchmark,
+				description: this.description,
+				subject: this.subject,
+				grade: this.grade,
+				bodyOfKnowledge: this.bodyOfKnowledge
 			});
 
 			// Redirect after save
@@ -17,7 +21,11 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 				$location.path('standards/' + response._id);
 
 				// Clear form fields
-				$scope.name = '';
+				$scope.benchmark = '';
+				$scope.description = '';
+				$scope.subject = '';
+				$scope.grade = '';
+				$scope.bodyOfKnowledge = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -65,80 +73,80 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 	$scope.grades = [
 			{
 				num: 12,
-				name: "12th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '12th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 11,
-				name: "11th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '11th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 10,
-				name: "10th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '10th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 9,
-				name: "9th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '9th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 8,
-				name: "8th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '8th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 7,
-				name: "7th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '7th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 6,
-				name: "6th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '6th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 5,
-				name: "5th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '5th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 4,
-				name: "4th Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '4th Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 3,
-				name: "3rd Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '3rd Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 2,
-				name: "2nd Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '2nd Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 1,
-				name: "1st Grade",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: '1st Grade',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			{
 				num: 0,
-				name: "Kindergarden",
-				checkbox: "glyphicon glyphicon-unchecked",
+				name: 'Kindergarden',
+				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
 			},
 			

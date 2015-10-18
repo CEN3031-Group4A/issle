@@ -10,10 +10,34 @@ var mongoose = require('mongoose'),
  * Standard Schema
  */
 var StandardSchema = new Schema({
-	name: {
+	benchmark: {
 		type: String,
 		default: '',
-		required: 'Please fill Standard name',
+		required: 'Please fill in the Standard name',
+		trim: true
+	},
+	description: {
+		type: String,
+		default: '',
+		required: 'Please fill in the Description',
+		trim: true
+	},
+	subject: {
+		type: String,
+		default: '',
+		required: 'Please fill in the Subject',
+		trim: true
+	},
+	grade: {
+		type: String,
+		default: '',
+		required: 'Please fill in the Grade or Grades',
+		trim: true
+	},
+	bodyOfKnowledge: {
+		type: String,
+		default: '',
+		required: 'Please fill in the Body of Knowledge',
 		trim: true
 	},
 	created: {
