@@ -18,7 +18,7 @@
                     <li><a href="#8">E.Sketch- Literature</a></li>
                     <li><a href="#9">E.Sketch- SocialStudies</a></li>
                     <li class="active"><a href="#"><H4>Help Menu</h4></a></li>
-                    <li><a>Examples</a></li>
+                    <li><a href = "/modules/support/client/views/examples.client.view.html">Examples</a></li>
                     <li><a data-ui-sref="support.faq">FAQ</a></li>
                     <li><a>Mindset & Tips</a></li>
                     <li><a>View other Projects</a></li>
@@ -96,9 +96,36 @@
                         Now that we've established a basic guideline as to what the project is, we can focus on tying it to all the different subject areas to make sure that a wider range of benchmarks are met. Simply list the main idea and how it relates to each field, followed
                         by details.
                         <br>
-
+                        Think about the central subjects dealing with your project. Check all those that apply:
+                        <br>
+                       <!-- <ul>
+                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeMath"/><label>Mathematics</label></li>
+                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeScience"/><label>Science</label></li>
+                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeLiterature"/><label>Literature</label></li>
+                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeSocialStudies"/><label>Social Studies</label></li>
+                        </ul>
+                        !-->
+                        <body ng-app>
+                        <div ng-controller="SubjectSelectCtrl">
+                        <table>
+                        <tr ng-repeat="subjects in subjectList">
+                        <td>
+                        <div>{{item.text}}</div>
+                        </td>
+                        <td>
+                        <input type="checkbox" ng-model="item.isTrue" />
+                        </td>
+                        </tr>
+                        </table>
+                        </div>
+                        </body>
+                        
+                        
+                        
+                        
+                        
                         <a name="6"><font size = "3">Main Idea-mathematics:</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                            data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a mathematics standard. You can look at the examples for some ideas or search standards for more information. "></span></span>
+                        data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a mathematics standard. You can look at the examples for some ideas or search standards for more information. "></span></span>
                         <br>
                         <span data-ng-init="essentialDetails.mathDetails.subjectName = 'Mathematics'"></span>
                         <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.mathDetails[0].mainIdea"> Essential Details & What students will do:

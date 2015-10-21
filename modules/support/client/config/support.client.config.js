@@ -21,5 +21,9 @@ angular.module('supports').run(['Menus',
             title: 'About Us',
             state: 'support.about'
         });
+        Menus.addSubMenuItem('topbar', 'support', {
+            title: 'Examples',
+            state: 'support.examples'
+        });
 	}
 ]);

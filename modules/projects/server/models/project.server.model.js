@@ -62,10 +62,10 @@ var ProjectSchema = new Schema({
 			type: String,
 			default: ''
 		},
-        solvingProblem: {
-            type: String,
-            default: ''
-        },
+		solvingProblem: {
+			type: String,
+			default: ''
+		},
 		constraints: {
 			type: String,
 			default: ''
@@ -98,6 +98,22 @@ var ProjectSchema = new Schema({
 		ssDetails: {
 			type: [SubjectSchema]
 		},
+		mainIncludeMath: {
+		type: Boolean,
+		default:'false' 
+		},
+		mainIncludeScience: {
+		type: Boolean,
+		default:'false' 
+		},
+		mainIncludeLiterature: {
+		type: Boolean,
+		default:'false' 
+		},
+		mainIncludeSocialStudies: {
+		type: Boolean,
+		default:'false' 
+		},
 		communicateFindings: {
 			type: String,
 			default: ''
@@ -107,4 +123,3 @@ var ProjectSchema = new Schema({
 
 
 mongoose.model('Project', ProjectSchema);
-mongoose.model('Subject', SubjectSchema);
