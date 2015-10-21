@@ -3,7 +3,11 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
-
+/* Specific Page Format CSS: Examples*/
+.spacing {
+    height: 150px;
+    
+}
 /* Sidebar  CSS*/
 .sidebar {
     display: none;

@@ -25,5 +25,17 @@ angular.module('supports').run(['Menus',
             title: 'Examples',
             state: 'support.examples'
         });
+         Menus.addSubMenuItem('topbar', 'support', {
+            title: 'Example1',
+            state: 'support.example1'
+        });
+         Menus.addSubMenuItem('topbar', 'support', {
+            title: 'Example2',
+            state: 'support.example2'
+        });
+         Menus.addSubMenuItem('topbar', 'support', {
+            title: 'Example3',
+            state: 'support.example3'
+        });
 	}
 ]);

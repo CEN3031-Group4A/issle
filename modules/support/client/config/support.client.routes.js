@@ -22,5 +22,17 @@ angular.module('supports').config(['$stateProvider',
             url: '/About',
             templateUrl: 'modules/support/views/about.client.view.html'
         });
+        state('support.example1', {
+            url: '/About',
+            templateUrl: 'modules/support/views/example1.client.view.html'
+        });
+        state('support.example2', {
+            url: '/About',
+            templateUrl: 'modules/support/views/example2.client.view.html'
+        });
+        state('support.example3', {
+            url: '/About',
+            templateUrl: 'modules/support/views/example3.client.view.html'
+        });
 	}
 ]);
