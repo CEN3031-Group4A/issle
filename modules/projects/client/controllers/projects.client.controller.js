@@ -96,11 +96,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		*/
 
 
-		$scope.grades = {
-        	min_grade: 6,
-        	max_grade: 8
-      	};
-		
+		$scope.grades = [6,8];	//min and max grades
 
 
 		/*	Old way of selecting grades

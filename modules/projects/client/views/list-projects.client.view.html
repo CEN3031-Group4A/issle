@@ -46,9 +46,8 @@
                 <div class="panel panel-blue">
                   <div class="panel-heading">I want projects for the following grades...</div>
                   <div class="panel-body">
-
-                  Show me projects between grades <input type="number" min="0" max="grades.max_grade" placeholder="6" ng-model="grades.min_grade" style="width: 3em"> 
-                  and <input type="number" min="grades.min_grade" max="12" placeholder="8" ng-model="grades.max_grade" style="width: 3em"> 
+                  Show me projects between grades <input type="number" min="0" max="grades[1]" placeholder="6" ng-model="grades[0]" style="width: 3em"> 
+                  and <input type="number" min="grades[0]" max="12" placeholder="8" ng-model="grades[1]" style="width: 3em"> 
                   
                   </div> 
                     
@@ -92,7 +91,7 @@
             <div class="panel-body">
               <h4 class="search-results">Displaying projects that match the following categories: </h4>
               <ul class="list-group">
-                <li class="list-group-item"><h5>Between grades {{grades.min_grade}} and {{grades.max_grade}}</h5></li>
+                <li class="list-group-item"><h5>Between grades {{grades[0]}} and {{grades[1]}}</h5></li>
                 <li class="list-group-item"> <h5>In the following subjects: </h5>
                   <div class="row">
                     <div class="col-md-3"> 
