@@ -44,10 +44,12 @@
                 <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
                 <h3>Search by Grade</h3>
                 <div class="panel panel-blue">
-                  <div class="panel-heading">I want projects for the following grades...</div>
+                  <div class="panel-heading">I want projects in the following range...</div>
                   <div class="panel-body">
-                  Between grades <input type="number" min="0" max="{{grades[1]}}" placeholder="6" ng-model="grades[0]" style="width: 3em"> 
-                  and <input type="number" min="{{grades[0]}}" max="12" placeholder="8" ng-model="grades[1]" style="width: 3em"> 
+                  <h4> From grade </h4><br>
+                  <input type="number" min="0" max="{{grades[1]}}" placeholder="6" ng-model="grades[0]" style="width: 3em;"><br><br>
+                  <h4> to grade </h4> <br>
+                  <input type="number" min="{{grades[0]}}" max="12" placeholder="8" ng-model="grades[1]" style="width: 3em"> 
                   
                   </div> 
                     
@@ -62,7 +64,7 @@
                 <div class="panel panel-blue">
                   <div class="panel-heading">I want projects that cover the following topics:</div>
                   <div class="panel-body">
-
+                      pls no
                   </div>
                 </div>
              </div>  
@@ -94,9 +96,19 @@
                 </div>
               </div>
 
-              <div class="col-md-8" style="padding-right:1em">
+              
+
+              <div class="col-md-7" style="padding-top:2em; padding-left:1em">
                 <div class="panel panel-blue">
-                  <div class="panel-body"> There's nothing to see here...</div>
+                  <div class="panel-body"> 
+                      <!-- Projects display -->
+                      <div class="panel panel-blue">
+                        <div class="panel-heading"> some title </div>
+                        <div class="panel-body"> 
+
+                        </div>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
