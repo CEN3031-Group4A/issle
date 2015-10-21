@@ -13,6 +13,10 @@ angular.module('users').config(['$stateProvider',
           roles: ['user', 'admin']
         }
       })
+	  .state('settings.projects', {
+        url: '/profile',
+        templateUrl: 'modules/users/views/settings/projects.client.view.html'
+      })
       .state('settings.profile', {
         url: '/profile',
         templateUrl: 'modules/users/views/settings/edit-profile.client.view.html'
