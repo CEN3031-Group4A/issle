@@ -1,5 +1,4 @@
 'use strict';
-
 // Projects controller
 angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Projects',
 	function($scope, $stateParams, $location, Authentication, Projects ) {
@@ -72,6 +71,40 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		//This is list-projects stuff now:
 
 		
+
+		/*
+		
+		$scope.subjects = [
+			{
+				title: 'Mathematics',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+
+
+			},
+			{
+				title: 'Science'
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+			},
+			{
+				title: 'Gifted'
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+			},
+		];
+		*/
+
+
+		$scope.grades = {
+        	min_grade: 6,
+        	max_grade: 8
+      	};
+		
+
+
+		/*	Old way of selecting grades
+
 		$scope.grades = [
 			{
 				num: 12,
@@ -153,12 +186,11 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			},
 			
 		];
-		
+
 		$scope.included_grades = [];
 		$scope.min_grade = null;	//no narrowing down yet
 		$scope.max_grade = null;
-		
-		//This whole method's buggy as hell. Will need to fix.
+
 		$scope.toggle_include_grade = function(item){
 			item.include = !item.include;	//toggle include
 			if(item.include){	//wasn't included, now should be
@@ -168,7 +200,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				var index = $scope.included_grades.indexOf(item.num);
     			$scope.included_grades.splice(index, 1);
 				item.checkbox = 'glyphicon glyphicon-unchecked';
-			};
+			}
 			
 			if($scope.included_grades.length === 0) {
 				$scope.max_grade = 0;
@@ -183,17 +215,6 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		$scope.show_grades = false;
 		$scope.toggle_show_grades = function(){
 			$scope.show_grades = true;
-		};
-		
-		$scope.categories = [
-			//Will hold any topics specified
-		];
-		
-		$scope.add_category = function(){
-			$scope.categories.push(
-		        {
-		          
-		        });
-		};
+		}; */
 	}
 ]);
