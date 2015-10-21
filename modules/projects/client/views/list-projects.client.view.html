@@ -22,8 +22,8 @@
                     <div class="list-group">
                         <div ng-repeat="subject in subjects">
                           <button type="button" class="list-group-item" ng-click="toggle_include_subject(subject)">
-                            <div class="col-xs-3"> 
-                              <a class="gold" ng-class="grade.checkbox" ></a> 
+                            <div class="col-xs-3">
+                              <span class="gold {{subject.checkbox}}" aria-hidden="true"></span>
                             </div>
                             <div class="col-xs-9">
                               {{subject.title}}
@@ -46,8 +46,8 @@
                 <div class="panel panel-blue">
                   <div class="panel-heading">I want projects for the following grades...</div>
                   <div class="panel-body">
-                  Show me projects between grades <input type="number" min="0" max="grades[1]" placeholder="6" ng-model="grades[0]" style="width: 3em"> 
-                  and <input type="number" min="grades[0]" max="12" placeholder="8" ng-model="grades[1]" style="width: 3em"> 
+                  Between grades <input type="number" min="0" max="{{grades[1]}}" placeholder="6" ng-model="grades[0]" style="width: 3em"> 
+                  and <input type="number" min="{{grades[0]}}" max="12" placeholder="8" ng-model="grades[1]" style="width: 3em"> 
                   
                   </div> 
                     
@@ -63,21 +63,6 @@
                   <div class="panel-heading">I want projects that cover the following topics:</div>
                   <div class="panel-body">
 
-                    <!--  Old stuff from grade selection
-                    <div class="list-group">
-                        <div ng-repeat="grade in grades">
-                          <button type="button" class="list-group-item" ng-click="toggle_include_grade(grade)">
-                            <div class="col-xs-3"> 
-                              <a class="gold" ng-class="grade.checkbox" ></a> 
-                            </div>
-                            <div class="col-xs-9">
-                              {{grade.name}}
-                            </div>
-                          </button>
-                        </div>
-                    </div>  -->
-
-
                   </div>
                 </div>
              </div>  
@@ -88,19 +73,34 @@
       
       <div class="panel panel-blue">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
-            <div class="panel-body">
-              <h4 class="search-results">Displaying projects that match the following categories: </h4>
-              <ul class="list-group">
-                <li class="list-group-item"><h5>Between grades {{grades[0]}} and {{grades[1]}}</h5></li>
-                <li class="list-group-item"> <h5>In the following subjects: </h5>
-                  <div class="row">
-                    <div class="col-md-3"> 
-                    <ul class="list-group"> <li class="list-group-item" ng-repeat="subject in included_subjects"> {{subject.title}}</li> </ul></div>
-                  </div>
-                    
-                </li>
-              </ul>
+            
+            <div class="row">
+              <div class="col-md-4"> 
+                <div class="panel-body">
+                  <h4 class="search-results">Displaying projects that match the following categories: </h4>
+                  <ul class="list-group">
+                    <li class="list-group-item"><h5>Between grades {{grades[0]}} and {{grades[1]}}</h5></li>
+                    <li class="list-group-item"> <h5>In the following subjects: </h5>
+                      <div class="row">
+                        <div class="col-md-12" > 
+                        <ul class="list-group"> 
+                          <li class="list-group-item" ng-repeat="subject in included_subjects"> {{subject.title}}</li> 
+                        </ul>
+                      </div>
+                      </div>
+                        
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-8" style="padding-right:1em">
+                <div class="panel panel-blue">
+                  <div class="panel-body"> There's nothing to see here...</div>
+                </div>
+              </div>
             </div>
+
         </div>
       </div>
       

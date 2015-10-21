@@ -70,34 +70,49 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		
 		//This is list-projects stuff now:
 
-		
-
-		/*
-		
 		$scope.subjects = [
 			{
 				title: 'Mathematics',
 				checkbox: 'glyphicon glyphicon-unchecked',
-				include: false,
+				include: false
 
 
 			},
 			{
-				title: 'Science'
+				title: 'Science',
 				checkbox: 'glyphicon glyphicon-unchecked',
-				include: false,
+				include: false
 			},
 			{
-				title: 'Gifted'
+				title: 'Social Studies',
 				checkbox: 'glyphicon glyphicon-unchecked',
-				include: false,
+				include: false
 			},
+			{
+				title: 'Literature',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false
+			}
 		];
-		*/
 
+		$scope.included_subjects = [];
+		
+		$scope.toggle_include_subject = function(item){
+			item.include = !item.include;	//toggle include
+			if(item.include){	//wasn't included, now should be
+				$scope.included_subjects.push(item);
+				item.checkbox = 'glyphicon glyphicon-check';
+			} else {			//was included, now shouldn't be
+				var index = $scope.included_subjects.indexOf(item);
+    			$scope.included_subjects.splice(index, 1);
+				item.checkbox = 'glyphicon glyphicon-unchecked';
+			}
+			
+		};
 
-		$scope.grades = [6,8];	//min and max grades
+		$scope.grades = [0,12];	//min and max grades.
 
+		
 
 		/*	Old way of selecting grades
 
