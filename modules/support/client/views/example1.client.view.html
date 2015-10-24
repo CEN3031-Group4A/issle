@@ -1,185 +1,121 @@
+<section data-ng-controller="ProjectsController">
+    <div class = "container" id="list">
+        <div class="page-header">
+            <h1 id = "listheader">Algonquian Wigwam</h1>
 
-    <script src="projects/projects.js"></script>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
+                <h4 id ="greyColor">Grade(s) 3 - 3</h4>
+            <h2 id = "listheader">Ask</h2>
+                <h3>Goal</h3>
+                    <h4 id ="greyColor">Improve the design of an Algonquian Wigwam</h4>
+            </br>
+            <h3>Major Problem/Underlying Statement</h3>
+                <h4 id ="greyColor">Everything was tied together. Saplings have to be cut and dragged</h4>
+            </br>
+            <h3>How can your students solve this problem?</h3>
+                <h4 id ="greyColor">Camping tent design</h4>
+            </br>
+            <h3>Constraints</h3>
+                <h4 id ="greyColor">Need saplings, birch bark or woven mats. Need smoke hole and door</h4>
+            </br>
+            <h2 id = "listheader">Imagine</h2>
+                <h3>What are some solutions? Brainstorm ideas.</h3>
+                    <img src="modules/support/img/imagine.png" alt="Generic placeholder image">
+            </br>
+            <h2 id = "listheader">Plan</h2>
+                <h3>Draw a diagram or any other representation of your project.</h3>
+                    <img src="modules/support/img/plan.png" alt="Generic placeholder image">
+            </br>
+            <h3>List the materials you need.</h3>
+            <ul id ="greyColor">
+                <li>Thin coffee sticks</li>
+                <li>String</li>
+                <li>Paper squares</li>
+            </ul>
+            </br>
+            <h2 id = "listheader">Main Idea- Mathematics</h2>
+                <h4 id ="greyColor">Looking for patterns in shape and purpose</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students will see a pattern between dimensions in native dwelling and use these to improve design</h4>
+            </br>
+            <h3>What students will do:</h3>
+                <h4 id ="greyColor">Sort shapes of dwellings, investigate patterns</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students will identify shapes of dwellings and patterns. Then they will use dimensional constraints to design a dwelling</h4>
+            </br>
+            <h3>Linked Math Standard(s):</h3>
+                <h4 id ="greyColor">MAFS.K12.MP.7.1</h4>
+            </br>
+            <h2 id = "listheader">Main Idea- Science</h2>
+                <h4 id ="greyColor">The practice of science</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students will investigate dwelling design and tie design to habitat of native people. Students will pose a question about dwelling design.</h4>
+            </br>
+            <h3>What students will do:</h3>
+                <h4 id ="greyColor">Create a question, collect data, evaluate data</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students will ask a question related to dwelling structure - Students will use engineering design to help answer this question</h4>
+            </br>
+            <h3>Linked Science Standard(s):</h3>
+                <h4 id ="greyColor">SC.3.N.1.3</h4>
+            </br>
+            <h2 id = "listheader">Main Idea- Literature</h2>
+                <h4 id ="greyColor">Compare different Native American dwellings</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students read if you lived with the ... (Hopi, Sioux, Iroquois, Indians of the Northwest Coast). Focus on housing.</h4>
+            </br>
+            <h3>What students will do:</h3>
+                <h4 id ="greyColor">Make a comparison chart</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students will read informational texts to determine types of dwellings of native culture</h4>
+            </br>
+            <h3>Linked Literature Standard(s):</h3>
+                <h4 id ="greyColor">LAFS.3.RI.3.9</h4>
+            </br>
+            <h2 id = "listheader">Main Idea- Social Studies</h2>
+                <h4 id ="greyColor">Comparing Cultures of Native People</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students study habitats, environment and cultures of native people in the Americas</h4>
+            </br>
+            <h3>What students will do:</h3>
+                <h4 id ="greyColor">Make a chart to identify natural resources, habitat and culture</h4>
+            </br>
+            <h3>Essential Details:</h3>
+                <h4 id ="greyColor">Students will use SS texts and readings to identify resources and climate constraints in dwelling design</h4>
+            </br>
+            <h3>Linked Social Studies Standard(s):</h3>
+                <h4 id ="greyColor">SS.3.G.4.3</h4>
+            </br>
+            <h2 id="listheader">How will students communicate findings?</h2>
+                <h4 id ="greyColor">Students will design a poster to present findings</h4>
+            </br>
 
-                <ul class="nav nav-sidebar">
-                    <li class="active">
-                    <li class="active"><a href="#"><h4>Design Menu</h4></a></li>
-                    <p class="text-center">
-                    <li><a href="#1">Basic Goal</a></li>
-                    <li><a href="#2">Identifying Problem</a></li>
-                    <li><a href="#3">Figuring Constraints</a></li>
-                    <li><a href="#4">Brainstorm Solutions</a></li>
-                    <li><a href="#5">Listing Materials</a></li>
-                    <li><a href="#6">E.Sketch- Math</a></li>
-                    <li><a href="#7">E.Sketch- Science</a></li>
-                    <li><a href="#8">E.Sketch- Literature</a></li>
-                    <li><a href="#9">E.Sketch- SocialStudies</a></li>
-                    <li class="active"><a href="#"><H4>Help Menu</h4></a></li>
-                    <li><a href = "/modules/support/client/views/examples.client.view.html">Examples</a></li>
-                    <li><a data-ui-sref="support.faq">FAQ</a></li>
-                    <li><a>Mindset & Tips</a></li>
-                    <li><a>View other Projects</a></li>
-                    </p>
-                </ul>
 
-            </div>
 
-            <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+            <small>
+                <em class="text-muted">
+                    Posted on
+                    <span data-ng-bind="project.created | date:'mediumDate'"></span>
+                    by
+                    <span data-ng-bind="project.user.displayName"></span>
+                </em>
+            </small>
 
-                <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-bind="project.name"></h2>
-                <h4 class="sub-header">Grade(s) : <input type="number" min="1" max="12" placeholder="3" data-ng-model="project.grades.gradeMin">
-                    - <input type="number" min="1" max="12" placeholder="5" data-ng-model="project.grades.gradeMax"></h4>
-
-                <div class="panel panel-blue">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Ask</h3>
-                    </div>
-                    <div class="panel-body">
-                        <a name="1"><font size = "3">Describe your goal:</font></a>
-                        <span class="glyphicon glyphicon-question-sign"
-                              data-toggle="tooltip" data-original-title="Share" title ="Try imagining a simple learning objective that you  want your students to gain from completing the assignment in mind. Make sure that this objective is broad enough so you can expand on it later. For example, 'I want to teach my students the science behind roller coasters' is a good, generic goal.">
-                        </span>
-                        <br>
-                        <textarea class="form-control" rows="8" data-ng-model="project.ask.goal"></textarea>
-
-                        <a name="2"><font size = "3">What's the major problem or underlying question?</font></a>
-                        <span class="glyphicon glyphicon-question-sign"
-                              data-toggle="tooltip" data-original-title="Share" title ="Identify a simple problem or question that ties in to your goal. Focus on this for the rest of the document. Relating back to the roller coasters, a major problem would be how Roller Coasters overcome gravity."> </span>
-                        <br>
-                        <textarea class="form-control" rows="4" data-ng-model="project.ask.problemStatement"></textarea>
-                        <br>
-                        <a name="2"><font size = "3">How can your students solve this problem?</font></a>
-                        <br>
-                        <textarea class="form-control" rows="3" data-ng-model="project.ask.solvingProblem"></textarea>
-                        <br>
-                        <a name="3"><font size = "3">List your constraints:</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                            data-toggle="tooltip" data-original-title="Share" title ="What constraints you? Money? The objects required to complete the task? Specific materials or utensils? List everything you can think of."></span>
-                        <br>
-                        <textarea class="form-control" rows="4" data-ng-model="project.ask.constraints"></textarea>
-                        <br>
-
-                    </div>
-                </div>
-                <div class="panel panel-blue">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Imagine</h3>
-                    </div>
-                    <div class="panel-body">
-
-                        <a name="4"><font size = "3">What are some solutions? Brainstorm ideas.</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                                                data-toggle="tooltip" data-original-title="Share" title ="This is probably the most crucial part. Identify one or multiple solutions to the problem you have identified earlier. Check examples for more information. "></span>
-                        <br>
-                        <textarea class="form-control" rows="4" data-ng-model="project.imagine.brainstorm"></textarea>
-                        <br>
-                        <h3>Plan</h3>
-                        <font size="3">Draw a diagram or any other representation of your project.</font><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
-                        <br>
-                        <textarea class="form-control" rows="4" data-ng-model="project.imagine.plan"></textarea>
-                        <br>
-                        <a name="5"><font size = "3">List the materials you need.</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                                  data-toggle="tooltip" data-original-title="Share" title ="Include only the basic items/utensils needed to complete the task. No need to list every little think. Check the tip section for a list of items not to include if you are unsure."></span>
-                        <br>
-                        <textarea class="form-control" rows="4" data-ng-model="project.imagine.materials"></textarea>
-
-                        <br>
-                    </div>
-                </div>
-                <div class="panel panel-blue">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Essential Sketch & Details: </h3>
-                    </div>
-                    <div class="panel-body">
-
-                        Now that we've established a basic guideline as to what the project is, we can focus on tying it to all the different subject areas to make sure that a wider range of benchmarks are met. Simply list the main idea and how it relates to each field, followed
-                        by details.
-                        <br>
-                        Think about the central subjects dealing with your project. Check all those that apply:
-                        <br>
-                       <!-- <ul>
-                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeMath"/><label>Mathematics</label></li>
-                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeScience"/><label>Science</label></li>
-                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeLiterature"/><label>Literature</label></li>
-                        <li><input type="checkbox" data-ng-model="project.essentialDetails.mainIncludeSocialStudies"/><label>Social Studies</label></li>
-                        </ul>
-                        !-->
-                        <body ng-app>
-                        <div ng-controller="SubjectSelectCtrl">
-                        <table>
-                        <tr ng-repeat="subjects in subjectList">
-                        <td>
-                        <div>{{item.text}}</div>
-                        </td>
-                        <td>
-                        <input type="checkbox" ng-model="item.isTrue" />
-                        </td>
-                        </tr>
-                        </table>
-                        </div>
-                        </body>
-                        
-                        
-                        
-                        
-                        
-                        <a name="6"><font size = "3">Main Idea-mathematics:</font></a><span class="glyphicon glyphicon-question-sign"
-                        data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a mathematics standard. You can look at the examples for some ideas or search standards for more information. "></span></span>
-                        <br>
-                        <span data-ng-init="essentialDetails.mathDetails.subjectName = 'Mathematics'"></span>
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.mathDetails[0].mainIdea"> Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="project.essentialDetails.mathDetails[0].details"></textarea>
-                        Linked Math Standard(s):
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.mathDetails[0].standards">
-                        <br>
-                        <br>
-
-                        <a name="7"><font size = "3">Main Idea-science:</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                        data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a science standard. You can look at the examples for some ideas or search standards for more information."></span>
-                        <br>
-                        <span data-ng-init="essentialDetails.scienceDetails.subjectName = 'Science'"></span>
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].mainIdea"> Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="project.essentialDetails.scienceDetails[0].details"></textarea>
-                        Linked Science Standard(s):
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].standards">
-                        <br>
-                        <br>
-
-                        <a name="8"><font size = "3">Main Idea-literature:</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                           data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a literature standard. You can look at the examples for some ideas or search standards for more information."></span>
-                        <br>
-                        <span data-ng-init="essentialDetails.litDetails.subjectName = 'Literature'"></span>
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.litDetails[0].mainIdea"> Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="project.essentialDetails.litDetails[0].details"></textarea>
-                        Linked Literature Standard(s):
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.litDetails[0].standards">
-                        <br>
-                        <br>
-
-                        <a name="9"><font size = "3">Main Idea-social studies:</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                               data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a social studies standard. You can look at the examples for some ideas or search standards for more information."></span>
-                        <br>
-                        <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.ssDetails[0].mainIdea"> Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="project.essentialDetails.ssDetails[0].details"></textarea>
-                        Linked SocialStudies Standard(s):
-                        <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.ssDetails[0].standards">
-                        <br>
-                        <br>
-
-                        <a>
-                            <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                                   data-toggle="tooltip" data-original-title="Share" title ="Be sure that this method of communication is feasible. Presentations, diagrams, reports or demos are some common ways to present findings."></span>
-                        <br>
-                        <textarea class="form-control" rows="5" data-ng-model="project.essentialDetails.communicateFindings"></textarea>
-                        <br>
-                    </div>
-                </div>
-                <a data-ng-href="/#!/projects/{{project._id}}">
-                    <button type="submit" class="btn btn-info btn-block">Submit</button>
+            <div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
+                <a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
+                    <i class="glyphicon glyphicon-edit"></i>
                 </a>
-
+                <a class="btn btn-primary" data-ng-click="remove();">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
             </div>
+
         </div>
     </div>
+</section>
