@@ -44,3 +44,10 @@
 body{
   background-color: #eeeeee;
 }
+
+.scrollable-list
+{
+  height: auto;
+  max-height: 400px;
+  overflow-x: hidden;
+}
