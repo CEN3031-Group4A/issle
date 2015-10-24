@@ -73,15 +73,33 @@ exports.delete = function(req, res) {
 /**
  * List of Projects
  */
-exports.list = function(req, res) { Project.find().where('user').equals(req.query['userID']).sort('-created').populate('user', 'displayName').exec(function(err, projects) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(projects);
-		}
-	});
+exports.list = function(req, res) {
+	console.log('projectsByUser ' + req.query['userId']);
+
+	if (req.query['userId'])
+	{
+		Project.find().where('user').equals(req.query['userId']).sort('-created').populate('user', 'displayName').exec(function(err, projects) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				res.jsonp(projects);
+			}
+		});
+	}
+	else
+	{
+		Project.find().sort('-created').populate('user', 'displayName').exec(function(err, projects) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				res.jsonp(projects);
+			}
+		});
+	}
 };
 
 /**

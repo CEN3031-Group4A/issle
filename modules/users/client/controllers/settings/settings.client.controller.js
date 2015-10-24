@@ -6,10 +6,10 @@ angular.module('users').controller('SettingsController', ['$scope', 'Authenticat
 
     $scope.getUserProjects = function(){
       Projects.query(
-        {'userID' : $scope.user._id},
+        {userId : $scope.user._id},
         function(projects) {
           $scope.userProjects = projects;
         }
-    );}
+    );};
   }
 ]);
