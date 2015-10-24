@@ -1,20 +1,37 @@
-<section data-ng-controller="SettingsController" data-ng-init="getUserProjects()">
-  <div class="page-header">
-    <h1>{{user.displayName}}'s Page</h1>
-    <img ng-src="user.profileImageURL"/>
+<section data-ng-controller="SettingsController" data-ng-init="getUserProjects()" class="panel panel-info">
+  <br>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1">
+      <img ng-src="{{user.profileImageURL}}"/>
+    </div>
+    <div class="col-md-6">
+      <h1>{{user.displayName}}'s Page</h1>
+    </div>
   </div>
 
   <div class="row">
-    <div class="col-md-5 col-md-offset-7">
+    <div class="col-md-5 col-md-offset-6">
       <div class="panel panel-gold">
         <div class="panel-heading text-center" style="font-size: x-large">My Projects:</div>
         <div class="panel-body">
-          <ul class="list-group scrollable-list">
-            <li class="list-group-item" ng-repeat="userProjectItem in userProjects" >
-                <h3>{{userProjectItem.name}}</h3>
-                <p class="text-muted">Created: {{userProjectItem.created}}</p>
-            </li>
-          </ul>
+          <div class="list-group scrollable-list">
+            <a class="list-group-item" ng-repeat="userProjectItem in userProjects" >
+              <div class="row">
+                <div class="col-md-8 col-xs-8">
+                  <h3>{{userProjectItem.name}}</h3>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                  <button class="btn btn-blue glyphicon glyphicon-edit"></button>
+                  <button class="btn btn-danger glyphicon glyphicon-trash"></button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <p class="text-muted">Created: {{userProjectItem.created}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
