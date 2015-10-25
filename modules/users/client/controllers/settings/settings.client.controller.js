@@ -11,5 +11,22 @@ angular.module('users').controller('SettingsController', ['$scope', 'Authenticat
           $scope.userProjects = projects;
         }
     );};
+
+    $scope.deleteProject = function(project){
+      if ( project ) { project.$remove();
+
+        for (var i in $scope.userProjects ) {
+          if ($scope.userProjects [i] === project ) {
+            $scope.userProjects.splice(i, 1);
+          }
+        }
+      } else {
+        $scope.project.$remove(function() {
+          $location.path('projects');
+        });
+      }
+
+    }
+
   }
 ]);
