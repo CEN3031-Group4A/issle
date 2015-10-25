@@ -1,64 +1,33 @@
-<section data-ng-controller="SettingsController" data-ng-init="getUserProjects()" class="panel panel-info">
+<section data-ng-controller="SettingsController" data-ng-init="getUserProjects()" class="container-fluid panel" style="height:600px">
   <br>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-1">
-      <img ng-src="{{user.profileImageURL}}"/>
-    </div>
-    <div class="col-md-6">
-      <h1>{{user.displayName}}'s Page</h1>
-    </div>
+
+  <div class="header text-center">
+    <img ng-src="{{user.profileImageURL}}" class="img-circle" style="height: auto; max-height: 60px;"/>
+    <h1 style="display: inline; vertical-align: middle">&nbsp;&nbsp;{{user.displayName}}'s Page</h1>
   </div>
 
+  <hr>
+
   <div class="row">
-    <div class="col-md-5 col-md-offset-6">
-      <div class="panel panel-gold">
-        <div class="panel-heading text-center" style="font-size: x-large">My Projects:</div>
-        <div class="panel-body">
-          <div class="list-group scrollable-list">
-            <a class="list-group-item" ng-repeat="userProjectItem in userProjects" >
-              <div class="row">
-                <div class="col-md-8 col-xs-8">
-                  <h3>{{userProjectItem.name}}</h3>
-                </div>
-                <div class="col-md-4 col-xs-4">
-                  <button class="btn btn-blue glyphicon glyphicon-edit"></button>
-                  <button class="btn btn-danger glyphicon glyphicon-trash"></button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-xs-12">
-                  <p class="text-muted">Created: {{userProjectItem.created}}</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+
+    <nav class="col-sm-3 col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li data-ui-sref-active="active">
+          <a data-ui-sref="settings.account">My Profile</a>
+        </li>
+        <li data-ui-sref-active="active">
+          <a data-ui-sref="settings.profile">Edit Profile</a>
+        </li>
+        <li data-ui-sref-active="active">
+          <a data-ui-sref="settings.picture">Change Profile Picture</a>
+        </li>
+        <li data-ui-sref-active="active" data-ng-show="user.provider === 'local'">
+          <a data-ui-sref="settings.password">Change Password</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-md-9 settings-view">
+      <div data-ui-view></div>
     </div>
   </div>
-
-  <!--<div class="row">-->
-    <!--<nav class="col-sm-3 col-md-3">-->
-      <!--<ul class="nav nav-pills nav-stacked">-->
-	    <!--<li data-ui-sref-active="active">-->
-        <!--<a data-ui-sref="settings.projects">My Projects</a>-->
-        <!--</li>-->
-        <!--<li data-ui-sref-active="active">-->
-          <!--<a data-ui-sref="settings.profile">Edit Profile</a>-->
-        <!--</li>-->
-        <!--<li data-ui-sref-active="active">-->
-          <!--<a data-ui-sref="settings.picture">Change Profile Picture</a>-->
-        <!--</li>-->
-        <!--<li data-ui-sref-active="active" data-ng-show="user.provider === 'local'">-->
-          <!--<a data-ui-sref="settings.password">Change Password</a>-->
-        <!--</li>-->
-        <!--<li data-ui-sref-active="active">-->
-          <!--<a data-ui-sref="settings.accounts">Manage Social Accounts</a>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</nav>-->
-    <!--<div class="col-sm-9 col-md-8 settings-view">-->
-      <!--<div data-ui-view></div>-->
-    <!--</div>-->
-  <!--</div>-->
 </section>

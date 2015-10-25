@@ -1,0 +1,33 @@
+<section data-ng-controller="ProjectsController">
+    <div class="col-md-5">
+      <h3>School: {{user.school}}</h3>
+      <h3>Email: {{user.email}}</h3>
+    </div>
+
+    <div class="col-md-7">
+      <div class="panel panel-gold">
+        <div class="panel-heading text-center" style="font-size: x-large">My Projects:</div>
+        <div class="panel-body">
+          <div class="list-group scrollable-list">
+            <a class="list-group-item" ng-repeat="userProjectItem in userProjects" style="padding-top: 0%; padding-bottom: 0%">
+              <div class="row">
+                <div class="col-md-8 col-xs-8 col-sm-8">
+                  <h3>{{userProjectItem.name}}</h3>
+                </div>
+                <div class="col-md-4 col-xs-4 col-sm-4" style="padding-top: 5%">
+                  <button class="btn btn-info glyphicon glyphicon-edit"></button>
+                  <button class="btn btn-danger glyphicon glyphicon-trash"></button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <p class="text-muted">Created: {{userProjectItem.created}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>

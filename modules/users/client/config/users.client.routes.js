@@ -13,9 +13,9 @@ angular.module('users').config(['$stateProvider',
           roles: ['user', 'admin']
         }
       })
-	  .state('settings.projects', {
+	  .state('settings.account', {
         url: '/profile',
-        templateUrl: 'modules/users/views/settings/projects.client.view.html'
+        templateUrl: 'modules/users/views/settings/account.client.view.html'
       })
       .state('settings.profile', {
         url: '/profile',
@@ -24,10 +24,6 @@ angular.module('users').config(['$stateProvider',
       .state('settings.password', {
         url: '/password',
         templateUrl: 'modules/users/views/settings/change-password.client.view.html'
-      })
-      .state('settings.accounts', {
-        url: '/accounts',
-        templateUrl: 'modules/users/views/settings/manage-social-accounts.client.view.html'
       })
       .state('settings.picture', {
         url: '/picture',
