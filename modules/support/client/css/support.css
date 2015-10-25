@@ -78,6 +78,17 @@ a {
     color: #fbc650;
 }
 
+.tab {
+    padding-left:2em;
+}
+
+img.example {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 150px;
+}
+
 /* Panel CSS*/
 .panel-blue > .panel-heading {
 	border-color: #64bed8;
