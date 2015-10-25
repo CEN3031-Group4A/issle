@@ -1,6 +1,6 @@
 <section class="row" data-ng-controller="EditProfileController">
   <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
-    <form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
+    <form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid);" class="signin form-horizontal" autocomplete="off">
       <fieldset>
         <div class="form-group">
           <label for="firstName">First Name</label>
@@ -9,6 +9,10 @@
         <div class="form-group">
           <label for="lastName">Last Name</label>
           <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label for="school">School</label>
+          <input type="text" id="school" name="school" class="form-control" data-ng-model="user.school" placeholder="School">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
