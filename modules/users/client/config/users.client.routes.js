@@ -14,7 +14,7 @@ angular.module('users').config(['$stateProvider',
         }
       })
 	  .state('settings.account', {
-        url: '/profile',
+        url: '/account',
         templateUrl: 'modules/users/views/settings/account.client.view.html'
       })
       .state('settings.profile', {
