@@ -1,94 +1,92 @@
 <section data-ng-controller="StandardsController" data-ng-init="find()">
   <div class="container-fluid">
     <h2>Search for Standards</h2>
-      <br>
+      <div class="main row">
+          <div class="col-md-6"> <br>
+            <div style="text-align:center">
+              <span style="font-size:5em" class="blue glyphicon glyphicon-book" aria-hidden="true"></span>
+              <h3>Search by Subject</h3>
+              <div class="panel panel-blue">
+                <div class="panel-heading">I want standards in the subject(s) of...</div>
+                <div class="panel-body">                                      
+                  <h4>Subject: 
+                  <select style="height:27px" ng-model="search.subject">
+                    <option value="">Select one...</option
+                    <option value="dance">Dance</option>
+                    <option value="englishLanguageArts">English Language Arts</option>
+                    <option value="englishLanguageDevelopment">English Language Development</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="music">Music</option>
+                    <option value="physicalEducation">Physical Education</option>
+                    <option value="science">Science</option>
+                    <option value="socialStudies">Social Studies</option>
+                    <option value="specialSkills">Special Skills</option>
+                    <option value="theatre">Theatre</option>
+                    <option value="visualArt">Visual Art</option>
+                  </select>
+                  </h4>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="col-md-6"> <br>
+            <div style="text-align:center">
+              <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              <h3>Search by Grade</h3>
+              <div class="panel panel-blue">
+                <div class="panel-heading">I want standards for the following grades...</div>
+                <div class="panel-body">
+                  <h4>Grade(s) : 
+                  <select style="height:27px" ng-model="search.minGrade">
+                    <option value="">Select one...</option>
+                    <option value="k">K</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="912">9-12</option>
+                  </select> -
+                  <select style="height:27px" ng-model="search.maxGrade">
+                    <option value="">Select one...</option>
+                    <option value="k">K</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="912">9-12</option>
+                  </select>
+                  </h4>  
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+        
+         <h3>Alternatively...</h3>
       <div class="input-group input-group-lg">
             <span class="input-group-addon" id="sizing-addon1">By standard...</span>
-            <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1">
+            <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText">
       </div>
       <br>
-      
-      <h3>Alternatively...</h3>
-      
-      <div class="main row">
-          <div class="col-md-4"> <br>
-            <div style="text-align:center">
-                <span style="font-size:5em" class="blue glyphicon glyphicon-book" aria-hidden="true"></span>
-                <h3>Search by Subject</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want standards in the subject(s) of...</div>
-                  <div class="panel-body">
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="...">
-                          </span>
-                          <input type="text" class="form-control" placeholder="eg. Math"aria-label="...">
-                      </div><!-- /input-group -->
-                      <br>
-                      <button class="btn btn-blue btn-sm" style="align:center">Add another subject</button>
-                  </div>
-                </div>
-             </div>  
-          </div>
-          
-          
-          <div class="col-md-4"> <br>
-            <div style="text-align:center">
-                <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                <h3>Search by Grade</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want standards for the following grades...</div>
-                  <div class="panel-body">
-                    <div class="list-group">
-                        <div ng-repeat="grade in grades">
-                          <button type="button" class="list-group-item" ng-click="toggle_include_grade(grade)">
-                            <div class="col-xs-3"> 
-                              <a class="gold" ng-class="grade.checkbox" ></a> 
-                            </div>
-                            <div class="col-xs-9">
-                              {{grade.name}}
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-             </div>  
-          </div>
-          
-          <div class="col-md-4"> <br>
-            <div style="text-align:center">
-                <span style="font-size:5em" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                <h3>Search by Topic</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want standards that cover the following topics:</div>
-                  <div class="panel-body">
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="...">
-                          </span>
-                          <input type="text" class="form-control" placeholder="eg. Math"aria-label="...">
-                      </div><!-- /input-group -->
-                      <br>
-                      <button class="btn btn-blue btn-sm" style="align:center">Add another subject</button>
-                  </div>
-                </div>
-             </div>  
-          </div>
-          
-        
-      </div>
-      
+      <button type="submit" class="btn btn-warning btn-block" ng-click="submit(search)">Submit</button>
+      <br>
       <div class="panel panel-blue">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
             <div class="panel-body">
-              <h4 class="search-results">Displaying standards that match the following categories: </h4>
+              <h4 class="search-results">Displaying standard(s) selected: </h4>
               <ul class="list-group">
-                <li class="list-group-item" >Between grades {{min_grade}} and {{max_grade}}</li>
                 {{standards[25].benchmark}}
               </ul>
-              <div ng-repeat="std in standards">
-                {{std.benchmark}}
+              <div ng-repeat="std in standards | filter:searchText">
+                <!--{{std.benchmark}} !-->
               </div>
             </div>
         </div>
