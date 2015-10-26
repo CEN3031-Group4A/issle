@@ -37,8 +37,32 @@
                 <div class="panel-heading">I want standards for the following grades...</div>
                 <div class="panel-body">
                   <h4>Grade(s) : 
-                  <input type="number" ng-model = "minimumNum" min="0" max="12" placeholder="0"> -
-                  <input type="number" min= "{{minimumNum || 0}}" max="12" placeholder="12">
+                  <select style="height:27px" ng-model="minGrade">
+                    <option value="">Select one...</option>
+                    <option value="k">K</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="912">9-12</option>
+                  </select> -
+                  <select style="height:27px" ng-model="maxGrade">
+                    <option value="">Select one...</option>
+                    <option value="k">K</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="912">9-12</option>
+                  </select>
                   </h4>  
                 </div>
               </div>
@@ -56,7 +80,7 @@
       <div class="panel panel-blue">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
             <div class="panel-body">
-              <h4 class="search-results">Displaying standards that match the following categories: </h4>
+              <h4 class="search-results">Displaying standard(s) selected: </h4>
               <ul class="list-group">
                 {{standards[25].benchmark}}
               </ul>
