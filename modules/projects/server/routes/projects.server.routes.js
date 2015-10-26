@@ -5,7 +5,7 @@ module.exports = function(app) {
 	var projectsPolicy = require('../policies/projects.server.policy');
 
 	// Projects Routes
-	app.route('/api/projects').all()
+	app.route('/api/projects')
 		.get(projects.list).all(projectsPolicy.isAllowed)
 		.post(projects.create);
 
@@ -16,4 +16,5 @@ module.exports = function(app) {
 
 	// Finish by binding the Project middleware
 	app.param('projectId', projects.projectByID);
+
 };
