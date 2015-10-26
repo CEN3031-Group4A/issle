@@ -10,7 +10,7 @@
                 <div class="panel-heading">I want standards in the subject(s) of...</div>
                 <div class="panel-body">                                      
                   <h4>Subject: 
-                  <select style="height:27px" ng-model="subject">
+                  <select style="height:27px" ng-model="search.subject">
                     <option value="">Select one...</option
                     <option value="dance">Dance</option>
                     <option value="englishLanguageArts">English Language Arts</option>
@@ -37,7 +37,7 @@
                 <div class="panel-heading">I want standards for the following grades...</div>
                 <div class="panel-body">
                   <h4>Grade(s) : 
-                  <select style="height:27px" ng-model="minGrade">
+                  <select style="height:27px" ng-model="search.minGrade">
                     <option value="">Select one...</option>
                     <option value="k">K</option>
                     <option value="1">1</option>
@@ -50,7 +50,7 @@
                     <option value="8">8</option>
                     <option value="912">9-12</option>
                   </select> -
-                  <select style="height:27px" ng-model="maxGrade">
+                  <select style="height:27px" ng-model="search.maxGrade">
                     <option value="">Select one...</option>
                     <option value="k">K</option>
                     <option value="1">1</option>
@@ -73,10 +73,11 @@
          <h3>Alternatively...</h3>
       <div class="input-group input-group-lg">
             <span class="input-group-addon" id="sizing-addon1">By standard...</span>
-            <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "searchText">
+            <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText">
       </div>
       <br>
-      
+      <button type="submit" class="btn btn-warning btn-block" ng-click="submit(search)">Submit</button>
+      <br>
       <div class="panel panel-blue">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
             <div class="panel-body">
@@ -85,7 +86,7 @@
                 {{standards[25].benchmark}}
               </ul>
               <div ng-repeat="std in standards | filter:searchText">
-                {{std.benchmark}}
+                <!--{{std.benchmark}} !-->
               </div>
             </div>
         </div>

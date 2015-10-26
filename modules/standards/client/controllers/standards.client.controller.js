@@ -107,5 +107,14 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 		          
 		        });
 		};
+		$scope.submit = function(search) {
+			if(form.searchText) {
+
+			}
+			else{
+
+			}
+			console.log(form)
+		}
 	}
 ]);
