@@ -76,18 +76,32 @@
             <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText">
       </div>
       <br>
-      <button type="submit" class="btn btn-warning btn-block" ng-click="submit(search)">Submit</button>
+	  <br>
+      <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="submit(search)" style="width:50%; margin-left:25%">Submit</button></div>
       <br>
       <div class="panel panel-blue">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
             <div class="panel-body">
               <h4 class="search-results">Displaying standard(s) selected: </h4>
-              <ul class="list-group">
-                {{standards[25].benchmark}}
-              </ul>
+			  <br>
+			  <table class = "searchResults">
+			  <tr class = "searchRow">
+			  <th>Standard</th>
+			  <th>Summary</th>
+			  <th>Subject</th>
+			  <th>Grade(s)</th>
+			  <th>Topic</th>
+			  </tr>
+			  <tr>
               <div ng-repeat="std in standards | filter:searchText">
-                <!--{{std.benchmark}} !-->
+               <td>{{standards[28].benchmark}}</td>
+			   <td>{{standards[28].description}}</td>
+			   <td>{{standards[28].subject}}</td>
+			   <td>{{standards[28].grade}}</td>
+			   <td>{{standards[28].bodyOfKnowledge}}</td>
               </div>
+			  </tr>
+			  </table>
             </div>
         </div>
       </div>

@@ -106,6 +106,28 @@ a:hover .header-profile-image {
   color: #2c5b69;
 }
 
+.searchResults{
+	border: 1px solid #92d1e3;
+}
+
+.searchRow{
+	padding:5px;
+	text-align:center;
+}
+
+th{
+	padding:5px;
+	text-align:center;
+	color:white;
+	background-color: #92d1e3;
+}
+
+td{
+	border: 1px solid #92d1e3;
+	padding:10px;
+	text-align:center;
+}
+
 @media (max-width: 767px) {
   .navbar-issle .navbar-nav .open .dropdown-menu > li > a {
     color: #2c5b69;
