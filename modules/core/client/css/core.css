@@ -108,15 +108,22 @@ a:hover .header-profile-image {
 
 .searchResults{
 	border: 1px solid #92d1e3;
+	margin-right:auto;
+	margin-left:auto; 
+}
+
+table{
+	height:98%;
+	width:98%;
 }
 
 .searchRow{
-	padding:5px;
+	padding:1px;
 	text-align:center;
 }
 
 th{
-	padding:5px;
+	padding:1px;
 	text-align:center;
 	color:white;
 	background-color: #92d1e3;
@@ -124,8 +131,9 @@ th{
 
 td{
 	border: 1px solid #92d1e3;
-	padding:10px;
+	padding:2.3px;
 	text-align:center;
+	font-size: 12px;
 }
 
 @media (max-width: 767px) {
