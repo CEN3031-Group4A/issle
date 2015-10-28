@@ -48,6 +48,7 @@
 					<h3 class="panel-title">Essential Sketch & Details: </h3>
 				</div>
 				<div class="panel-body">
+
 					<div class="panel panel-blue">
 						<div class="panel-heading">
 							<h3 class="panel-title">Mathematics:</h3>
@@ -65,8 +66,6 @@
 						</div>
 					</div>
 
-
-
 					<div class="panel panel-blue">
 						<div class="panel-heading">
 							<h3 class="panel-title">Science:</h3>
@@ -78,74 +77,69 @@
 							<h4 class="blue">Essential Details:</h4>
 							<h5 class="tab">{{project.essentialDetails.scienceDetails[0].details}}</h5>
 							</br>
-							<h4 class="blue">Linked Science Standard(s):</h5>
-		<h5 class ="tab">{{project.essentialDetails.scienceDetails[0].standards}}</h5>
-		</br>
-		  </div>
-        </div>
+							<h4 class="blue">Linked Science Standard(s):</h4>
+                            <h5 class ="tab">{{project.essentialDetails.scienceDetails[0].standards}}</h5>
+                            </br>
+                        </div>
+                    </div>
         
-        
-        	<div class="panel panel-blue">
+        	        <div class="panel panel-blue">
                         <div class="panel-heading">
                             <h3 class="panel-title">Literature:</h3>
                         </div>
-        <div class="panel-body">
-                         <h4 class="blue">Main Idea:</h4>
+                        <div class="panel-body">
+                            <h4 class="blue">Main Idea:</h4>
 							<h5 class="tab">{{project.essentialDetails.litDetails[0].mainIdea}}</h5>
 							</br>
 							<h4 class="blue">Essential Details:</h4>
 							<h5 class="tab">{{project.essentialDetails.litDetails[0].details}}</h5>
 							</br>
-							<h4 class="blue">Linked Science Standard(s):</h5>
-		<h5 class ="tab">{{project.essentialDetails.litDetails[0].standards}}</h5>
-		</br>
-		  </div>
-        </div>
+							<h4 class="blue">Linked Science Standard(s):</h4>
+		                    <h5 class ="tab">{{project.essentialDetails.litDetails[0].standards}}</h5>
+		                    </br>
+		                </div>
+                    </div>
         
-        
-        
-        	<div class="panel panel-blue">
+        	        <div class="panel panel-blue">
                         <div class="panel-heading">
                             <h3 class="panel-title">Social Studies:</h3>
                         </div>
-        <div class="panel-body">
-                         <h4 class="blue">Main Idea:</h4>
+                        <div class="panel-body">
+                            <h4 class="blue">Main Idea:</h4>
 							<h5 class="tab">{{project.essentialDetails.ssDetails[0].mainIdea}}</h5>
 							</br>
 							<h4 class="blue">Essential Details:</h4>
 							<h5 class="tab">{{project.essentialDetails.ssDetails[0].details}}</h5>
 							</br>
-							<h4 class="blue">Linked Science Standard(s):</h5>
-		<h5 class ="tab">{{project.essentialDetails.ssDetails[0].standards}}</h5>
-		</br>
-		  </div>
+							<h4 class="blue">Linked Science Standard(s):</h4>
+		                    <h5 class ="tab">{{project.essentialDetails.ssDetails[0].standards}}</h5>
+		                    </br>
+		                </div>
+                    </div>
+
+		            <h4 class="blue">How will students communicate findings?</h4>
+                    <h5 class="tab">{{project.essentialDetails.communicateFindings}}</h5>
+
+                </div>
+
+                <small>
+                    <em class="text-muted">
+                        Posted on
+                        <span data-ng-bind="project.created | date:'mediumDate'"></span>
+                        by
+                        <span data-ng-bind="project.user.displayName"></span>
+                    </em>
+                </small>
+				<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
+					<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
+						<i class="glyphicon glyphicon-edit"></i>
+					</a>
+					<a class="btn btn-primary" data-ng-click="remove();">
+						<i class="glyphicon glyphicon-trash"></i>
+					</a>
+				</div>
+
+			</div>
         </div>
- 
-		</br>
-		<h4 class="blue">How will students communicate findings?</h4>
-							<h5 class="tab">{{project.essentialDetails.communicateFindings}}</h5>
-							</br>
-
-
-
-							<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="project.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="project.user.displayName"></span>
-		</em>
-	</small>
-
-							<div class="pull-right" data-ng-show="authentication.user._id == project.user._id">
-								<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
-									<i class="glyphicon glyphicon-edit"></i>
-								</a>
-								<a class="btn btn-primary" data-ng-click="remove();">
-									<i class="glyphicon glyphicon-trash"></i>
-								</a>
-							</div>
-
-						</div>
-					</div>
+    </div>
 </section>

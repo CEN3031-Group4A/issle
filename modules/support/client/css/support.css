@@ -64,6 +64,10 @@ a {
 }
 
 /* Glyphicon placeholder, size, color CSS*/
+.btn {
+    margin-right: 5px;
+}
+
 .placeholders {
     margin-bottom: 30px;
     text-align: center;
