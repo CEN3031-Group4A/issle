@@ -59,8 +59,11 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 		};
 
 		// Find a list of Standards
-		$scope.find = function() {
+		$scope.find = function(search) {
 			$scope.standards = Standards.query();
+			//$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject,searchText:search.searchText});
+			//$http.get('/api/standards', {params: search} ).success(function(response){$standards = response;});
+
 		};
 
 		// Find existing Standard
@@ -108,13 +111,13 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 		        });
 		};
 		$scope.submit = function(search) {
-			if(form.searchText) {
+			if(search.searchText) {
 
 			}
 			else{
 
 			}
-			console.log(form)
+			console.log(search)
 		}
 	}
 ]);

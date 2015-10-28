@@ -73,7 +73,11 @@ exports.delete = function(req, res) {
 /**
  * List of Standards
  */
-exports.list = function(req, res) { Standard.find().sort('-created').populate('user', 'displayName').exec(function(err, standards) {
+exports.list = function(req, res) { 
+	Standard.find().
+		//where(grade).gt(req.query['minGrade']).
+		sort('-created').populate('user', 'displayName').
+		exec(function(err, standards) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
