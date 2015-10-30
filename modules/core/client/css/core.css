@@ -105,6 +105,35 @@ a:hover .header-profile-image {
 .navbar-issle .navbar-link:hover {
   color: #2c5b69;
 }
+.searchResults{
+  border: 1px solid #92d1e3;
+  margin-right:auto;
+  margin-left:auto; 
+}
+
+table{
+  height:98%;
+  width:98%;
+}
+
+.searchRow{
+  padding:5px;
+  text-align:center;
+}
+
+th{
+  padding:1px;
+  text-align:center;
+  color:white;
+  background-color: #92d1e3;
+}
+
+td{
+  border: 1px solid #92d1e3;
+  padding:2.3px;
+  text-align:center;
+  font-size: 12px;
+}
 
 .searchResults{
 	border: 1px solid #92d1e3;
