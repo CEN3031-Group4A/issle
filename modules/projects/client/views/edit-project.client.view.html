@@ -29,7 +29,7 @@
 
             <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main">
 
-                <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" value="{{project.name}}" data-ng-bind="project.name"></h2>
+                <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="project.name"></h2>
                 <h4 class="sub-header">Grade(s) : <input type="number" min="1" max="12" placeholder="3" data-ng-model="project.grades.gradeMin">
                     - <input type="number" min="1" max="12" placeholder="5" data-ng-model="project.grades.gradeMax"></h4>
 
@@ -172,9 +172,8 @@
                         <br>
                     </div>
                 </div>
-                <a data-ng-href="/#!/projects/{{project._id}}">
-                    <button type="submit" class="btn btn-info btn-block">Submit</button>
-                </a>
+
+                <button type="submit" class="btn btn-info btn-block">Submit</button>
 
             </div>
         </div>

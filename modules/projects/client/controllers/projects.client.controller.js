@@ -50,7 +50,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			var project = $scope.project;
 
 			project.$update(function() {
-				$location.path('projects/' + project._id+'/edit');
+				$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
