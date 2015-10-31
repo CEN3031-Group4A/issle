@@ -43,6 +43,9 @@
                     <span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu" role="menu">
+					<li data-ui-sref-active="active">
+                        <a data-ui-sref="settings.account">My Profile</a>
+                    </li>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="settings.profile">Edit Profile</a>
                     </li>
@@ -51,9 +54,6 @@
                     </li>
                     <li data-ui-sref-active="active" data-ng-show="authentication.user.provider === 'local'">
                         <a data-ui-sref="settings.password">Change Password</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="settings.accounts">Manage Social Accounts</a>
                     </li>
                     <li class="divider"></li>
                     <li>
