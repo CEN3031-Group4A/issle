@@ -17,6 +17,6 @@ angular.module('standards').config(['$stateProvider',
 		state('standards.view', {
 			url: '/:standardId',
 			templateUrl: 'modules/standards/views/view-standard.client.view.html'
-		})
+		});
 	}
 ]);

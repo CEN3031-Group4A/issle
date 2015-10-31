@@ -74,8 +74,9 @@ exports.delete = function(req, res) {
  * List of Standards
  */
 exports.list = function(req, res) { 
+	if(req.query.benchmark) {
 	Standard.find().
-		//where(grade).gt(req.query['minGrade']).
+		where('benchmark').equals(req.query.benchmark).
 		sort('-created').populate('user', 'displayName').
 		exec(function(err, standards) {
 		if (err) {
@@ -86,6 +87,34 @@ exports.list = function(req, res) {
 			res.jsonp(standards);
 		}
 	});
+	} else if(req.query.subject) {
+	Standard.find().
+		where('grade').gte(req.query.minGrade).lte(req.query.maxGrade).
+		where('subject').equals(req.query.subject).
+		sort('-created').populate('user', 'displayName').
+		exec(function(err, standards) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(standards);
+		}
+		});
+	} else {
+	Standard.find().
+		where('grade').gte(req.query.minGrade).lte(req.query.maxGrade).
+		sort('-created').populate('user', 'displayName').
+		exec(function(err, standards) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(standards);
+		}
+	});
+	}
 };
 
 /**

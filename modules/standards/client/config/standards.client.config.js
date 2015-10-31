@@ -14,6 +14,6 @@ angular.module('standards').run(['Menus',
 		Menus.addSubMenuItem('topbar', 'standards', {
 			title: 'List Standards',
 			state: 'standards.list'
-		})
+		});
 	}
 ]);

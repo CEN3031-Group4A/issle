@@ -60,9 +60,21 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 
 		// Find a list of Standards
 		$scope.find = function(search) {
-			$scope.standards = Standards.query();
+			//$scope.standards = Standards.query();
+			//search.minGrade = parseInt(search.minGrade, 10); //parseInt with radix
 			//$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject,searchText:search.searchText});
-			//$http.get('/api/standards', {params: search} ).success(function(response){$standards = response;});
+			
+			if(!search.minGrade) search.minGrade = '1';
+			if(!search.maxGrade) search.maxGrade = '912';
+
+			if(search.searchText) {
+				$scope.standards = Standards.query({benchmark:search.searchText});
+			} else if(search.subject) {
+				$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject});
+			} else {
+				$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade});
+			}
+			console.log(search);
 
 		};
 
@@ -73,32 +85,7 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 			});
 		};
 		
-		//This whole method's buggy as hell. Will need to fix.
-		$scope.toggle_include_grade = function(item){
-			item.include = !item.include;	//toggle include
-			if(item.include){	//wasn't included, now should be
-				$scope.included_grades.push(item.num);
-				item.checkbox = "glyphicon glyphicon-check"
-			} else {			//was included, now shouldn't be
-				var index = $scope.included_grades.indexOf(item.num);
-    			$scope.included_grades.splice(index, 1);
-				item.checkbox = "glyphicon glyphicon-unchecked"
-			};
-			
-			$scope.min_grade = Math.min.apply(null, $scope.included_grades);
-			$scope.max_grade = Math.max.apply(null, $scope.included_grades);
-			
-			if($scope.included_grades.length == 0) {
-				$scope.max_grade = 0
-				$scope.min_grade = 0;
-			}
-			
-		};
 		
-		$scope.show_grades = false;
-		$scope.toggle_show_grades = function(){
-			$scope.show_grades = true;
-		};
 		
 		$scope.categories = [
 			//Will hold any topics specified
@@ -110,14 +97,5 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 		          
 		        });
 		};
-		$scope.submit = function(search) {
-			if(search.searchText) {
-
-			}
-			else{
-
-			}
-			console.log(search)
-		}
 	}
 ]);

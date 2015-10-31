@@ -1,110 +1,112 @@
-<section data-ng-controller="StandardsController" data-ng-init="find()">
+<section data-ng-controller="StandardsController">
   <div class="container-fluid">
     <h2>Search for Standards</h2>
-      <div class="main row">
-          <div class="col-md-6"> <br>
-            <div style="text-align:center">
-              <span style="font-size:5em" class="blue glyphicon glyphicon-book" aria-hidden="true"></span>
-              <h3>Search by Subject</h3>
-              <div class="panel panel-blue">
-                <div class="panel-heading">I want standards in the subject(s) of...</div>
-                <div class="panel-body">                                      
-                  <h4>Subject: 
-                  <select style="height:27px; width: 250px" ng-model="search.subject">
-                    <option value="">Select one...</option>
-                    <option value="dance">Dance</option>
-                    <option value="englishLanguageArts">English Language Arts</option>
-                    <option value="englishLanguageDevelopment">English Language Development</option>
-                    <option value="mathematics">Mathematics</option>
-                    <option value="music">Music</option>
-                    <option value="physicalEducation">Physical Education</option>
-                    <option value="science">Science</option>
-                    <option value="socialStudies">Social Studies</option>
-                    <option value="specialSkills">Special Skills</option>
-                    <option value="theatre">Theatre</option>
-                    <option value="visualArt">Visual Art</option>
-                  </select>
-                  </h4>
-                </div>
-              </div>
-            </div>  
-          </div>
-          <div class="col-md-6"> <br>
-            <div style="text-align:center">
-              <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
-              <h3>Search by Grade</h3>
-              <div class="panel panel-blue">
-                <div class="panel-heading">I want standards for the following grades...</div>
-                <div class="panel-body">
-                  <h4>Grade(s) : 
-                  <select style="height:27px" ng-model="search.minGrade">
-                    <option value="">Select one...</option>
-                    <option value="k">K</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="912">9-12</option>
-                  </select> -
-                  <select style="height:27px" ng-model="search.maxGrade">
-                    <option value="">Select one...</option>
-                    <option value="k">K</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="912">9-12</option>
-                  </select>
-                  </h4>  
-                </div>
-              </div>
-            </div>  
-          </div>
-        </div>
-        
-         <h3>Alternatively...</h3>
-      <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">By standard...</span>
-            <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText">
-      </div>
-      <br>
-      <br>
-      <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
-      <br>
-      <div class="panel panel-blue" ng-show="show">
-        <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
-            <div class="panel-body">
-              <h4 class="search-results">Displaying standard(s) selected: </h4>
-			  <br>
-			  <table class = "searchResults">
-			  <tr class = "searchRow">
-			  <th>Standard</th>
-			  <th>Summary</th>
-			  <th>Subject</th>
-			  <th>Grade(s)</th>
-			  <th>Topic</th>
-			  </tr>
-              <div ng-repeat="std in standards | filter:searchText">
-			  <tr class = "searchRow">
-               <td>{{standards[28].benchmark}}</td>
-			   <td>{{standards[28].description}}</td>
-			   <td>{{standards[28].subject}}</td>
-			   <td>{{standards[28].grade}}</td>
-			   <td>{{standards[28].bodyOfKnowledge}}</td>
-			   </tr>
-              </div>
-			  </table>
+    <div class="main row">
+      <div class="col-md-6"> <br>
+        <div style="text-align:center">
+          <span style="font-size:5em" class="blue glyphicon glyphicon-book" aria-hidden="true"></span>
+          <h3>Search by Subject</h3>
+          <div class="panel panel-blue">
+            <div class="panel-heading">I want standards in the subject(s) of...</div>
+            <div class="panel-body">                                      
+              <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="englishLanguageArts">English Language Arts</option>
+                  <option value="englishLanguageDevelopment">English Language Development</option>
+                  <option value="gifted">Gifted</option>
+                  <option value="healthEducation">Health Education</option>
+                  <option value="mathematics">Mathematics</option>
+                  <option value="music">Music</option>
+                  <option value="physicalEducation">Physical Education</option>
+                  <option value="science">Science</option>
+                  <option value="socialStudies">Social Studies</option>
+                  <option value="specialSkills">Special Skills</option>
+                  <option value="theatre">Theatre</option>
+                  <option value="visualArt">Visual Art</option>
+                </select>
+              </h4>
             </div>
-        </div>
+          </div>
+        </div>  
       </div>
-      
+      <div class="col-md-6"> <br>
+        <div style="text-align:center">
+          <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          <h3>Search by Grade</h3>
+          <div class="panel panel-blue">
+            <div class="panel-heading">I want standards for the following grades...</div>
+            <div class="panel-body">
+              <h4>Grade(s) : 
+                <select style="height:27px" ng-model="search.minGrade">
+                  <option value="">Select one...</option>
+                  <option value="k">K</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="912">9-12</option>
+                </select> -
+                <select style="height:27px" ng-model="search.maxGrade">
+                  <option value="">Select one...</option>
+                  <option value="k">K</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="912">9-12</option>
+                </select>
+              </h4>  
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <h3>Alternatively...</h3>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">By standard...</span>
+      <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText">
+    </div>
+    <br>
+    <br>
+    <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
+    <br>
+    <div class="panel panel-blue" ng-show="show">
+      <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
+      <div class="panel-body">
+        <h4 class="search-results">Displaying standard(s) selected: </h4>
+        <br>
+        <table class = "searchResults">
+         <tr class = "searchRow">
+           <th>Standard</th>
+           <th>Summary</th>
+           <th>Subject</th>
+           <th>Grade(s)</th>
+           <th>Topic</th>
+         </tr>
+         {{standards.length}}
+           <tr class="searchRow" ng-repeat="std in standards | filter:searchText">
+            <!--<td>{{std.benchmark}}</td> !-->
+            <td>{{std.benchmark}}</td>
+            <td>{{std.description}}</td>
+            <td>{{std.subject}}</td>
+            <td>{{std.grade}}</td>
+            <td>{{std.bodyOfKnowledge}}</td>
+          </tr>
+      </table>
+    </div>
   </div>
+</div>
+
+</div>
 </section>
