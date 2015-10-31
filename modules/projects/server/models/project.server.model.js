@@ -98,22 +98,40 @@ var ProjectSchema = new Schema({
 		ssDetails: {
 			type: [SubjectSchema]
 		},
-		mainIncludeMath: {
+		// stuff starting here
+		mainIncludeDance: {
 		type: Boolean,
 		default:'false' 
 		},
-		mainIncludeScience: {
+		mainIncludeSpecialSkills: {
 		type: Boolean,
 		default:'false' 
 		},
-		mainIncludeLiterature: {
+		mainIncludeEnglishLA: {
 		type: Boolean,
 		default:'false' 
 		},
-		mainIncludeSocialStudies: {
+		mainIncludeMusic: {
 		type: Boolean,
 		default:'false' 
 		},
+		mainIncludeTheatre: {
+		type: Boolean,
+		default:'false' 
+		},
+		mainIncludeEnglishLD: {
+		type: Boolean,
+		default:'false' 
+		},
+		mainIncludePE: {
+		type: Boolean,
+		default:'false' 
+		},
+		mainIncludeVisualArt: {
+		type: Boolean,
+		default:'false' 
+		},
+		// stuff ending here 
 		communicateFindings: {
 			type: String,
 			default: ''
