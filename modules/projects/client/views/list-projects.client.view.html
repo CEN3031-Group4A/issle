@@ -10,8 +10,8 @@
       
       <h3>Alternatively...</h3>
       
-      <div class="main row">
-          <div class="col-md-4"> 
+      <div class="main row" style = "text-align:center">
+          <div class="col-md-6"> 
             <div style="text-align:center">
                 <span style="font-size:5em" class="blue glyphicon glyphicon-book" aria-hidden="true"></span>
                 <h3>Search by Subject</h3>
@@ -39,54 +39,79 @@
           </div>
           
           
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div style="text-align:center">
                 <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
                 <h3>Search by Grade</h3>
                 <div class="panel panel-blue">
                   <div class="panel-heading">I want projects in the following range...</div>
                   <div class="panel-body">
-                  <h4> From grade </h4><br>
-                  <input type="number" min="0" max="{{grades[1]}}" placeholder="6" ng-model="grades[0]" style="width: 3em;"><br><br>
-                  <h4> to grade </h4> <br>
-                  <input type="number" min="{{grades[0]}}" max="12" placeholder="8" ng-model="grades[1]" style="width: 3em"> 
+				  <br><br><br>
+                  <h4>Grade(s) : 
+                  <select style="height:27px" ng-model="search.minGrade">
+                    <option value="">Select one...</option>
+                    <option value="k">K</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="912">9-12</option>
+                  </select> -
+                  <select style="height:27px" ng-model="search.maxGrade">
+                    <option value="">Select one...</option>
+                    <option value="k">K</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="912">9-12</option>
+                  </select>
+                  </h4>  
                   
+				  <br><br><br><br>
+				  
                   </div> 
                     
                 </div>
              </div>  
           </div>
           
-          <div class="col-md-4">
-            <div style="text-align:center">
-                <span style="font-size:5em" class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                <h3>Search by Topic</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want projects that cover the following topics:</div>
-                  <div class="panel-body">
-                      pls no
-                  </div>
-                </div>
-             </div>  
           </div>
           
         
       </div>
+	  
+	  <br>
+      <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
+      <br>
+	  <br>
       
-      <div class="panel panel-blue">
+      <div class="panel panel-blue" ng-show="show">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
             
             <div class="row">
               <div class="col-md-4"> 
                 <div class="panel-body">
+				<br>
+				<br>
+				<br>
                   <h4 class="search-results">Displaying projects that match the following categories: </h4>
+				  <br>
                   <ul class="list-group">
-                    <li class="list-group-item"><h5>Between grades {{grades[0]}} and {{grades[1]}}</h5></li>
+                    <li class="list-group-item"><h5>Between grades <strong>{{search.minGrade}}</strong> and <strong>{{search.maxGrade}}</strong></h5></li>
                     <li class="list-group-item"> <h5>In the following subjects: </h5>
                       <div class="row">
                         <div class="col-md-12" > 
                         <ul class="list-group"> 
-                          <li class="list-group-item" ng-repeat="subject in included_subjects"> {{subject.title}}</li> 
+                          <li class="list-group-item" ng-repeat="subject in included_subjects"> <strong>{{subject.title}}<strong></li> 
                         </ul>
                       </div>
                       </div>
@@ -102,16 +127,17 @@
                 <div class="panel panel-blue">
                   <div class="panel-body"> 
                       <!-- Projects display -->
-                      <div class="panel panel-blue">
-                        <div class="panel-heading"> some title </div>
-                        <div class="panel-body"> 
-
-                        </div>
-                      </div>
+					<ul class="list-group">
+					
+					  <div ng-repeat="project in projects">
+							<li class = "list-group-item">
+								<h4>{{project.title}}</h4>
+							</li>
+					  </div>
+					</ul>
                   </div>
                 </div>
               </div>
-            </div>
 
         </div>
       </div>
