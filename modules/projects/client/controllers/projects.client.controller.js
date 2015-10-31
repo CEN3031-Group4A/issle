@@ -68,6 +68,9 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 		
 		
+
+
+
 		//This is list-projects stuff now:
 
 		$scope.subjects = [
@@ -75,8 +78,6 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				title: 'Mathematics',
 				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false
-
-
 			},
 			{
 				title: 'Science',
@@ -110,11 +111,6 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			
 		};
 
-		$scope.grades = [0,12];	//min and max grades.
-
-		
-
-		/*	Old way of selecting grades
 
 		$scope.grades = [
 			{
@@ -222,10 +218,28 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			}
 			
 		};
-		
-		$scope.show_grades = false;
-		$scope.toggle_show_grades = function(){
-			$scope.show_grades = true;
-		}; */
+
+		$scope.topics = [
+			{
+				title: 'Mathematics',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false
+			},
+			{
+				title: 'Science',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false
+			},
+			{
+				title: 'Social Studies',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false
+			},
+			{
+				title: 'Literature',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false
+			}
+		];
 	}
 ]);

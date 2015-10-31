@@ -17,9 +17,13 @@
                 <h3>Search by Subject</h3>
                 <div class="panel panel-blue">
                   <div class="panel-heading">I want projects in the subject(s) of...</div>
-                  <div class="panel-body">
 
-                    <div class="list-group">
+                  <div class="panel-body">
+                  <button class="btn btn-warning" ng-click="show_sub_select = !show_sub_select"> Show Subjects...
+                    <span class="glyphicon glyphicon-chevron-down"> </span>
+                  </button>
+                  <br><br>
+                    <div class="list-group" ng-show="show_sub_select">
                         <div ng-repeat="subject in subjects">
                           <button type="button" class="list-group-item" ng-click="toggle_include_subject(subject)">
                             <div class="col-xs-3">
@@ -31,13 +35,11 @@
                           </button>
                         </div>
                     </div>
-
-
                   </div>
+                  
                 </div>
              </div>  
           </div>
-          
           
           <div class="col-md-6">
             <div style="text-align:center">
@@ -45,10 +47,38 @@
                 <h3>Search by Grade</h3>
                 <div class="panel panel-blue">
                   <div class="panel-heading">I want projects in the following range...</div>
-                  <div class="panel-body">
-				  <br><br><br>
-                  <h4>Grade(s) : 
-                  <select style="height:27px" ng-model="search.minGrade">
+                   <!-- My grade selection -->
+                   <div class="panel-body">
+                    <button class="btn btn-warning" ng-click="show_grade_select = !show_grade_select"> Show Grades...
+                      <span class="glyphicon glyphicon-chevron-down"> </span>
+                    </button>
+                    <br><br>
+                      <div class="list-group" ng-show="show_grade_select">
+                          <div ng-repeat="grade in grades">
+                            <button type="button" class="list-group-item" ng-click="toggle_include_grade(grade)">
+                              <div class="col-xs-3">
+                                <span class="gold {{grade.checkbox}}" aria-hidden="true"></span>
+                              </div>
+                              <div class="col-xs-9">
+                                {{grade.name}}
+                              </div>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+                   <!-- <div class="panel-body">
+
+                   Marie's grade-selection
+
+
+                  <h4>Grade(s) : <br><br><br>
+                  <select style="height:27px" ng-model="search.min_grade">
                     <option value="">Select one...</option>
                     <option value="k">K</option>
                     <option value="1">1</option>
@@ -61,7 +91,7 @@
                     <option value="8">8</option>
                     <option value="912">9-12</option>
                   </select> -
-                  <select style="height:27px" ng-model="search.maxGrade">
+                  <select style="height:27px" ng-model="search.max_grade">
                     <option value="">Select one...</option>
                     <option value="k">K</option>
                     <option value="1">1</option>
@@ -78,7 +108,7 @@
                   
 				  <br><br><br><br>
 				  
-                  </div> 
+                  </div> -->
                     
                 </div>
              </div>  
@@ -90,11 +120,11 @@
       </div>
 	  
 	  <br>
-      <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
+      <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show_results = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
       <br>
 	  <br>
       
-      <div class="panel panel-blue" ng-show="show">
+      <div class="panel panel-blue" ng-show="show_results">
         <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
             
             <div class="row">
@@ -104,10 +134,10 @@
 				<br>
 				<br>
                   <h4 class="search-results">Displaying projects that match the following categories: </h4>
-				  <br>
+				<br>
                   <ul class="list-group">
-                    <li class="list-group-item"><h5>Between grades <strong>{{search.minGrade}}</strong> and <strong>{{search.maxGrade}}</strong></h5></li>
-                    <li class="list-group-item"> <h5>In the following subjects: </h5>
+                    <li class="list-group-item"><h5>Between grades <strong>{{min_grade}}</strong> and <strong>{{max_grade}}</strong></h5></li>
+                    <li class="list-group-item"> <h5>In the following subjects: </h5> 
                       <div class="row">
                         <div class="col-md-12" > 
                         <ul class="list-group"> 
@@ -121,14 +151,12 @@
                 </div>
               </div>
 
-              
-
               <div class="col-md-7" style="padding-top:2em; padding-left:1em">
                 <div class="panel panel-blue">
                   <div class="panel-body"> 
                       <!-- Projects display -->
+
 					<ul class="list-group">
-					
 					  <div ng-repeat="project in projects">
 							<li class = "list-group-item">
 								<h4>{{project.title}}</h4>
