@@ -149,9 +149,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				name: 'Kindergarden',
 				checkbox: 'glyphicon glyphicon-unchecked',
 				include: false,
-			},	
-		];,
-			
+			}	
 		];
 		
 		$scope.included_grades = [];
@@ -163,18 +161,18 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			item.include = !item.include;	//toggle include
 			if(item.include){	//wasn't included, now should be
 				$scope.included_grades.push(item.num);
-				item.checkbox = "glyphicon glyphicon-check"
+				item.checkbox = 'glyphicon glyphicon-check';
 			} else {			//was included, now shouldn't be
 				var index = $scope.included_grades.indexOf(item.num);
     			$scope.included_grades.splice(index, 1);
-				item.checkbox = "glyphicon glyphicon-unchecked"
-			};
+				item.checkbox = 'glyphicon glyphicon-unchecked';
+			}
 			
 			$scope.min_grade = Math.min.apply(null, $scope.included_grades);
 			$scope.max_grade = Math.max.apply(null, $scope.included_grades);
 			
-			if($scope.included_grades.length == 0) {
-				$scope.max_grade = 0
+			if($scope.included_grades.length === 0) {
+				$scope.max_grade = 0;
 				$scope.min_grade = 0;
 			}
 			
