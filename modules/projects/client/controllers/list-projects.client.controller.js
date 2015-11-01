@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('projects').controller('list-ProjectsController'['$scope', '$stateParams', '$location', 'Authentication', 'Projects',
+angular.module('projects').controller('list-ProjectsController' , ['$scope', '$stateParams', '$location', 'Authentication', 'Projects',
 	function($scope, $stateParams, $location, Authentication, Projects ) {
 	    $scope.authentication = Authentication;
 
