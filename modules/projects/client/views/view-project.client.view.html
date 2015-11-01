@@ -1,5 +1,5 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
-	<div class="container" id="list">
+	<div class="container" id="list" data-ng-show="!project.isPublic&&authentication.user._id == project.user._id">
 		<div class="page-header">
 			<div class="sub-header">
 				<h2 style="display: inline-block">{{project.name}}</h2>
@@ -154,4 +154,10 @@
 			</div>
         </div>
     </div>
+    <p data-ng-show="!project.isPublic&&authentication.user._id != project.user._id">
+        <div class="alert alert-danger" role="alert">
+            You do not have access rights to this project.
+            <a data-ui-sref="home" class="alert-link">Please return to the home page.</a>
+        </div>
+    </p>
 </section>

@@ -122,6 +122,11 @@ a {
 	border-color: #fbc650;
 }
 
+.alert-danger {
+    margin:auto;
+    width: 550px;
+}
+
 /* List Project CSS */
  #list.container{
 	background-color:white;
