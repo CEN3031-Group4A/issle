@@ -43,15 +43,22 @@ var ProjectSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	grades: {
-		gradeMin: {
-			type: Number,
-			default: 0
-		},
-		gradeMax: {
-			type: Number,
-			default: 12
-		}
+	minGrade: {
+		type: Number,
+		default: 0
+	},
+	maxGrade: {
+		type: Number,
+		default: 12
+	},
+	status: {
+		type: String,
+		enum: ['Active', 'In Progress', 'InActive'],
+		default: 'In Progress'
+	},
+	isPublic: {
+		type: Boolean,
+		default: false
 	},
 	ask: {
 		goal: {

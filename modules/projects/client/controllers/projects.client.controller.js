@@ -11,7 +11,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				name: this.name,
 				created: this.created,
 				user: this.user,
-				grades: this.grades,
+				status: this.status,
+				isPublic: this.isPublic,
+				minGrade: this.minGrade,
+				maxGrade: this.maxGrade,
 				ask: this.ask,
 				imagine: this.imagine,
 				essentialDetails: this.essentialDetails
