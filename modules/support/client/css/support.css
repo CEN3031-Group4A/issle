@@ -3,7 +3,11 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
-
+/* Specific Page Format CSS: Examples*/
+.spacing {
+    height: 150px;
+    
+}
 /* Sidebar  CSS*/
 .sidebar {
     display: none;
@@ -60,6 +64,10 @@ a {
 }
 
 /* Glyphicon placeholder, size, color CSS*/
+.btn {
+    margin-right: 5px;
+}
+
 .placeholders {
     margin-bottom: 30px;
     text-align: center;
@@ -72,6 +80,17 @@ a {
 }
 .gold {
     color: #fbc650;
+}
+
+.tab {
+    padding-left:2em;
+}
+
+img.example {
+    display: block;
+    margin: 0 auto;
+    width: 280px;
+    height: 200px;
 }
 
 /* Panel CSS*/

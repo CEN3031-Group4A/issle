@@ -10,6 +10,11 @@ angular.module('supports').run(['Menus',
 			type: 'dropdown'
 		});
 
+        Menus.addSubMenuItem('topbar', 'support', {
+            title: 'Examples',
+            state: 'support.examples'
+        });
+
 		// Add the dropdown list item
 		Menus.addSubMenuItem('topbar', 'support', {
 			title: 'FAQ',
@@ -21,5 +26,7 @@ angular.module('supports').run(['Menus',
             title: 'About Us',
             state: 'support.about'
         });
+
+
 	}
 ]);

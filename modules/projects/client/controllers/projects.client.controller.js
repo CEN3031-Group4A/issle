@@ -50,7 +50,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			var project = $scope.project;
 
 			project.$update(function() {
-				$location.path('projects/' + project._id+'/edit');
+				$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -193,5 +193,46 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		          
 		        });
 		};
+		
+	/**	$scope.mainSubjects = [
+			{
+				name: 'Mathematics',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+			},
+			{
+				name: 'Science',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+			},
+			{
+				name: 'Literature',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+			},
+			{
+				name: 'Social Studies',
+				checkbox: 'glyphicon glyphicon-unchecked',
+				include: false,
+			},
+		
+			];
+		
+		$scope.included_subjects = [];
+		
+		$scope.toggle_include_subject = function(item){
+			item.include = !item.include;	//toggle include
+			if(item.include){	//wasn't included, now should be
+				$scope.included_subjects.push(item.num);
+				item.checkbox = 'glyphicon glyphicon-check';
+			} else {			//was included, now shouldn't be
+				var index = $scope.included_subjects.indexOf(item.num);
+    			$scope.included_subjects.splice(index, 1);
+				item.checkbox = 'glyphicon glyphicon-unchecked';
+			}
+			
+		};
+		**/
+		
 	}
 ]);

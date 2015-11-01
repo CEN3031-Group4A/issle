@@ -3,7 +3,6 @@
     <form class="container-fluid" data-ng-submit="create()">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
-
                 <ul class="nav nav-sidebar">
                     <li class="active">
                     <li class="active"><a href="#"><h4>Design Menu</h4></a></li>
@@ -18,18 +17,17 @@
                         <li><a href="#8">E.Sketch- Literature</a></li>
                         <li><a href="#9">E.Sketch- SocialStudies</a></li>
                         <li class="active"><a href="#"><H4>Help Menu</h4></a></li>
-                        <li><a>Examples</a></li>
+                        <li><a data-ui-sref="projects.list">View other Projects</a></li>
+                        <li><a data-ui-sref="support.examples">Examples</a></li>
                         <li><a data-ui-sref="support.faq">FAQ</a></li>
-                        <li><a>Mindset & Tips</a></li>
-                        <li><a>View other Projects</a></li>
+
                     </p>
                 </ul>
-
             </div>
 
             <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main">
 
-               <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
+            <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
               <h4 class="sub-header">Grade(s) : <input type="number" min="1" max="12" placeholder="3" data-ng-model="grades.gradeMin">
                 - <input type="number" min="1" max="12" placeholder="5" data-ng-model="grades.gradeMax"></h4>
 

@@ -42,7 +42,7 @@
     margin-right: -21px;
 }
 li {
-    line-height: 10px;
+    line-height: 20px;
 }
     
 .nav-sidebar > li {
@@ -125,6 +125,7 @@ a {
 /* List Project CSS */
  #list.container{
 	background-color:white;
+     width: 900px;
 }
 
 #greyColor{
@@ -132,6 +133,6 @@ a {
 }
 
 #listheader{
-	font-weight: ;
+	font-weight: 10;
 	color: #64bed8;
 }
