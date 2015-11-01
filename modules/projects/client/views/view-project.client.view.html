@@ -1,10 +1,18 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
 	<div class="container" id="list">
 		<div class="page-header">
-			<h2 class="sub-header" data-ng-bind="project.name"></h2>
-			<!--<h1 id = "listheader" data-ng-bind="project.name"></h1> !-->
+			<div class="sub-header">
+				<h2 style="display: inline-block">{{project.name}}</h2>
+				<span class="text-warning" data-ng-show="project.status !== 'Active'">
+					&nbsp;&nbsp;[{{project.status}}]
+				</span>
+				<span class="text-info" data-ng-show="!project.isPublic">
+					&nbsp;&nbsp;[Private]
+				</span>
+			</div>
 
-			<h4 class="sub-header">Grade(s) {{project.grades.gradeMin}} - {{project.grades.gradeMax}}</h4>
+
+			<h4 class="sub-header">Grade(s) {{project.minGrade}} - {{project.maxGrade}}</h4>
 			<div class="panel panel-blue">
 				<div class="panel-heading">
 					<h2 class="panel-title">Ask</h2>

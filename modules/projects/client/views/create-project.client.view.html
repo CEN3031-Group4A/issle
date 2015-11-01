@@ -1,6 +1,6 @@
 <section data-ng-controller="ProjectsController">
     <script src="projects/projects.js"></script>
-    <form class="container-fluid" data-ng-submit="create()">
+    <form class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
@@ -28,8 +28,18 @@
             <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main">
 
             <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
-              <h4 class="sub-header">Grade(s) : <input type="number" min="1" max="12" placeholder="3" data-ng-model="grades.gradeMin">
-                - <input type="number" min="1" max="12" placeholder="5" data-ng-model="grades.gradeMax"></h4>
+
+                <h4 class="sub-header" style="display: inline-block;">Grade(s) : <input type="number" min="0" max="12" placeholder="3" data-ng-model="minGrade">
+                    - <input type="number" min="0" max="12" placeholder="5" data-ng-model="maxGrade"></h4>
+
+                <span data-ng-init="isPublic = false">
+                    &nbsp;&nbsp;
+                    This Project is:
+                    &nbsp;
+                    <input type="radio", ng-value="true", data-ng-model="isPublic">Public
+                    &nbsp;
+                    <input type="radio", ng-value="false", data-ng-model="isPublic">Private
+                </span>
 
                 <div class="panel panel-blue">
                     <div class="panel-heading">
@@ -148,7 +158,14 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-info btn-block">Submit</button>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1">
+                        <button type="button" class="btn btn-success btn-block btn-lg" data-ng-click="status = 'Active'; create();">Submit</button>
+                    </div>
+                    <div class="col-md-3 col-md-offset-4">
+                        <button type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="status = 'In Progress'; create()";>Save Draft</button>
+                    </div>
+                </div>
 
             </div>
         </div>
