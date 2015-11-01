@@ -1,94 +1,112 @@
-<section data-ng-controller="ProjectsController" data-ng-init="find()">
+<section data-ng-controller='list-ProjectsController'>
   <div class="container-fluid">
     <h2>Search for Projects</h2>
-      <br>
-      <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">By standard...</span>
-            <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1">
-      </div>
-      <br>
-      
-      <h3>Alternatively...</h3>
-      
-      <div class="main row">
-          <div class="col-md-4"> <br>
-            <div style="text-align:center">
-                <span style="font-size:5em" class="blue glyphicon glyphicon-book" aria-hidden="true"></span>
-                <h3>Search by Subject</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want projects in the subject(s) of...</div>
-                  <div class="panel-body">
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="...">
-                          </span>
-                          <input type="text" class="form-control" placeholder="eg. Math"aria-label="...">
-                      </div><!-- /input-group -->
-                      <br>
-                      <button class="btn btn-blue btn-sm" style="align:center">Add another subject</button>
-                  </div>
-                </div>
-             </div>  
-          </div>
-          
-          
-          <div class="col-md-4">
-            <div style="text-align:center">
-                <span style="font-size:6em" class="gold glyphicon glyphicon-education" aria-hidden="true"></span>
-                <h3>Search by Grade</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want projects for the following grades...</div>
-                  <div class="panel-body">
-                    <div class="list-group">
-                        <div ng-repeat="grade in grades">
-                          <button type="button" class="list-group-item" ng-click="toggle_include_grade(grade)">
-                            <div class="col-xs-3"> 
-                              <a class="gold" ng-class="grade.checkbox" ></a> 
-                            </div>
-                            <div class="col-xs-9">
-                              {{grade.name}}
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-             </div>  
-          </div>
-          
-          <div class="col-md-4"> <br>
-            <div style="text-align:center">
-                <span style="font-size:5em" class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
-                <h3>Search by Topic</h3>
-                <div class="panel panel-blue">
-                  <div class="panel-heading">I want projects that cover the following topics:</div>
-                  <div class="panel-body">
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="...">
-                          </span>
-                          <input type="text" class="form-control" placeholder="eg. Math"aria-label="...">
-                      </div><!-- /input-group -->
-                      <br>
-                      <button class="btn btn-blue btn-sm" style="align:center">Add another subject</button>
-                  </div>
-                </div>
-             </div>  
-          </div>
-          
-        
-      </div>
-      
-      <div class="panel panel-blue">
-        <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
-            <div class="panel-body">
-              <h4 class="search-results">Displaying projects that match the following categories: </h4>
-              <ul class="list-group">
-                <li class="list-group-item">Between grades {{min_grade}} and {{max_grade}}</li>
-              </ul>
+    <div class="main row">
+      <div class="col-md-6"> <br>
+        <div style="text-align:center">
+          <span style="font-size:5em" class="blue glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+          <h3>Search by Main Subject</h3>
+          <div class="panel panel-blue">
+            <div class="panel-heading">I want projects with this subject...</div>
+            <div class="panel-body">                                      
+              <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
             </div>
-        </div>
+          </div>
+        </div>  
       </div>
-      
+      <div class="col-md-6"> <br>
+        <div style="text-align:center">
+          <span style="font-size:5em" class="gold glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          <h3>Search by Grade</h3>
+          <div class="panel panel-blue">
+            <div class="panel-heading">I want standards for the following grades...</div>
+            <div class="panel-body">
+              <h4>Grade(s) : 
+                <select style="height:27px" ng-model="search.minGrade">
+                  <option value="">Select one...</option>
+                  <option value="0">K</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="912">9-12</option>
+                </select> -
+                <select style="height:27px" ng-model="search.maxGrade">
+                  <option value="">Select one...</option>
+                  <option value="0">K</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="912">9-12</option>
+                </select>
+              </h4>  
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <h3>Alternatively...</h3>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">By Project...</span>
+      <input type="text" class="form-control" placeholder="eg. Raz's Ballooons" aria-describedby="sizing-addon1" ng-model= "search.searchName">
+    </div>
+    <br>
+    <h3>Or...</h3>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">By standard...</span>
+      <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText">
+    </div>
+    <br>
+    <br>
+    <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
+    <br>
+    <div class="panel panel-blue" ng-show="show">
+      <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
+      <div class="panel-body">
+        <h4 class="search-results">Displaying Project(s) selected: </h4>
+        <br>
+        <table class = "searchResults">
+         <tr class = "searchRow">
+           <th>Project Name</th>
+           <th>Summary</th>
+           <th>Min Grade</th>
+           <th>Max Grade</th>
+           <th>Standard(s)</th>
+         </tr>
+         <!-- {{projects.length}} -->
+           <tr class="searchRow" ng-repeat="prj in projects">
+            <td>{{prj.name}}</td>
+            <td>{{prj.ask.goal}}</td>
+            <td>{{prj.minGrade}}</td>
+            <td>{{prj.maxGrade}}</td>
+            <td>{{prj.standards}}</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+  </div>
   </div>
 </section>
