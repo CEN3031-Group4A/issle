@@ -64,7 +64,7 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 			//search.minGrade = parseInt(search.minGrade, 10); //parseInt with radix
 			//$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject,searchText:search.searchText});
 			
-			if(!search.minGrade) search.minGrade = '1';
+			if(!search.minGrade) search.minGrade = '0';
 			if(!search.maxGrade) search.maxGrade = '912';
 
 			if(search.searchText) {

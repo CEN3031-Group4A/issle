@@ -13,18 +13,18 @@
                 <select style="height:27px; width: 250px" ng-model="search.subject">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
-                  <option value="englishLanguageArts">English Language Arts</option>
-                  <option value="englishLanguageDevelopment">English Language Development</option>
-                  <option value="gifted">Gifted</option>
-                  <option value="healthEducation">Health Education</option>
-                  <option value="mathematics">Mathematics</option>
-                  <option value="music">Music</option>
-                  <option value="physicalEducation">Physical Education</option>
-                  <option value="science">Science</option>
-                  <option value="socialStudies">Social Studies</option>
-                  <option value="specialSkills">Special Skills</option>
-                  <option value="theatre">Theatre</option>
-                  <option value="visualArt">Visual Art</option>
+                  <option value="English Language Arts">English Language Arts</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Science">Science</option>
+                  <option value="Social Studies">Social Studies</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
                 </select>
               </h4>
             </div>
@@ -41,7 +41,7 @@
               <h4>Grade(s) : 
                 <select style="height:27px" ng-model="search.minGrade">
                   <option value="">Select one...</option>
-                  <option value="k">K</option>
+                  <option value="0">K</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -54,7 +54,7 @@
                 </select> -
                 <select style="height:27px" ng-model="search.maxGrade">
                   <option value="">Select one...</option>
-                  <option value="k">K</option>
+                  <option value="0">K</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -94,7 +94,7 @@
            <th>Grade(s)</th>
            <th>Topic</th>
          </tr>
-         {{standards.length}}
+         <!-- {{standards.length}} -->
            <tr class="searchRow" ng-repeat="std in standards | filter:searchText">
             <!--<td>{{std.benchmark}}</td> !-->
             <td>{{std.benchmark}}</td>
