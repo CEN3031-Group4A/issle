@@ -86,7 +86,7 @@
     <div class="panel panel-blue" ng-show="show">
       <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
       <div class="panel-body">
-        <h4 class="search-results">Displaying standard(s) selected: </h4>
+        <h4 class="search-results">Displaying Project(s) selected: </h4>
         <br>
         <table class = "searchResults">
          <tr class = "searchRow">
@@ -96,10 +96,9 @@
            <th>Max Grade</th>
            <th>Standard(s)</th>
          </tr>
-         <!-- {{standards.length}} -->
-           <tr class="searchRow" ng-repeat="prj in standards | filter:searchText">
-            <!--<td>{{std.benchmark}}</td> !-->
-            <td>{{prj.name}</td>
+          {{projects.length}} 
+           <tr class="searchRow" ng-repeat="prj in projects">
+            <td>{{prj.name}}</td>
             <td>{{prj.ask.goal}}</td>
             <td>{{prj.minGrade}}</td>
             <td>{{prj.maxGrade}}</td>
