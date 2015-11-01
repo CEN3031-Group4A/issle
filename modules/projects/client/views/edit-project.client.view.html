@@ -1,6 +1,6 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
     <script src="projects/projects.js"></script>
-    <form class="container-fluid" data-ng-submit="update()">
+    <form class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
 
@@ -31,8 +31,8 @@
 
                 <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="project.name"></h2>
                 
-                <h4 class="sub-header" style="display: inline-block;">Grade(s) : <input type="number" min="0" max="12" placeholder="3" data-ng-model="project.grades.gradeMin">
-                    - <input type="number" min="0" max="12" placeholder="5" data-ng-model="project.grades.gradeMax"></h4>
+                <h4 class="sub-header" style="display: inline-block;">Grade(s) : <input type="number" min="0" max="12" placeholder="3" data-ng-model="project.minGrade">
+                    - <input type="number" min="0" max="12" placeholder="5" data-ng-model="project.maxGrade"></h4>
 
                 <span>
                     &nbsp;&nbsp;
@@ -183,8 +183,14 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-info btn-block">Submit</button>
-
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1">
+                        <button type="button" class="btn btn-success btn-block btn-lg" data-ng-click="project.status = 'Active'; update();">Submit</button>
+                    </div>
+                    <div class="col-md-3 col-md-offset-4">
+                        <button type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="project.status = 'In Progress'; update()";>Save Draft</button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
