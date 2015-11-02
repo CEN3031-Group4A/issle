@@ -94,7 +94,7 @@
  	{
  		if(req.query.projectName) {
  			Project.find().
- 			where('name').equals(req.query.projectName).
+ 			where('name').regex(new RegExp(req.query.projectName, 'i')).
  			sort('-created').populate('user', 'displayName').
  			exec(function(err, projects) {
  				if (err) {
