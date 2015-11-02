@@ -98,7 +98,11 @@
          </tr>
          <!-- {{projects.length}} -->
            <tr class="searchRow" ng-repeat="prj in projects">
-            <td>{{prj.name}}</td>
+            <td>
+              <a data-ui-sref="projects.view({projectId : prj._id})">
+                {{prj.name}}
+              </a>
+            </td>
             <td>{{prj.ask.goal}}</td>
             <td>{{prj.minGrade}}</td>
             <td>{{prj.maxGrade}}</td>
