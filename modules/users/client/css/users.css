@@ -34,3 +34,20 @@
   min-height: 150px;
   max-height: 150px;
 }
+.login-form-bg{
+  background-color: white;
+  border: 15px solid;
+  border-radius: 15px;
+  border-color: white;
+  margin-top: 0px;
+}
+body{
+  background-color: #eeeeee;
+}
+
+.scrollable-list
+{
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}

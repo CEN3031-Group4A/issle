@@ -1,0 +1,138 @@
+
+/* Cloned from support page's CSS for consistent look*/
+
+#by_class_dropdown{
+	
+}
+
+/* Size + header  CSS*/
+
+
+.sub-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Sidebar  CSS*/
+.sidebar {
+    display: none;
+	border-color: #fbc650;
+}
+@media (min-width: 768px) {
+	.sidebar {
+		background-color: #f5f5f5;
+		border-right: 1px solid #fbc650;
+		border-top: 1px solid #fbc650;
+		bottom: 0;
+		display: block;
+		left: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding: 20px;
+		position: fixed;
+		top: 51px;
+		z-index: 0 !important;
+	}
+}
+
+/* Nav-sidebar + text CSS*/
+.nav-sidebar {
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -21px;
+}
+li {
+    line-height: 20px;
+}
+    
+.nav-sidebar > li {
+    display:block;
+}
+    
+.nav-sidebar > li > a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+    background-color: #64bed8;
+    color: #fff;
+    padding-bottom: 0px;
+    padding-top: 2px;
+    height: 40px;
+}
+a {
+    color: #64bed8;
+    text-decoration: none;
+}
+
+/* Main Div CSS*/
+.main {
+    padding: 20px;
+}
+@media (min-width: 768px) {
+	.main {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+.main .page-header {
+    margin-top: 0;
+}
+
+/* Glyphicon placeholder, size, color CSS*/
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.big {
+    font-size:5em;
+}
+.blue {
+    color: #64bed8;
+}
+.gold {
+    color: #fbc650;
+}
+.btn-blue{
+	border-color: #64bed8;
+	background-color: #64bed8;
+	color: #fff;
+}
+.btn-gold{
+	border-color: #fbc650;
+	background-color: #fbc650;
+	color: #fff;
+}
+
+/* Panel CSS*/
+.panel-blue > .panel-heading {
+	border-color: #64bed8;
+	background-color: #64bed8;
+	color: #fff;
+}
+.panel-blue {
+	border-color: #64bed8;
+}
+.panel-gold > .panel-heading {
+	border-color: #fbc650;
+	background-color: #fbc650;
+	color: #fff;
+}
+.panel-gold {
+	border-color: #fbc650;
+}
+
+/* List Project CSS */
+ #list.container{
+	background-color:white;
+     width: 900px;
+}
+
+#greyColor{
+	color:grey;
+}
+
+#listheader{
+	font-weight: 10;
+	color: #64bed8;
+}
