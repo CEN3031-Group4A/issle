@@ -1,22 +1,28 @@
 <section data-ng-controller="SettingsController">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <h3 class="text-justify">School: {{user.school}}</h3>
       <h3 class="text-justify">Email: {{user.email}}</h3>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-8">
       <div class="panel panel-gold">
         <div class="panel-heading text-center" style="font-size: x-large">My Projects:</div>
         <div class="panel-body">
           <div class="list-group scrollable-list">
-            <li class="list-group-item" ng-repeat="userProjectItem in userProjects" style="padding-top: 0%; padding-bottom: 0%">
+            <li class="list-group-item" ng-repeat="userProjectItem in userProjects | filter: {name : query.name, isPublic : query.privacy, status : query.status}" style="padding-top: 0%; padding-bottom: 0%">
               <div class="row">
                 <div class="col-md-8 col-xs-8 col-sm-8">
-                  <h3>
+                  <h3 style="display: inline-block">
                     <a data-ui-sref="projects.view({projectId : userProjectItem._id})" style="text-decoration: none">
                       {{userProjectItem.name}}
                     </a>
                   </h3>
+                  <span class="text-warning" data-ng-show="userProjectItem.status !== 'Active'">
+					&nbsp;&nbsp;[{{userProjectItem.status}}]
+				</span>
+				<span class="text-info" data-ng-show="!userProjectItem.isPublic">
+					&nbsp;&nbsp;[Private]
+				</span>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4" style="padding-top: 5%">
                   <button class="btn btn-info glyphicon glyphicon-edit" data-ui-sref="projects.edit({projectId : userProjectItem._id})"></button>
@@ -32,6 +38,32 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-12">
+            <input class="form-control input" type="text" placeholder="Search by Name..." data-ng-model="query.name">
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 2%; padding-bottom: 2%">
+        <div class="col-md-4">
+          Show Projects that are:
+        </div>
+        <div class="col-md-8">
+          <select data-ng-model="query.privacy">
+            <option value="">Public/Private</option>
+            <option value="true">Public</option>
+            <option value="false">Private</option>
+          </select>
+          and
+          <select data-ng-model="query.status">
+            <option value="">Completed/In Progress</option>
+            <option value="Active">Completed</option>
+            <option value="In Progress">In Progress</option>
+          </select>
+        </div>
+      </div>
+
     </div>
 
 </section>

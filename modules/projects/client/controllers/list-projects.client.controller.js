@@ -5,9 +5,23 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
 	    $scope.authentication = Authentication;
 
 	    // Find a list of Projects
-		$scope.find = function() {
-			$scope.projects = Projects.query();
-		};
+		$scope.find = function(search) {
+      //$scope.projects = Projects.query();  
+      if(!search.minGrade) search.minGrade = '0';
+      if(!search.maxGrade) search.maxGrade = '912';
+
+      if(search.searchName){
+        $scope.projects = Projects.query({projectName:search.searchName});
+      } else if(search.searchText) {
+        $scope.projects = Projects.query({benchmark:search.searchText});
+      } else if(search.subject) {
+        $scope.projects = Projects.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject});
+      } else {
+        $scope.projects = Projects.query({minGrade:search.minGrade,maxGrade:search.maxGrade});
+      }
+      console.log(search);
+
+    };
 
 		// Find existing Project
 		$scope.findOne = function() {
@@ -17,25 +31,3 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
 		};
 	}
 ]);
-
-angular.module('projects').controller('DropdownCtrl', function ($scope, $log) {
-      $scope.items = [
-        'The first choice!',
-        'And another choice for you.',
-        'but wait! A third!'
-      ];
-    
-      $scope.status = {
-        isopen: false
-      };
-    
-      $scope.toggled = function(open) {
-        $log.log('Dropdown is now: ', open);
-      };
-    
-      $scope.toggleDropdown = function($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-        $scope.status.isopen = !$scope.status.isopen;
-      };
-});
