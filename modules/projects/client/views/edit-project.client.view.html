@@ -1,7 +1,7 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
     <script src="projects/projects.js"></script>
     <form class="container-fluid">
-        <div class="row">
+        <div class="row" data-ng-show="authentication.user._id==project.user._id">
             <div class="col-sm-3 col-md-2 sidebar">
 
                 <ul class="nav nav-sidebar">
@@ -193,4 +193,10 @@
             </div>
         </div>
     </form>
+    <span data-ng-hide="authentication.user._id==project.user._id">
+        <div class="alert alert-success" role="alert">
+            Project Page Not Available. This could be because you did not create this project, or you're not signed in to see it.
+            <a data-ui-sref="home" class="alert-link">Please return to the home page.</a>
+        </div>
+    </span>
 </section>

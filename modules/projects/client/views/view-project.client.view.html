@@ -1,5 +1,5 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
-	<div class="container" id="list" data-ng-show="!project.isPublic&&authentication.user._id == project.user._id">
+	<div class="container" id="list" data-ng-show="project.status=='Active'&&project.isPublic||authentication.user._id==project.user._id">
 		<div class="page-header">
 			<div class="sub-header">
 				<h2 style="display: inline-block">{{project.name}}</h2>
@@ -154,10 +154,10 @@
 			</div>
         </div>
     </div>
-    <p data-ng-show="!project.isPublic&&authentication.user._id != project.user._id">
-        <div class="alert alert-danger" role="alert">
-            You do not have access rights to this project.
+    <span data-ng-hide="project.status=='Active'&&project.isPublic||authentication.user._id==project.user._id">
+        <div class="alert alert-success" role="alert">
+            Project Page Not Available. This could be because the project isn't public, is in development, or you're not signed in to see it.
             <a data-ui-sref="home" class="alert-link">Please return to the home page.</a>
         </div>
-    </p>
+    </span>
 </section>
