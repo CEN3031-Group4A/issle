@@ -33,14 +33,11 @@
                 <h4 class="sub-header" style="display: inline-block;">Grade(s) : <input type="number" min="0" max="12" placeholder="3" data-ng-model="project.minGrade">
                     - <input type="number" min="0" max="12" placeholder="5" data-ng-model="project.maxGrade"></h4>
 
-                <span>
-                    &nbsp;&nbsp;
-                    This Project is:
-                    &nbsp;
-                    <input type="radio", ng-value="true", data-ng-model="project.isPublic">Public
-                    &nbsp;
-                    <input type="radio", ng-value="false", data-ng-model="project.isPublic">Private
-                </span>
+
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn" ng-class="{ 'active btn-success': (project.isPublic === true)}" ng-click="project.isPublic = true">Public</button>
+                    <button type="button" class="btn" ng-class="{ 'active btn-success': (project.isPublic === false)}" ng-click="project.isPublic = false">Private</button>
+                </div>
 
                 <div class="panel panel-blue">
                     <div class="panel-heading">
