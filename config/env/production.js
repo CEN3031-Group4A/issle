@@ -1,5 +1,7 @@
 'use strict';
 
+var defaultEnvConfig = require('./default');
+
 module.exports = {
   secure: true,
   port: process.env.PORT || 8443,
@@ -11,5 +13,8 @@ module.exports = {
     },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
-  }
+  },
+    app: {
+        title: defaultEnvConfig.app.title
+    }
 };
