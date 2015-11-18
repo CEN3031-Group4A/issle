@@ -4,12 +4,14 @@
 		  <div class = "section-to-print">
 			<div class="sub-header">
 				<h2 style="display: inline-block">{{project.name}}</h2>
-				<span class="text-warning" data-ng-show="project.status !== 'Active'">
-					&nbsp;&nbsp;[{{project.status}}]
-				</span>
-				<span class="text-info" data-ng-show="!project.isPublic">
-					&nbsp;&nbsp;[Private]
-				</span>
+					<span class = "section-to-hide">
+						<span class="text-warning" data-ng-show="project.status !== 'Active'">
+							&nbsp;&nbsp;[{{project.status}}]
+						</span>
+						<span class="text-info" data-ng-show="!project.isPublic">
+							&nbsp;&nbsp;[Private]
+						</span>
+					</span>
 			</div>
 
 
@@ -51,7 +53,9 @@
 					</br>
 				</div>
 			</div>
-
+			
+			<div class = "print-spacing">
+			
 			<div class="panel panel-blue">
 				<div class="panel-heading">
 					<h3 class="panel-title">Essential Sketch & Details: </h3>
@@ -144,6 +148,7 @@
 				  </div>
 
 				  </div>
+				</div>
 				  
 				  </div>
 				  

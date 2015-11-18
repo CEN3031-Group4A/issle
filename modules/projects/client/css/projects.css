@@ -139,11 +139,14 @@ a {
 
 /*Print Project CSS*/
 @media print {
-
+ .section-to-hide{
+	visibility: hidden !important;
+ }
   .row {
     visibility: hidden;
   }
-  .section-to-print, .section-to-print * {
+  
+  .section-to-print {
     visibility: visible;
   }
   .section-to-print {
@@ -151,4 +154,9 @@ a {
     left: 0;
     top: 0;
   }
+  
+  .print-spacing{
+	margin-top: 300px;
+  }
+
 }
