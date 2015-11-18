@@ -60,6 +60,10 @@ var ProjectSchema = new Schema({
 		type: Boolean,
 		default: false
 	},
+	rating: {
+		type: Number,
+		default: 5
+	},
 	ask: {
 		goal: {
 			type: String,

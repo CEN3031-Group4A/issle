@@ -95,6 +95,7 @@
            <th>Min Grade</th>
            <th>Max Grade</th>
            <th>Standard(s)</th>
+           <th>Rating</th>
          </tr>
          <!-- {{projects.length}} -->
            <tr class="searchRow" ng-repeat="prj in projects">
@@ -107,6 +108,12 @@
             <td>{{prj.minGrade}}</td>
             <td>{{prj.maxGrade}}</td>
             <td>{{prj.standards}}</td>
+            <!-- <td>{{prj.rating}}</td> -->
+            <td>
+            <!--<div class = "gold glyphicon glyphicon-star" ng-repeat="n in range(1,{{prj.rating}})"> </div> -->
+                <div ng-repeat="n in range(1,5,1)" class="gold glyphicon glyphicon-star" > </div>
+
+            </td>
           </tr>
       </table>
     </div>
