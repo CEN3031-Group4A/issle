@@ -1,5 +1,5 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
-	<div class="container" id="list">
+	<div class="container" id="list" data-ng-show="project.status=='Active'&&project.isPublic||authentication.user._id==project.user._id">
 		<div class="page-header">
 		  <div class = "section-to-print">
 			<div class="sub-header">
@@ -170,5 +170,14 @@
 				  
 
         </div>
+    </div>
+    <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main">
+        <span data-ng-hide="project.status=='Active'&&project.isPublic||authentication.user._id==project.user._id">
+            <div class="alert alert-success" role="alert">
+                <p>Project Page Not Available. This could be because the project isn't public, is in development, or you're not signed in to see it.</p>
+                <p><a data-ui-sref="home" class="alert-link">Click here to return to the home page</a></p>
+                <p><a data-ui-sref="projects.list" class="alert-link">Click here to search for a project</a></p>
+            </div>
+        </span>
     </div>
 </section>
