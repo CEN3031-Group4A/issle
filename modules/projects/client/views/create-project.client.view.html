@@ -20,12 +20,11 @@
                         <li><a data-ui-sref="projects.list">View other Projects</a></li>
                         <li><a data-ui-sref="support.examples">Examples</a></li>
                         <li><a data-ui-sref="support.faq">FAQ</a></li>
-
                     </p>
                 </ul>
             </div>
 
-            <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+            <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main" data-ng-hide="authentication.user._id==NULL">
 
             <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
 
@@ -164,6 +163,15 @@
                     </div>
                 </div>
 
+            </div>
+            <div class="col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-3 main">
+                <span data-ng-show="authentication.user._id==NULL">
+                    <div class="alert alert-success" role="alert">
+                        <p>Please sign in or sign up before you create a project</p>
+                        <p><a data-ui-sref="authentication.signup" class="alert-link">Click here to signup</a></p>
+                        <p><a data-ui-sref="authentication.signin" class="alert-link">Click here to signin</a></p>
+                    </div>
+                </span>
             </div>
         </div>
     </form>
