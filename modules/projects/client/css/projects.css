@@ -157,6 +157,7 @@ a {
   .section-to-print {
     position: relative;
     margin-left: 0%;
+	margin-right: 0%;
     top: 0%;
   }
   
