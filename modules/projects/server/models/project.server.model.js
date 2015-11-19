@@ -61,8 +61,22 @@ var ProjectSchema = new Schema({
 		default: false
 	},
 	rating: {
-		type: Number,
-		default: 5
+		ratings: [
+			{
+				num: {
+					type: Number,	//number of stars
+				},		
+				reviewer: {
+					type: String,	//ID of the user who rated it
+				}
+			}
+		],
+
+		avg_rating: {
+			//Recalculated from the ratings array every time a rating is submitted
+			type: Number,
+			default: 5
+		}
 	},
 	ask: {
 		goal: {
