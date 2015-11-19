@@ -156,12 +156,12 @@ a {
   }
   .section-to-print {
     position: relative;
-    left: 0;
+    left: -2;
     top: 0;
   }
   
   .print-spacing{
-	margin-top: 1000px;
+	margin-top: 100%;
   }
 
 }
