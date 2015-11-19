@@ -156,9 +156,10 @@ a {
   }
   .section-to-print {
     position: relative;
-    margin-left: 0%;
-	margin-right: 5%;
-    top: 0%;
+	margin-top: 0.75in;
+    margin-bottom: 0.75in;
+    margin-left: 0.25in;
+    margin-right: 0.75in;
   }
   
   .print-spacing{
