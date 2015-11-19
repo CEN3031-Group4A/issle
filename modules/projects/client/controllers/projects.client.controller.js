@@ -111,7 +111,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			$scope.rating = num;
 
 			//check if user is valid (Not null)
-			if (id !== null){
+			if (id !== null){g
 				/* 
 					TO-DO: Update this project's schema to include this user's rating. Will involve checking if
 					a userID-Rating pair already exists for this user, creating it if it doesn't, and updating 
