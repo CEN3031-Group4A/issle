@@ -156,8 +156,8 @@ a {
   }
   .section-to-print {
     position: relative;
-    left: -2;
-    top: 0;
+    margin-left: 0%;
+    top: 0%;
   }
   
   .print-spacing{
