@@ -105,13 +105,14 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		$scope.reset_hover = function(){
 			$scope.rating_hover($scope.rating);
 		}; 
-		
+
+
 		//Changes the user's rating of the project
 		$scope.rate = function(num, id){
 			$scope.rating = num;
 
 			//check if user is valid (Not null)
-			if (id !== null){g
+			if (id !== null){
 				/* 
 					TO-DO: Update this project's schema to include this user's rating. Will involve checking if
 					a userID-Rating pair already exists for this user, creating it if it doesn't, and updating 
@@ -121,8 +122,9 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				*/
 				
 			}
-		};  	
+		};  
 
+		
 		
 	}
 ]);
