@@ -166,4 +166,9 @@ a {
 	margin-top: 100%;
   }
 
+    .centered {
+        position: fixed; /* or absolute */
+        top: 50%;
+        left: 50%;
+    }
 }
