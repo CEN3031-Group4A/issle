@@ -17,7 +17,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				maxGrade: this.maxGrade,
 				ask: this.ask,
 				imagine: this.imagine,
-				essentialDetails: this.essentialDetails
+				essentialDetails: this.essentialDetails,
+				rating: null
 			});
 
 			// Redirect after save
@@ -108,20 +109,38 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 
 		//Changes the user's rating of the project
-		$scope.rate = function(num, id){
-			$scope.rating = num;
+		$scope.rate = function(id){
+			if(!$scope.project.rating){
+				$scope.project.rating = {
+					ratings : [
+						{
+							num: $scope.rating,
+							reviewer: id
+						}
+					],
+					avg_rating : $scope.rating
+				};
+			} else {
 
-			//check if user is valid (Not null)
-			if (id !== null){
-				/* 
-					TO-DO: Update this project's schema to include this user's rating. Will involve checking if
-					a userID-Rating pair already exists for this user, creating it if it doesn't, and updating 
-					it if it does.
+				var rateIndex = $scope.project.rating.ratings.indexOf({reviewer: id});
+				var rateToRemove = 0;
+				if(rateIndex !== -1)
+				{
+					rateToRemove = $scope.project.rating.ratings[rateIndex].num;
+					$scope.project.rating.ratings.splice(rateIndex, 1);
+				}
+				var length = $scope.project.rating.ratings.length;
 
-					THEN, recalculate the project's average rating, round it to the nearest integer.
-				*/
-				
+				$scope.project.rating.avg_rating = ($scope.project.rating.avg_rating * length + $scope.rating - rateToRemove)/(length + 1);
+
+				$scope.project.rating.ratings.push({
+						num: $scope.rating,
+						reviewer: id
+				});
 			}
+
+			$scope.update();
+
 		};  
 
 		

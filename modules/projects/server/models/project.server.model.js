@@ -75,8 +75,7 @@ var ProjectSchema = new Schema({
 
 		avg_rating: {
 			//Recalculated from the ratings array every time a rating is submitted
-			type: Number,
-			default: 5
+			type: Number
 		}
 	},
 	ask: {
