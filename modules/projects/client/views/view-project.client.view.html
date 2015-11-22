@@ -1,206 +1,218 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
-	<div class="container" id="list" data-ng-show="project.status=='Active'&&project.isPublic||authentication.user._id==project.user._id">
-        <div class="section-to-print">
-            <div class="page-header">
-                <div class="sub-header">
-                    <h2 style="display: inline-block">{{project.name}}</h2>
-                        <span class = "section-to-hide">
-                            <span class="text-warning" data-ng-show="project.status !== 'Active'">
-                                &nbsp;&nbsp;[{{project.status}}]
+    <div data-ng-show="project.user._id">
+        <div class="container" id="list" data-ng-show="project.status==='Active'&&project.isPublic||authentication.user._id===project.user._id">
+            <div class="section-to-print">
+                <div class="page-header">
+                    <div class="sub-header">
+                        <h2 style="display: inline-block">{{project.name}}</h2>
+                            <span class = "section-to-hide">
+                                <span class="text-warning" data-ng-show="project.status !== 'Active'">
+                                    &nbsp;&nbsp;[{{project.status}}]
+                                </span>
+                                <span class="text-info" data-ng-show="!project.isPublic">
+                                    &nbsp;&nbsp;[Private]
+                                </span>
                             </span>
-                            <span class="text-info" data-ng-show="!project.isPublic">
-                                &nbsp;&nbsp;[Private]
-                            </span>
-                        </span>
+                    </div>
+
+                    <h4>Grade(s) {{project.minGrade}} - {{project.maxGrade}}</h4>
                 </div>
 
-                <h4>Grade(s) {{project.minGrade}} - {{project.maxGrade}}</h4>
-
-            </div>
-
-			<div class="panel panel-blue">
-				<div class="panel-heading">
-					<h2 class="panel-title">Ask</h2>
-				</div>
-				<div class="panel-body">
-					<h4 class="blue">Goal</h4>
-					<h5 class="tab">{{project.ask.goal}}</h5>
-					</br>
-					<h4 class="blue">Major Problem/Underlying Statement</h4>
-					<h5 class="tab">{{project.ask.problemStatement}}</h5>
-					</br>
-					<h4 class="blue">How can your students solve this problem?</h4>
-					<h5 class="tab">{{project.ask.solvingProblem}}</h5>
-					</br>
-					<h4 class="blue">Constraints</h4>
-					<h5 class="tab">{{project.ask.constraints}}</h5>
-					</br>
-				</div>
-			</div>
-
-			<div class="panel panel-blue">
-				<div class="panel-heading">
-					<h3 class="panel-title">Imagine</h3>
-				</div>
-				<div class="panel-body">
-					<h4 class="blue">Brainstormed ideas:</h4>
-					<h5 id="tab">{{project.imagine.brainstorm}}</h5>
-					</br>
-					<h3>Plan</h3>
-					<h4 class="blue">Diagram or other representation of your project:</h4>
-					<h5 class="tab">{{project.imagine.plan}}</h5>
-					</br>
-					<h4 class="blue">Materials required:</h4>
-					<h5 class="tab">{{project.imagine.materials}}</h5>
-					</br>
-				</div>
-			</div>
-			
-			<div class="print-spacing">
-			
                 <div class="panel panel-blue">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Essential Sketch & Details: </h3>
+                        <h2 class="panel-title">Ask</h2>
                     </div>
                     <div class="panel-body">
+                        <h4 class="blue">Goal</h4>
+                        <h5 class="tab">{{project.ask.goal}}</h5>
+                        </br>
+                        <h4 class="blue">Major Problem/Underlying Statement</h4>
+                        <h5 class="tab">{{project.ask.problemStatement}}</h5>
+                        </br>
+                        <h4 class="blue">How can your students solve this problem?</h4>
+                        <h5 class="tab">{{project.ask.solvingProblem}}</h5>
+                        </br>
+                        <h4 class="blue">Constraints</h4>
+                        <h5 class="tab">{{project.ask.constraints}}</h5>
+                        </br>
+                    </div>
+                </div>
 
-                        <div class="panel panel-blue">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Mathematics:</h3>
-                            </div>
-                            <div class="panel-body">
-                                <h4 class="blue">Main Idea:</h4>
-                                <h5 class="tab">{{project.essentialDetails.mathDetails[0].mainIdea}}</h5>
-                                </br>
-                                <h4 class="blue">Essential Details:</h4>
-                                <h5 class="tab">{{project.essentialDetails.mathDetails[0].details}}</h5>
-                                </br>
-                                <h4 class="blue">Linked Math Standard(s):</h4>
-                                <h5 class="tab">{{project.essentialDetails.mathDetails[0].standards}}</h5>
-                                </br>
-                            </div>
+                <div class="panel panel-blue">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Imagine</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h4 class="blue">Brainstormed ideas:</h4>
+                        <h5 id="tab">{{project.imagine.brainstorm}}</h5>
+                        </br>
+                        <h3>Plan</h3>
+                        <h4 class="blue">Diagram or other representation of your project:</h4>
+                        <h5 class="tab">{{project.imagine.plan}}</h5>
+                        </br>
+                        <h4 class="blue">Materials required:</h4>
+                        <h5 class="tab">{{project.imagine.materials}}</h5>
+                        </br>
+                    </div>
+                </div>
+
+                <div class="print-spacing">
+
+                    <div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Essential Sketch & Details: </h3>
                         </div>
+                        <div class="panel-body">
 
-                        <div class="panel panel-blue">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Science:</h3>
+                            <div class="panel panel-blue">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Mathematics:</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="blue">Main Idea:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.mathDetails[0].mainIdea}}</h5>
+                                    </br>
+                                    <h4 class="blue">Essential Details:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.mathDetails[0].details}}</h5>
+                                    </br>
+                                    <h4 class="blue">Linked Math Standard(s):</h4>
+                                    <h5 class="tab">{{project.essentialDetails.mathDetails[0].standards}}</h5>
+                                    </br>
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                <h4 class="blue">Main Idea:</h4>
-                                <h5 class="tab">{{project.essentialDetails.scienceDetails[0].mainIdea}}</h5>
-                                </br>
-                                <h4 class="blue">Essential Details:</h4>
-                                <h5 class="tab">{{project.essentialDetails.scienceDetails[0].details}}</h5>
-                                </br>
-                                <h4 class="blue">Linked Science Standard(s):</h4>
-                                <h5 class ="tab">{{project.essentialDetails.scienceDetails[0].standards}}</h5>
-                                </br>
-                            </div>
-                        </div>
 
-                        <div class="panel panel-blue">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Literature:</h3>
+                            <div class="panel panel-blue">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Science:</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="blue">Main Idea:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.scienceDetails[0].mainIdea}}</h5>
+                                    </br>
+                                    <h4 class="blue">Essential Details:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.scienceDetails[0].details}}</h5>
+                                    </br>
+                                    <h4 class="blue">Linked Science Standard(s):</h4>
+                                    <h5 class ="tab">{{project.essentialDetails.scienceDetails[0].standards}}</h5>
+                                    </br>
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                <h4 class="blue">Main Idea:</h4>
-                                <h5 class="tab">{{project.essentialDetails.litDetails[0].mainIdea}}</h5>
-                                </br>
-                                <h4 class="blue">Essential Details:</h4>
-                                <h5 class="tab">{{project.essentialDetails.litDetails[0].details}}</h5>
-                                </br>
-                                <h4 class="blue">Linked Science Standard(s):</h4>
-                                <h5 class ="tab">{{project.essentialDetails.litDetails[0].standards}}</h5>
-                                </br>
-                            </div>
-                        </div>
 
-                        <div class="panel panel-blue">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Social Studies:</h3>
+                            <div class="panel panel-blue">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Literature:</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="blue">Main Idea:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.litDetails[0].mainIdea}}</h5>
+                                    </br>
+                                    <h4 class="blue">Essential Details:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.litDetails[0].details}}</h5>
+                                    </br>
+                                    <h4 class="blue">Linked Science Standard(s):</h4>
+                                    <h5 class ="tab">{{project.essentialDetails.litDetails[0].standards}}</h5>
+                                    </br>
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                <h4 class="blue">Main Idea:</h4>
-                                <h5 class="tab">{{project.essentialDetails.ssDetails[0].mainIdea}}</h5>
-                                </br>
-                                <h4 class="blue">Essential Details:</h4>
-                                <h5 class="tab">{{project.essentialDetails.ssDetails[0].details}}</h5>
-                                </br>
-                                <h4 class="blue">Linked Science Standard(s):</h4>
-                                <h5 class ="tab">{{project.essentialDetails.ssDetails[0].standards}}</h5>
-                                </br>
-                            </div>
-                        </div>
 
-                        <h4 class="blue">How will students communicate findings?</h4>
-                        <h5 class="tab">{{project.essentialDetails.communicateFindings}}</h5>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <small>
-                                    <em class="text-muted">
-                                        Posted on
-                                        <span data-ng-bind="project.created | date:'mediumDate'"></span>
-                                        by
-                                        <span data-ng-bind="project.user.displayName"></span>
-                                    </em>
-                                </small>
+                            <div class="panel panel-blue">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Social Studies:</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="blue">Main Idea:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.ssDetails[0].mainIdea}}</h5>
+                                    </br>
+                                    <h4 class="blue">Essential Details:</h4>
+                                    <h5 class="tab">{{project.essentialDetails.ssDetails[0].details}}</h5>
+                                    </br>
+                                    <h4 class="blue">Linked Science Standard(s):</h4>
+                                    <h5 class ="tab">{{project.essentialDetails.ssDetails[0].standards}}</h5>
+                                    </br>
+                                </div>
                             </div>
-                        </div>
+
+                            <h4 class="blue">How will students communicate findings?</h4>
+                            <h5 class="tab">{{project.essentialDetails.communicateFindings}}</h5>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <small>
+                                        <em class="text-muted">
+                                            Posted on
+                                            <span data-ng-bind="project.created | date:'mediumDate'"></span>
+                                            by
+                                            <span data-ng-bind="project.user.displayName"></span>
+                                        </em>
+                                    </small>
+                                </div>
+                            </div>
+                         </div>
                     </div>
                 </div>
             </div>
+
 				  
-        </div>
-				  
-        <div class = "row" data-ng-show="authentication.user._id !== project.user._id">
-            <div class="col-md-12">
-                <h2>Rate this Project:
-                    <!-- ng-mouseleave has a timeout of 500ms so the stars don't update too quickly. Looks smoother. -->
-                    <a href="#"><div class="{{glyphs[0]}}" style="font-size:1em" ng-mouseenter="rating_hover(1)"
-                                ng-mouseleave="reset_hover()" ng-click="rate(1, authentication.user._id)"> </div></a>
+            <div class = "row" data-ng-show="authentication.user._id !== project.user._id">
+                <div class="col-md-12">
+                    <h2>Rate this Project:
+                        <!-- ng-mouseleave has a timeout of 500ms so the stars don't update too quickly. Looks smoother. -->
+                        <a href="#"><div class="{{glyphs[0]}}" style="font-size:1em" ng-mouseenter="rating_hover(1)"
+                                    ng-mouseleave="reset_hover()" ng-click="rate(1, authentication.user._id)"> </div></a>
 
-                    <a href="#"><div class="{{glyphs[1]}}" style="font-size:1em" ng-mouseenter="rating_hover(2)"
-                                ng-mouseleave="reset_hover()" ng-click="rate(2, authentication.user._id)"> </div></a>
+                        <a href="#"><div class="{{glyphs[1]}}" style="font-size:1em" ng-mouseenter="rating_hover(2)"
+                                    ng-mouseleave="reset_hover()" ng-click="rate(2, authentication.user._id)"> </div></a>
 
-                    <a href="#"><div class="{{glyphs[2]}}" style="font-size:1em" ng-mouseenter="rating_hover(3)"
-                                ng-mouseleave="reset_hover()" ng-click="rate(3, authentication.user._id)"> </div></a>
+                        <a href="#"><div class="{{glyphs[2]}}" style="font-size:1em" ng-mouseenter="rating_hover(3)"
+                                    ng-mouseleave="reset_hover()" ng-click="rate(3, authentication.user._id)"> </div></a>
 
-                    <a href="#"><div class="{{glyphs[3]}}" style="font-size:1em" ng-mouseenter="rating_hover(4)"
-                                ng-mouseleave="reset_hover()" ng-click="rate(4, authentication.user._id)"> </div></a>
+                        <a href="#"><div class="{{glyphs[3]}}" style="font-size:1em" ng-mouseenter="rating_hover(4)"
+                                    ng-mouseleave="reset_hover()" ng-click="rate(4, authentication.user._id)"> </div></a>
 
-                    <a href="#"><div class="{{glyphs[4]}}" style="font-size:1em" ng-mouseenter="rating_hover(5)"
-                                ng-mouseleave="reset_hover()" ng-click="rate(5, authentication.user._id)"> </div></a>
-               </h2>
+                        <a href="#"><div class="{{glyphs[4]}}" style="font-size:1em" ng-mouseenter="rating_hover(5)"
+                                    ng-mouseleave="reset_hover()" ng-click="rate(5, authentication.user._id)"> </div></a>
+                   </h2>
 
-               <h4> Your currently rate this project at {{rating}}/5 stars</h4><br>
+                   <h4> Your currently rate this project at {{rating}}/5 stars</h4><br>
 
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-bottom: 1%">
-            <div class="col-md-12">
-                <div class="pull-right" data-ng-show="authentication.user._id === project.user._id">
-                    <a class="btn btn-success" onclick="window.print()">
-                        Print Project
-                    </a>
-                    <a class="btn btn-primary" data-ui-sref="projects.edit({projectId: project._id})">
-                        Edit
-                    </a>
-                    <a class="btn btn-danger" data-ng-click="remove()">
-                        Delete
-                    </a>
+            <div class="row" style="padding-bottom: 1%">
+                <div class="col-md-12">
+                    <div class="pull-right" data-ng-show="authentication.user._id === project.user._id">
+                        <a class="btn btn-success" onclick="window.print()">
+                            Print Project
+                        </a>
+                        <a class="btn btn-primary" data-ui-sref="projects.edit({projectId: project._id})">
+                            Edit
+                        </a>
+                        <a class="btn btn-danger" data-ng-click="remove()">
+                            Delete
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main">
+            <span data-ng-hide="project.status==='Active'&&project.isPublic||authentication.user._id===project.user._id">
+                <div class="alert alert-success" role="alert">
+                    <p>Project Page Not Available. This could be because the project isn't public, is in development, or you're not signed in to see it.</p>
+                    <p><a data-ui-sref="home" class="alert-link">Click here to return to the home page</a></p>
+                    <p><a data-ui-sref="projects.list" class="alert-link">Click here to search for a project</a></p>
+                </div>
+            </span>
+            </div>
+        </div>
     </div>
 
-    <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main">
-        <span data-ng-hide="project.status==='Active'&&project.isPublic||authentication.user._id===project.user._id">
-            <div class="alert alert-success" role="alert">
-                <p>Project Page Not Available. This could be because the project isn't public, is in development, or you're not signed in to see it.</p>
-                <p><a data-ui-sref="home" class="alert-link">Click here to return to the home page</a></p>
-                <p><a data-ui-sref="projects.list" class="alert-link">Click here to search for a project</a></p>
-            </div>
-        </span>
-    </div>
+	<div style="padding-top: 25%" data-ng-hide="project.user._id">
+		<div style="display: flex;align-items: center; justify-content: center">
+			<div style="color: #64bed8" class="la-cube-transition">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<h2 class="text-center">Loading</h2>
+	</div>
 </section>

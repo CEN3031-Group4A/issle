@@ -33,6 +33,20 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
         return input;
     };
 
+    $scope.enterPressName = function(keyEvent, search, show) {
+      if(keyEvent.which === 13){
+        $scope.projects = Projects.query({projectName:search.searchName});
+        $scope.show = true;
+      }
+    };
+
+    $scope.enterPressStandard = function(keyEvent, search, show) {
+      if(keyEvent.which === 13){
+        $scope.projects = Projects.query({benchmark:search.searchText});
+        $scope.show = true;
+      }
+    };
+
 		// Find existing Project
 		$scope.findOne = function() {
 			$scope.project = Projects.get({ 
