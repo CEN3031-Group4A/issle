@@ -81,11 +81,11 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 		};
 
 	    $scope.enterPressStandard = function(keyEvent, search, show) {
-	      if(keyEvent.which === 13){
-	        $scope.standards = Standards.query({benchmark:search.searchText});
-	        $scope.show = true;
-	      }
-	    };
+      		if(keyEvent.which === 13){
+        		$scope.standards = Standards.query({benchmark:search.searchText});
+        		$scope.show = true;
+      		}
+    	};
 
 	    $scope.enterPressKeyword = function(keyEvent, search, show) {
 	      if(keyEvent.which === 13){
