@@ -67,7 +67,8 @@ var ProjectSchema = new Schema({
 					type: Number,	//number of stars
 				},		
 				reviewer: {
-					type: String,	//ID of the user who rated it
+					type: Schema.ObjectId,	//ID of the user who rated it
+					ref: 'User'
 				}
 			}
 		],
