@@ -16,6 +16,7 @@
                     </div>
 
                     <h4>Grade(s) {{project.minGrade}} - {{project.maxGrade}}</h4>
+                    <h4> Rating: <div ng-repeat="{{project.rating.avg_rating}}" class="gold glyphicon glyphicon-star"> </div> ({{project.rating.avg_rating}}/5 stars)</h4>
                 </div>
 
                 <div class="panel panel-blue">
@@ -173,7 +174,7 @@
                                     ng-mouseleave="reset_hover()" ng-click="rate(5, authentication.user._id)"> </div></a>
                    </h2>
 
-                   <h4> Your currently rate this project at {{rating}}/5 stars</h4><br>
+                   <h4> {{getMyRating(project.rating.ratings, authentication.user._id)}} </h4><br>
 
                 </div>
             </div>

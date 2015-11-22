@@ -106,6 +106,15 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			$scope.rating_hover($scope.rating);
 		}; 
 
+		//Prints out user's current rating of the project
+		$scope.getMyRating = function(ratings_arr, id){
+			for(var i = 0; i < ratings_arr.length; i++){
+				if(ratings_arr[i].reviewer === id){
+					return ('Your currently rate this project at' + ratings_arr[i].num + ' stars');
+				}
+			}
+			return 'You haven\'t yet rated this project. Give it a couple of stars?';
+		}; 
 
 		//Changes the user's rating of the project
 		$scope.rate = function(num, id){

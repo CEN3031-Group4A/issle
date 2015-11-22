@@ -53,5 +53,13 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
 				projectId: $stateParams.projectId
 			});
 		};
+
+    $scope.getRatingNum = function(num) {
+      if(num !== null){
+        return num;
+      } else {
+        
+      }
+    };
 	}
 ]);
