@@ -69,6 +69,8 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 
 			if(search.searchText) {
 				$scope.standards = Standards.query({benchmark:search.searchText});
+			} else if(search.searchKeyword) {
+				$scope.standards = Standards.query({keyword:search.searchKeyword});
 			} else if(search.subject) {
 				$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject});
 			} else {
@@ -77,6 +79,20 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 			console.log(search);
 
 		};
+
+	    $scope.enterPressStandard = function(keyEvent, search, show) {
+	      if(keyEvent.which === 13){
+	        $scope.standards = Standards.query({benchmark:search.searchText});
+	        $scope.show = true;
+	      }
+	    };
+
+	    $scope.enterPressKeyword = function(keyEvent, search, show) {
+	      if(keyEvent.which === 13){
+	        $scope.standards = Standards.query({keyword:search.searchKeyword});
+	        $scope.show = true;
+	      }
+	    };
 
 		// Find existing Standard
 		$scope.findOne = function() {
