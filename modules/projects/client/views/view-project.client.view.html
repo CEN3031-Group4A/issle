@@ -153,7 +153,7 @@
             </div>
 
 				  
-            <div class = "row" data-ng-show="authentication.user._id !== project.user._id">
+            <div class = "row" data-ng-show="authentication.user._id && authentication.user._id !== project.user._id">
                 <div class="col-md-12">
                     <h2>Rate this Project:
                         <!-- ng-mouseleave has a timeout of 500ms so the stars don't update too quickly. Looks smoother. -->
@@ -179,10 +179,12 @@
             </div>
             <div class="row" style="padding-bottom: 1%">
                 <div class="col-md-12">
-                    <div class="pull-right" data-ng-show="authentication.user._id === project.user._id">
+                    <div class="pull-right">
                         <a class="btn btn-success" onclick="window.print()">
                             Print Project
                         </a>
+                    </div>
+                    <div class="pull-right" data-ng-show="authentication.user._id === project.user._id">
                         <a class="btn btn-primary" data-ui-sref="projects.edit({projectId: project._id})">
                             Edit
                         </a>
