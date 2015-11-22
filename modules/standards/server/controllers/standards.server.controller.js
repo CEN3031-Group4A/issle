@@ -87,6 +87,20 @@ exports.list = function(req, res) {
 			res.jsonp(standards);
 		}
 	});
+	}
+	else if(req.query.keyword) {
+	Standard.find().
+		where('description').regex(new RegExp(req.query.keyword, 'i')).
+		sort('-created').populate('user', 'displayName').
+		exec(function(err, standards) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(standards);
+		}
+	});
 	} else if(req.query.subject) {
 	Standard.find().
 		where('grade').gte(req.query.minGrade).lte(req.query.maxGrade).
