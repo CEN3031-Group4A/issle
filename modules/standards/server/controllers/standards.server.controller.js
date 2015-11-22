@@ -90,7 +90,7 @@ exports.list = function(req, res) {
 	}
 	else if(req.query.keyword) {
 	Standard.find().
-		where('keyword').regex(new RegExp(req.query.keyword, 'i')).
+		where('description').regex(new RegExp(req.query.keyword, 'i')).
 		sort('-created').populate('user', 'displayName').
 		exec(function(err, standards) {
 		if (err) {
