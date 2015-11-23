@@ -79,7 +79,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			initial rating, instead of 0.
 		*/
 
-		$scope.rating = 0;	//current rating
+
 
 		//an array containing the name of the glyphicon to use for each star
 		$scope.glyphs = new Array(
@@ -109,37 +109,38 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 
 		//Prints out user's current rating of the project
-		$scope.getMyRating = function(id){
+		$scope.getMyRating = function(){
 
 			if ($scope.project.rating && $scope.project.rating.ratings ){
 				var rater = $scope.project.rating.ratings.filter(isRater)[0];
-				if (!rater){
+				console.log(rater);
+				if (typeof rater === 'undefined'){
+					$scope.rating = 0;	//current rating
 					return 'You haven\'t yet rated this project. Give it a couple of stars?';
 				}
-
+				$scope.rating = rater.num;
+				$scope.reset_hover();
 				return ('Your currently rate this project at ' + rater.num + ' stars');
 			}
-
+			$scope.rating = 0;	//current rating
 			return 'This project has not yet been rated. Give it a couple of stars?';
 
 		}; 
 
         // Function to find the current rater
-        var isRater = function(id){
-            return function(value){
-                return value.reviewer === id;
-            };
+        var isRater = function(value){
+			return value.reviewer === $scope.authentication.user._id;
         };
 
 		//Changes the user's rating of the project
-		$scope.rate = function(id){
+		$scope.rate = function(){
 			console.log('In $scope.rate');
 			if(!$scope.project.rating){
 				$scope.project.rating = {
 					ratings : [
 						{
 							num: $scope.rating,
-							reviewer: id
+							reviewer: $scope.authentication.user._id
 						}
 					],
 					avg_rating : $scope.rating
@@ -156,7 +157,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
                     $scope.project.rating.avg_rating = 0;
                 }
 
-				if(rater) {
+				if(typeof rater !== 'undefined') {
                     rateToRemove = rater.num;
                     var rateIndex = $scope.project.rating.ratings.indexOf(rater);
                     $scope.project.rating.ratings.splice(rateIndex, 1);
@@ -167,14 +168,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 				$scope.project.rating.ratings.push({
 						num: $scope.rating,
-						reviewer: id
+						reviewer: $scope.authentication.user._id
 				});
 			}
 			$scope.update();
-
-            /* TODO: Figure out how to let users who dont own the project edit the project.
-                Has to do with the policies....
-             */
 
 
 		};  
