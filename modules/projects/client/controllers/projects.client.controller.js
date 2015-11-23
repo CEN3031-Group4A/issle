@@ -50,6 +50,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Update existing Project
 		$scope.update = function() {
+            console.log('In $scope.update');
 			var project = $scope.project;
 
 			project.$update(function() {
@@ -73,12 +74,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 /*	-------------------------------------Star Rating Stuff-------------------------------------- */
 		
 		/*	
-			TO-DO (IMPORTANT!!): Find a way to pull this particular user's previous rating from the 
+			TODO (IMPORTANT!!): Find a way to pull this particular user's previous rating from the
 			schema's ratings field (which holds an array of userID-Rating pairs) and use it as the
 			initial rating, instead of 0.
 		*/
 
-		$scope.rating = $scope.project;	//current rating
+		$scope.rating = 0;	//current rating
 
 		//an array containing the name of the glyphicon to use for each star
 		$scope.glyphs = new Array(
@@ -105,24 +106,34 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		//Runs when a star glyphicon is hovered out of. Resets the  stars' highlighing to the current rating
 		$scope.reset_hover = function(){
 			$scope.rating_hover($scope.rating);
-		}; 
+		};
 
 		//Prints out user's current rating of the project
 		$scope.getMyRating = function(id){
 
+			if ($scope.project.rating && $scope.project.rating.ratings ){
+				var rater = $scope.project.rating.ratings.filter(isRater)[0];
+				if (!rater){
+					return 'You haven\'t yet rated this project. Give it a couple of stars?';
+				}
 
-			var raterIndex = $scope.project.rating.ratings.indexOf({reviewer: id});
-
-			if (raterIndex === -1){
-				return 'You haven\'t yet rated this project. Give it a couple of stars?';
+				return ('Your currently rate this project at ' + rater.num + ' stars');
 			}
 
-			return ('Your currently rate this project at' + $scope.project.rating.ratings[raterIndex].num + ' stars');
+			return 'This project has not yet been rated. Give it a couple of stars?';
 
 		}; 
 
+        // Function to find the current rater
+        var isRater = function(id){
+            return function(value){
+                return value.reviewer === id;
+            };
+        };
+
 		//Changes the user's rating of the project
 		$scope.rate = function(id){
+			console.log('In $scope.rate');
 			if(!$scope.project.rating){
 				$scope.project.rating = {
 					ratings : [
@@ -134,23 +145,32 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 					avg_rating : $scope.rating
 				};
 			} else {
-
-				var rateIndex = $scope.project.rating.ratings.indexOf({reviewer: id});
+                var rater = $scope.project.rating.ratings.filter(isRater)[0];
+                var length = $scope.project.rating.ratings.length;
 				var rateToRemove = 0;
-				if(rateIndex !== -1)
-				{
-					rateToRemove = $scope.project.rating.ratings[rateIndex].num;
-					$scope.project.rating.ratings.splice(rateIndex, 1);
-				}
-				var length = $scope.project.rating.ratings.length;
 
-				$scope.project.rating.avg_rating = ($scope.project.rating.avg_rating * length + $scope.rating - rateToRemove)/(length + 1);
+                var newLength = length + 1;
+
+                if(length === 0)
+                {
+                    $scope.project.rating.avg_rating = 0;
+                }
+
+				if(rater) {
+                    rateToRemove = rater.num;
+                    var rateIndex = $scope.project.rating.ratings.indexOf(rater);
+                    $scope.project.rating.ratings.splice(rateIndex, 1);
+                    newLength -= 1;
+                }
+
+				$scope.project.rating.avg_rating = ($scope.project.rating.avg_rating * length + $scope.rating - rateToRemove)/(newLength);
 
 				$scope.project.rating.ratings.push({
 						num: $scope.rating,
 						reviewer: id
 				});
 			}
+			$scope.update();
 
             /* TODO: Figure out how to let users who dont own the project edit the project.
                 Has to do with the policies....
