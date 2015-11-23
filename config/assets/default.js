@@ -19,7 +19,8 @@ module.exports = {
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
     css: [
-      'modules/*/client/css/*.css'
+      'modules/*/client/css/*.css',
+      'public/lib/load-awesome/css/cube-transition.css'
     ],
     less: [
       'modules/*/client/less/*.less'

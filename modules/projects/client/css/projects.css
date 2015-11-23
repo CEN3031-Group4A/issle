@@ -122,6 +122,11 @@ a {
 	border-color: #fbc650;
 }
 
+.alert-danger {
+    margin:auto;
+    width: 550px;
+}
+
 /* List Project CSS */
  #list.container{
 	background-color:white;
@@ -135,4 +140,35 @@ a {
 #listheader{
 	font-weight: 10;
 	color: #64bed8;
+}
+
+/*Print Project CSS*/
+@media print {
+ .section-to-hide{
+	visibility: hidden !important;
+ }
+  .row {
+    visibility: hidden;
+  }
+  
+  .section-to-print {
+    visibility: visible;
+  }
+  .section-to-print {
+    position: relative;
+	margin-top: 0.75in;
+    margin-bottom: 0.75in;
+    margin-left: 0.25in;
+    margin-right: 0.75in;
+  }
+  
+  .print-spacing{
+	margin-top: 100%;
+  }
+
+    .centered {
+        position: fixed; /* or absolute */
+        top: 50%;
+        left: 50%;
+    }
 }
