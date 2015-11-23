@@ -71,7 +71,7 @@
     <h3>Alternatively...</h3>
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="sizing-addon1">By Project...</span>
-      <input type="text" class="form-control" placeholder="eg. Raz's Ballooons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
+      <input type="text" class="form-control" placeholder="eg. Raz's Balloons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
     </div>
     <br>
     <h3>Or...</h3>
@@ -86,27 +86,35 @@
     <div class="panel panel-blue" ng-show="show">
       <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
       <div class="panel-body">
-        <h4 class="search-results">Displaying Project(s) selected: </h4>
+        <h4 class="search-results">Here's projects matching that criteria: </h4>
         <br>
         <table class = "searchResults">
          <tr class = "searchRow">
            <th>Project Name</th>
            <th>Summary</th>
-           <th>Min Grade</th>
-           <th>Max Grade</th>
-           <th>Standard(s)</th>
+           <th>Grade range</th>
+           <!-- <th>Max Grade</th>  -->
+           <th>Standards Fulfilled</th>
+           <th>Rating</th>
          </tr>
          <!-- {{projects.length}} -->
            <tr class="searchRow" ng-repeat="prj in projects">
             <td>
               <a data-ui-sref="projects.view({projectId : prj._id})">
-                {{prj.name}}
-              </a>
+                {{prj.name}} </a> <br> by {{prj.user.displayName}}
             </td>
-            <td>{{prj.ask.goal}}</td>
-            <td>{{prj.minGrade}}</td>
-            <td>{{prj.maxGrade}}</td>
-            <td>{{prj.standards}}</td>
+            <td class = "line-break">{{prj.ask.goal}}</td>
+            <td> {{getGradeRange(prj.minGrade, prj.maxGrade)}}</td>
+            <!-- <td>{{prj.minGrade}}</td>
+            <td>{{prj.maxGrade}}</td> -->
+            <td class = "line-break">{{prj.standards}}</td>
+            <td style="width:110px;">
+              <div  class = "gold glyphicon glyphicon-star"
+                    style="font-size:1.5em"
+                    ng-repeat="n in range(1,prj.rating.avg_rating,1)"> 
+              </div>
+              {{noRatingCheck(prj.rating.avg_rating)}}
+            </td>
           </tr>
       </table>
     </div>

@@ -23,6 +23,50 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
 
     };
 
+    //Allows for looping based on number of star ratings
+    $scope.range = function(min, max, step) {
+        step = step || 1;
+        var input = [];
+        for (var i = min; i <= max; i += step) {
+            input.push(i);
+        }
+        return input;
+    };
+
+    //  K 1st   2nd   3rd   4th   5th   6th   7th   8th   9th  10th 11th 12th
+    $scope.getGradeRange = function(min,max){
+      var retString = '';
+      if(min === 0)
+        retString = 'K';
+      else if(min === 1)
+        retString = '1st';
+      else if(min ===2)
+        retString = '2nd';
+      else if(min === 3)
+        retString = '3rd';
+      else
+        retString = min + 'th';
+
+      retString += ' through ';
+
+      if(max === 1)
+        retString += '1st';
+      else if(max ===2)
+        retString += '2nd';
+      else if(max === 3)
+        retString += '3rd';
+      else
+        retString += max + 'th';
+
+      return retString;
+    };
+
+    $scope.noRatingCheck = function(rats){
+      if(!(rats > 0 && rats <= 5))
+        return 'No ratings (yet!)';
+      else return '';
+    };
+
     $scope.enterPressName = function(keyEvent, search, show) {
       if(keyEvent.which === 13){
         $scope.projects = Projects.query({projectName:search.searchName});
@@ -37,11 +81,17 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
       }
     };
 
-		// Find existing Project
-		$scope.findOne = function() {
-			$scope.project = Projects.get({ 
-				projectId: $stateParams.projectId
-			});
-		};
+    // Find existing Project
+    $scope.findOne = function() {
+        $scope.project = Projects.get({
+            projectId: $stateParams.projectId
+        });
+    };
+
+    $scope.getRatingNum = function(num) {
+      if(num !== null){
+        return num;
+      }
+    };
 	}
 ]);

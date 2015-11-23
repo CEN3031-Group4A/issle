@@ -48,6 +48,7 @@ exports.invokeRolesPolicies = function() {
 exports.isAllowed = function(req, res, next) {
 	var roles = (req.user) ? req.user.roles : ['guest'];
 
+	console.log(req.body);
 	// If an project is being processed and the current user created it then allow any manipulation
 	if (req.project && req.user && req.project.user.id === req.user.id) {
 		return next();
