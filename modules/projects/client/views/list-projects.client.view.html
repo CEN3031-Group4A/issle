@@ -71,7 +71,7 @@
     <h3>Alternatively...</h3>
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="sizing-addon1">By Project...</span>
-      <input type="text" class="form-control" placeholder="eg. Raz's Ballooons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
+      <input type="text" class="form-control" placeholder="eg. Raz's Balloons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
     </div>
     <br>
     <h3>Or...</h3>
@@ -103,11 +103,11 @@
               <a data-ui-sref="projects.view({projectId : prj._id})">
                 {{prj.name}} </a> <br> by {{prj.user.displayName}}
             </td>
-            <td>{{prj.ask.goal}}</td>
+            <td class = "line-break">{{prj.ask.goal}}</td>
             <td> {{getGradeRange(prj.minGrade, prj.maxGrade)}}</td>
             <!-- <td>{{prj.minGrade}}</td>
             <td>{{prj.maxGrade}}</td> -->
-            <td>{{prj.standards}}</td>
+            <td class = "line-break">{{prj.standards}}</td>
             <td style="width:110px;">
               <div  class = "gold glyphicon glyphicon-star"
                     style="font-size:1.5em"

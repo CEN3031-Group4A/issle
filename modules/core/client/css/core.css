@@ -126,12 +126,12 @@ table{
 }
 
 .searchRow{
-  padding:-20px;
+  padding:4px;
   text-align:center;
 }
 
 th{
-  padding:-20px;
+  padding:4px;
   text-align:center;
   color:white;
   background-color: #92d1e3;
@@ -140,10 +140,13 @@ th{
 
 td{
   border: 1px solid #92d1e3;
-  padding-top:4px;
+  padding:6px;
   text-align:center;
   font-size: 10px;
-  word-wrap: break-word;
+}
+
+.line-break{
+	 word-break: break-all !important;
 }
 
 .searchResults{
