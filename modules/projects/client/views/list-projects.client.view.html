@@ -92,8 +92,8 @@
          <tr class = "searchRow">
            <th>Project Name</th>
            <th>Summary</th>
-           <th>Min Grade</th>
-           <th>Max Grade</th>
+           <th>Grade range</th>
+           <!-- <th>Max Grade</th>  -->
            <th>Standard(s)</th>
            <th>Rating</th>
          </tr>
@@ -101,15 +101,13 @@
            <tr class="searchRow" ng-repeat="prj in projects">
             <td>
               <a data-ui-sref="projects.view({projectId : prj._id})">
-                {{prj.name}}
-              </a>
-              <br> by {{prj.user.displayName}}
+                {{prj.name}} </a> <br> by {{prj.user.displayName}}
             </td>
             <td>{{prj.ask.goal}}</td>
-            <td>{{prj.minGrade}}</td>
-            <td>{{prj.maxGrade}}</td>
+            <td> {{getGradeRange(prj.minGrade, prj.maxGrade)}}</td>
+            <!-- <td>{{prj.minGrade}}</td>
+            <td>{{prj.maxGrade}}</td> -->
             <td>{{prj.standards}}</td>
-            <!-- <td>{{prj.rating}}</td> -->
             <td style="width:110px;">
               <div  class = "gold glyphicon glyphicon-star"
                     style="font-size:1.5em"
