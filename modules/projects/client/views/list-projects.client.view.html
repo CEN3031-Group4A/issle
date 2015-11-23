@@ -109,14 +109,11 @@
             <td>{{prj.maxGrade}}</td>
             <td>{{prj.standards}}</td>
             <!-- <td>{{prj.rating}}</td> -->
-            <td>
-             <div class = "gold glyphicon glyphicon-star" 
-            <!-- <td style="width:75px;">{{prj.rating}}</td> -->
             <td style="width:75px;">
-            <div  class = "gold glyphicon glyphicon-star" 
-                      style="font-size:1.5em" 
-                      ng-repeat="n in range(1,{{prj.rating.avg_rating}},1)"> </div> 
-
+              <div  class = "gold glyphicon glyphicon-star"
+                    style="font-size:1.5em"
+                    ng-repeat="n in range(1,prj.rating.avg_rating,1)">
+              </div>
             </td>
           </tr>
       </table>

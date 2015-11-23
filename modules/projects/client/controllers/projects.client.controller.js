@@ -78,7 +78,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			initial rating, instead of 0.
 		*/
 
-		$scope.rating = 0;	//current rating
+		$scope.rating = $scope.project;	//current rating
 
 		//an array containing the name of the glyphicon to use for each star
 		$scope.glyphs = new Array(
@@ -108,13 +108,17 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		}; 
 
 		//Prints out user's current rating of the project
-		$scope.getMyRating = function(ratings_arr, id){
-			for(var i = 0; i < ratings_arr.length; i++){
-				if(ratings_arr[i].reviewer === id){
-					return ('Your currently rate this project at' + ratings_arr[i].num + ' stars');
-				}
+		$scope.getMyRating = function(id){
+
+
+			var raterIndex = $scope.project.rating.ratings.indexOf({reviewer: id});
+
+			if (raterIndex === -1){
+				return 'You haven\'t yet rated this project. Give it a couple of stars?';
 			}
-			return 'You haven\'t yet rated this project. Give it a couple of stars?';
+
+			return ('Your currently rate this project at' + $scope.project.rating.ratings[raterIndex].num + ' stars');
+
 		}; 
 
 		//Changes the user's rating of the project
@@ -148,7 +152,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				});
 			}
 
-			$scope.update();
+            /* TODO: Figure out how to let users who dont own the project edit the project.
+                Has to do with the policies....
+             */
+
 
 		};  
 

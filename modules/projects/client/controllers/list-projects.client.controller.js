@@ -47,18 +47,16 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
       }
     };
 
-		// Find existing Project
-		$scope.findOne = function() {
-			$scope.project = Projects.get({ 
-				projectId: $stateParams.projectId
-			});
-		};
+    // Find existing Project
+    $scope.findOne = function() {
+        $scope.project = Projects.get({
+            projectId: $stateParams.projectId
+        });
+    };
 
     $scope.getRatingNum = function(num) {
       if(num !== null){
         return num;
-      } else {
-        
       }
     };
 	}
