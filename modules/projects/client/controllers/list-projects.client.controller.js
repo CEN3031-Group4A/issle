@@ -61,6 +61,12 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
       return retString;
     };
 
+    $scope.noRatingCheck = function(rats){
+      if(!(rats > 0 && rats <= 5))
+        return 'No ratings (yet!)';
+      else return '';
+    };
+
     $scope.enterPressName = function(keyEvent, search, show) {
       if(keyEvent.which === 13){
         $scope.projects = Projects.query({projectName:search.searchName});

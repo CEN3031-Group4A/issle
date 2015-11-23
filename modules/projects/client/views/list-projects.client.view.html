@@ -86,7 +86,7 @@
     <div class="panel panel-blue" ng-show="show">
       <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
       <div class="panel-body">
-        <h4 class="search-results">Displaying Project(s) selected: </h4>
+        <h4 class="search-results">Here's projects matching that criteria: </h4>
         <br>
         <table class = "searchResults">
          <tr class = "searchRow">
@@ -94,7 +94,7 @@
            <th>Summary</th>
            <th>Grade range</th>
            <!-- <th>Max Grade</th>  -->
-           <th>Standard(s)</th>
+           <th>Standards Fulfilled</th>
            <th>Rating</th>
          </tr>
          <!-- {{projects.length}} -->
@@ -111,8 +111,9 @@
             <td style="width:110px;">
               <div  class = "gold glyphicon glyphicon-star"
                     style="font-size:1.5em"
-                    ng-repeat="n in range(1,prj.rating.avg_rating,1)">
+                    ng-repeat="n in range(1,prj.rating.avg_rating,1)"> 
               </div>
+              {{noRatingCheck(prj.rating.avg_rating)}}
             </td>
           </tr>
       </table>
