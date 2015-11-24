@@ -47,7 +47,7 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
       else
         retString = min + 'th';
 
-      retString += ' through ';
+      retString += ' - ';
 
       if(max === 1)
         retString += '1st';

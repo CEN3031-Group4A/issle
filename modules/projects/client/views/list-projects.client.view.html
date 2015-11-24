@@ -104,7 +104,7 @@
                 {{prj.name}} </a> <br> by {{prj.user.displayName}}
             </td>
             <td class = "line-break">{{prj.ask.goal}}</td>
-            <td class = "line-break"> {{prj.minGrade}} - {{prj.maxGrade}}</td>
+            <td class = "line-break"> {{getGradeRange(prj.minGrade, prj.maxGrade)}}</td>
             <!-- <td>{{prj.minGrade}}</td>
             <td>{{prj.maxGrade}}</td> -->
             <td class = "line-break">{{prj.standards}}</td>
