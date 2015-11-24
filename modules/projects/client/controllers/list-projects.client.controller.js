@@ -63,7 +63,7 @@ angular.module('projects').controller('list-ProjectsController' , ['$scope', '$s
 
     $scope.noRatingCheck = function(rats){
       if(!(rats > 0 && rats <= 5))
-        return 'No ratings (yet!)';
+        return 'None yet!';
       else return '';
     };
 
