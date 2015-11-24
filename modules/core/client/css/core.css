@@ -131,18 +131,18 @@ table{
 }
 
 th{
-  padding:4px;
+  padding:2px;
   text-align:center;
   color:white;
   background-color: #92d1e3;
-  font-size:10px;
+  font-size:11.5px;
 }
 
 td{
   border: 1px solid #92d1e3;
   padding:6px;
   text-align:center;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .line-break{
