@@ -13,7 +13,7 @@
               <div class="row">
                 <div class="col-md-8 col-xs-8 col-sm-8">
                   <h3 style="display: inline-block">
-                    <a data-ui-sref="projects.view({projectId : userProjectItem._id})" style="text-decoration: none">
+                    <a id="link" data-ui-sref="projects.view({projectId : userProjectItem._id})" style="text-decoration: none">
                       {{userProjectItem.name}}
                     </a>
                   </h3>
@@ -25,7 +25,7 @@
 				</span>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4" style="padding-top: 5%">
-                  <button class="btn btn-info glyphicon glyphicon-edit" data-ui-sref="projects.edit({projectId : userProjectItem._id})"></button>
+                  <button class="btn btn-info glyphicon glyphicon-edit" id="edit" data-ui-sref="projects.edit({projectId : userProjectItem._id})"></button>
                   <button class="btn btn-danger glyphicon glyphicon-trash" data-ng-click="deleteProject(userProjectItem)"></button>
                 </div>
               </div>
@@ -41,7 +41,7 @@
 
       <div class="row">
         <div class="col-md-12">
-            <input class="form-control input" type="text" placeholder="Search by Name..." data-ng-model="query.name">
+            <input id="search" class="form-control input" type="text" placeholder="Search by Name..." data-ng-model="query.name">
         </div>
       </div>
 
