@@ -17,7 +17,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				maxGrade: this.maxGrade,
 				ask: this.ask,
 				imagine: this.imagine,
-				essentialDetails: this.essentialDetails
+				essentialDetails: this.essentialDetails,
+				rating: null
 			});
 
 			// Redirect after save
@@ -49,6 +50,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Update existing Project
 		$scope.update = function() {
+            console.log('In $scope.update');
 			var project = $scope.project;
 
 			project.$update(function() {
@@ -72,12 +74,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 /*	-------------------------------------Star Rating Stuff-------------------------------------- */
 		
 		/*	
-			TO-DO (IMPORTANT!!): Find a way to pull this particular user's previous rating from the 
+			TODO (IMPORTANT!!): Find a way to pull this particular user's previous rating from the
 			schema's ratings field (which holds an array of userID-Rating pairs) and use it as the
 			initial rating, instead of 0.
 		*/
 
-		$scope.rating = 0;	//current rating
+
 
 		//an array containing the name of the glyphicon to use for each star
 		$scope.glyphs = new Array(
@@ -104,24 +106,74 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		//Runs when a star glyphicon is hovered out of. Resets the  stars' highlighing to the current rating
 		$scope.reset_hover = function(){
 			$scope.rating_hover($scope.rating);
+		};
+
+		//Prints out user's current rating of the project
+		$scope.getMyRating = function(){
+
+			if ($scope.project.rating && $scope.project.rating.ratings ){
+				var rater = $scope.project.rating.ratings.filter(isRater)[0];
+				console.log(rater);
+				if (typeof rater === 'undefined'){
+					$scope.rating = 0;	//current rating
+					return 'You haven\'t yet rated this project. Give it a couple of stars?';
+				}
+				$scope.rating = rater.num;
+				$scope.reset_hover();
+				return ('Your currently rate this project at ' + rater.num + ' stars');
+			}
+			$scope.rating = 0;	//current rating
+			return 'This project has not yet been rated. Give it a couple of stars?';
+
 		}; 
 
+        // Function to find the current rater
+        var isRater = function(value){
+			return value.reviewer === $scope.authentication.user._id;
+        };
 
 		//Changes the user's rating of the project
-		$scope.rate = function(num, id){
-			$scope.rating = num;
+		$scope.rate = function(){
+			console.log('In $scope.rate');
+			if(!$scope.project.rating){
+				$scope.project.rating = {
+					ratings : [
+						{
+							num: $scope.rating,
+							reviewer: $scope.authentication.user._id
+						}
+					],
+					avg_rating : $scope.rating
+				};
+			} else {
+                var rater = $scope.project.rating.ratings.filter(isRater)[0];
+                var length = $scope.project.rating.ratings.length;
+				var rateToRemove = 0;
 
-			//check if user is valid (Not null)
-			if (id !== null){
-				/* 
-					TO-DO: Update this project's schema to include this user's rating. Will involve checking if
-					a userID-Rating pair already exists for this user, creating it if it doesn't, and updating 
-					it if it does.
+                var newLength = length + 1;
 
-					THEN, recalculate the project's average rating, round it to the nearest integer.
-				*/
-				
+                if(length === 0)
+                {
+                    $scope.project.rating.avg_rating = 0;
+                }
+
+				if(typeof rater !== 'undefined') {
+                    rateToRemove = rater.num;
+                    var rateIndex = $scope.project.rating.ratings.indexOf(rater);
+                    $scope.project.rating.ratings.splice(rateIndex, 1);
+                    newLength -= 1;
+                }
+
+				$scope.project.rating.avg_rating = ($scope.project.rating.avg_rating * length + $scope.rating - rateToRemove)/(newLength);
+
+				$scope.project.rating.ratings.push({
+						num: $scope.rating,
+						reviewer: $scope.authentication.user._id
+				});
 			}
+			$scope.update();
+
+
 		};  
 
 		

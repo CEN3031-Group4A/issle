@@ -76,7 +76,7 @@
     <h3>Alternatively...</h3>
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="sizing-addon1">By Project...</span>
-      <input type="text" class="form-control" placeholder="eg. Raz's Ballooons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
+      <input type="text" class="form-control" placeholder="eg. Raz's Balloons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
     </div>
     <br>
     <h3>Or...</h3>
@@ -89,41 +89,95 @@
     <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
     <br>
     <div class="panel panel-blue" ng-show="show">
-      <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
+      <div class="panel-heading">  </div>
+            <!-- <h2 class="panel-title"> Search Results </h2></div> -->
       <div class="panel-body">
-        <h4 class="search-results">Displaying Project(s) selected: </h4>
-        <br>
+          <div class="row"> 
+              <div class="col-md-6 col-md-offset-3" style="text-align:center"> 
+                    <h3 class="search-results">Search Results: </h3>
+              </div>
+          </div>
+
+          <div class="panel panel-blue" ng-repeat="prj in projects">
+                <div class="panel-heading" data-ui-sref="projects.view({projectId : prj._id})">
+                      <div class="row">
+                              <div class="col-xs-6 col-md-3">
+                                  <a data-ui-sref="projects.view({projectId : prj._id})">
+                                      <h4 class="gold" style="font-size:20">
+                                      {{prj.name}}</h4> 
+                                  </a> 
+                              </div>
+                              <div class="col-xs-6 col-md-3"><h5>
+                                  by <strong>{{prj.user.displayName}}</strong></h5></div>
+                              <div class="col-xs-6 col-md-3"><h5> 
+                                  For grades {{getGradeRange(prj.minGrade, prj.maxGrade)}}</h5></div>
+                              <div class="col-xs-3-offset-3 col-md-3">
+                                    <h5> Rating: 
+                                        <div  class = "gold glyphicon glyphicon-star"
+                                              style="font-size:1em"
+                                              ng-repeat="n in range(1,prj.rating.avg_rating,1)"> 
+                                        </div> {{noRatingCheck(prj.rating.avg_rating)}}
+                                    </h5> 
+                              </div>
+                      </div>
+                </div>
+
+                <div class="panel-body">
+                      <div class="row">
+                          <div class="col-md-8">
+                              <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <h4> Summary </h4>
+                                        <p> {{prj.ask.goal}} </p>
+                                    </div>
+                              </div>
+
+                          </div>
+
+                          <div class="col-md-4">
+                              <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <h4> Standards Fulfilled </h4>
+                                        {{prj.standards}}
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      
+
+                      
+                </div>
+          </div>
+
+
+
+        <!-- OLD
         <table class = "searchResults">
          <tr class = "searchRow">
            <th>Project Name</th>
            <th>Summary</th>
-           <th>Min Grade</th>
-           <th>Max Grade</th>
-           <th>Standard(s)</th>
+           <th>Grade Range</th>
+           <th>Standards Fulfilled</th>
            <th>Rating</th>
          </tr>
-         <!-- {{projects.length}} -->
            <tr class="searchRow" ng-repeat="prj in projects">
             <td>
               <a data-ui-sref="projects.view({projectId : prj._id})">
-                {{prj.name}}
-              </a>
+                {{prj.name}} </a> <br> by {{prj.user.displayName}}
             </td>
-            <td>{{prj.ask.goal}}</td>
-            <td>{{prj.minGrade}}</td>
-            <td>{{prj.maxGrade}}</td>
-            <td>{{prj.standards}}</td>
-            <!-- <td style="width:75px;">{{prj.rating}}</td> -->
-            <td style="width:75px;">
-            <!--   CHANGE TO THIS VERSION ONCE PROJECTS ARE UPDATED TO HAVE A STAR FIELD  -->
-            <!--<div  class = "gold glyphicon glyphicon-star" 
-                      style="font-size:1.5em" 
-                      ng-repeat="n in range(1,{{prj.rating.avg_rating}},1)"> </div> -->
-            <div ng-repeat="n in range(1,5,1)" class="gold glyphicon glyphicon-star" > </div>
-
+            <td class = "line-break">{{prj.ask.goal}}</td>
+            <td class = "line-break"> {{getGradeRange(prj.minGrade, prj.maxGrade)}}</td>
+            <td class = "line-break">{{prj.standards}}</td>
+            <td class = "line-break" style="width:110px;">
+              <div  class = "gold glyphicon glyphicon-star"
+                    style="font-size:1.5em"
+                    ng-repeat="n in range(1,prj.rating.avg_rating,1)"> 
+              </div>
+              {{noRatingCheck(prj.rating.avg_rating)}}
             </td>
           </tr>
-      </table>
+      </table> -->
     </div>
   </div>
   </div>
