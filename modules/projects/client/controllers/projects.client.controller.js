@@ -54,6 +54,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		$scope.update = function() {
             console.log('In $scope.update');
 			var project = $scope.project;
+			var standards = standards.lit + ',' + standards.math + ',' + standards.science+ ',' + standards.ss;
+			project.essentialDetails.standards = standards;
 
 			project.$update(function() {
 				$location.path('projects/' + project._id);
