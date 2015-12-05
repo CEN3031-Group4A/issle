@@ -7,6 +7,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
+			var standards = standards.lit + ',' + standards.math + ',' + standards.science+ ',' + standards.ss;
+			this.essentialDetails.standards = standards;
 			var project = new Projects ({
 				name: this.name,
 				created: this.created,
