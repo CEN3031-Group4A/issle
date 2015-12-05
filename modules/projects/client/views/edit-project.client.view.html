@@ -144,7 +144,7 @@
                             <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].mainIdea"> Essential Details & What students will do:
                             <textarea class="form-control" rows="4" data-ng-model="project.essentialDetails.scienceDetails[0].details"></textarea>
                             Linked Science Standard(s):
-                            <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].standards">
+                            <input id="sci" type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].standards">
                             <br>
                             <br>
 
@@ -181,7 +181,7 @@
 
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1">
-                            <button type="button" class="btn btn-success btn-block btn-lg" data-ng-click="project.status = 'Active'; update();">Submit</button>
+                            <button id="submit" type="button" class="btn btn-success btn-block btn-lg" data-ng-click="project.status = 'Active'; update();">Submit</button>
                         </div>
                         <div class="col-md-3 col-md-offset-4">
                             <button type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="project.status = 'In Progress'; update()";>Save Draft</button>
