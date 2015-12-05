@@ -8,7 +8,13 @@ var _ = require('lodash'),
   path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
-  User = mongoose.model('User');
+  User = mongoose.model('User'),
+  knox = require('knox'),
+  knoxClient = knox.createClient({
+    key: 'AKIAIQIZVFFTPVUY66AQ',
+    secret: '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',
+    bucket: 'isslepictures'
+  });
 
 /**
  * Update user details
@@ -54,8 +60,10 @@ exports.update = function (req, res) {
 exports.changeProfilePicture = function (req, res) {
   var user = req.user;
   var message = null;
-
   if (user) {
+    knoxClient.putBuffer(req.files.file.buffer, 'Test.jpg',{'Content-Type': 'image/jpeg'},function(err, res){
+      // ...
+    });
     fs.writeFile('./modules/users/client/img/profile/uploads/' + req.files.file.name, req.files.file.buffer, function (uploadError) {
       if (uploadError) {
         return res.status(400).send({
