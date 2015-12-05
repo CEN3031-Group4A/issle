@@ -15,10 +15,6 @@ var SubjectSchema = new Schema({
 		type: String,
 		default: ''
 	},
-	standards: {
-		type: String, //Should be a list of standards in the future
-		default: ''
-	},
 	details: {
 		type: String,
 		default: ''
@@ -123,6 +119,10 @@ var ProjectSchema = new Schema({
 		},
 		ssDetails: {
 			type: [SubjectSchema]
+		},
+		standards: {
+		type: String, //Should be a list of standards in the future
+		default: ''
 		},
 		// stuff starting here
 		mainIncludeDance: {
