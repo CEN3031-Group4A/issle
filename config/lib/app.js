@@ -26,8 +26,8 @@ module.exports.init = function init(callback) {
 
 	});
 
-	//console.log('Connecting to S3 Images');
-	//module.exports.imgClient = knox.connect();
+	console.log('Connecting to S3 Images');
+	knox.connect();
 };
 
 module.exports.start = function start(callback) {

@@ -11,5 +11,6 @@ var config = require('../config'),
     knox = require('knox');
 
 module.exports.connect = function() {
-    return knox.createClient(config.imageServer);
+    module.exports.knoxClient = knox.createClient(config.imageServer);
 };
+

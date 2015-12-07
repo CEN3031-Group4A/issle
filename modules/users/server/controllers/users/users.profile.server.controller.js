@@ -9,12 +9,8 @@ var _ = require('lodash'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  knox = require('knox'),
-  knoxClient = knox.createClient({
-    key: 'AKIAIQIZVFFTPVUY66AQ',
-    secret: '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',
-    bucket: 'isslepictures'
-  });
+  knox = require(path.resolve('./config/lib/knox.js')),
+  knoxClient = knox.knoxClient;
 
 /**
  * Update user details
@@ -58,19 +54,22 @@ exports.update = function (req, res) {
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
+  console.log(process);
   var user = req.user;
   var message = null;
   if (user) {
-    knoxClient.putBuffer(req.files.file.buffer, 'Test.jpg',{'Content-Type': 'image/jpeg'},function(err, res){
-      // ...
-    });
-    fs.writeFile('./modules/users/client/img/profile/uploads/' + req.files.file.name, req.files.file.buffer, function (uploadError) {
+    knoxClient.putBuffer(req.files.file.buffer, 'ProfilePictures/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
       if (uploadError) {
         return res.status(400).send({
           message: 'Error occurred while uploading profile picture'
         });
       } else {
-        user.profileImageURL = 'modules/users/img/profile/uploads/' + req.files.file.name;
+        knoxClient.deleteFile(user.profileImageURL.substring(user.profileImageURL.search('ProfilePictures/')),{'Content-Type': 'image/jpeg'}, function(err){
+          if(err){
+            return err.message;
+          }
+        });
+        user.profileImageURL = 'https://s3.amazonaws.com/isslepictures/ProfilePictures/' + req.files.file.name;
 
         user.save(function (saveError) {
           if (saveError) {
