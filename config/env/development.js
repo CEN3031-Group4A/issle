@@ -12,6 +12,11 @@ module.exports = {
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
   },
+  imageServer: {
+    key: process.env.S3_KEY,
+    secret: process.env.S3_SECRET,
+    bucket: process.env.S3_BUCKET
+  },
   log: {
     // Can specify one of 'combined', 'common', 'dev', 'short', 'tiny'
     format: 'dev',
