@@ -11,6 +11,11 @@ module.exports = {
       user: '',
       pass: ''
     },
+    imageServer: {
+      key: process.env.S3_KEY,
+      secret: process.env.S3_SECRET,
+      bucket: process.env.S3_BUCKET
+    },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
   },
