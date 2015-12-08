@@ -72,7 +72,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Update existing Project
 		$scope.update = function() {
 			var project = $scope.project;
-			
+
 			project.imagine.plan = '';
 
 			project.$update(function() {
