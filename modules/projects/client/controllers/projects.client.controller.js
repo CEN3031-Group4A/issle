@@ -35,8 +35,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 				// Start upload of picture
 
-				$scope.uploaderC.queue[0].url = '/api/projects/picture/' + response._id;
-				$scope.uploaderC.uploadAll();
+				if($scope.uploaderC.queue.length > 0) {
+					$scope.uploaderC.queue[0].url = '/api/projects/picture/' + response._id;
+					$scope.uploaderC.uploadAll();
+				}
 
 
 				// Clear form fields
@@ -82,8 +84,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				$scope.error = errorResponse.data.message;
 			});
 
-			$scope.uploader.queue[0].url = '/api/projects/picture/' + project._id;
-			$scope.uploader.uploadAll();
+			if($scope.uploader.queue.length > 0) {
+				$scope.uploader.queue[0].url = '/api/projects/picture/' + project._id;
+				$scope.uploader.uploadAll();
+			}
 		};
 
 		// Find a list of Projects
