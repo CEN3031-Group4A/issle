@@ -144,14 +144,231 @@
                         <br>
                         <br>
                         
-                        <a>
-                       <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
+                        
+                        
+                        
+                        
+        <!-- modified code starts here- need the schema properly linked. All current fields refer to socialstudies -->
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show1 = true;">Add a subject</button></center></div>
+            
+            <div ng-show="show1">
+                
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show2 = true;">Add another subject</button></center></div>
+            </div>
+            
+<div ng-show="show2">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show3 = true;">Add another subject</button></center></div>
+            </div>
+            
+              
+              
+               <div ng-show="show3">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show4 = true;">Add another subject</button></center></div>
+            </div>
+            
+            
+            <div ng-show="show4">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show5 = true;">Add another subject</button></center></div>
+            </div>
+            
+             
+             
+             <div ng-show="show5">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="search.subject">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                        <br>
+                        <br>
+            </div>
+            
+            <!-- modified code ends here-->
+            
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            </div>
+            </div>
+             
+          <a> <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
                         data-toggle="tooltip" data-original-title="Share" title ="Be sure that this method of communication is feasible. Presentations, diagrams, reports or demos are some common ways to present findings."></span>
                         <br>
                         <textarea class="form-control" rows="5" data-ng-model="essentialDetails.communicateFindings"></textarea>
                         <br>
                     </div>
-                </div>
 
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1">
