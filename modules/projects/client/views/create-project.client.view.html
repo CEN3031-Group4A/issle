@@ -156,7 +156,7 @@
                         <br>
 
         <!-- modified code starts here- need the schema properly linked. All current fields refer to socialstudies -->
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-3 col-md-4">
             </div>
             <div class="col-sm-4  col-md-4">
             <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show1 = true; essentialDetails.otherSubject = []; essentialDetails.otherSubject.push()">Add a subject</button></center></div>
@@ -166,13 +166,13 @@
                 <br>
                 <br>
                 <div class = "row">
-                <div class="col-sm-7 col-md-7">
+                <div class="col-sm-5 col-md-7">
                 <a><font size = "3">Main Idea: </font></a>
-                <textarea class="form-control" rows="3" placeholder="" data-ng-model="otherSubject[0].mainIdea"> </textarea>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[0].mainIdea"> </textarea>
                 </div>
-                <div class="col-sm-3  col-md-3">
+                <div class="col-sm-4  col-md-3">
                 <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search.subject">
+                <select style="height:27px; width: 250px" data-ng-model="essentialDetails.otherSubject[0].subjectName">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
                   <option value="English Language Development">English Language Development</option>
@@ -195,13 +195,13 @@
                          <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[0].standards"></input>
                         <br>
                         <br>
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-1 col-md-4">
             </div>
-            <div class="col-sm-4  col-md-4">
+            <div class="col-sm-7  col-md-4">
             <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show2 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
             
-<div ng-show="show2">
+                <div ng-show="show2">
                 <br>
                 <br>
                 <div class = "row">
@@ -211,7 +211,7 @@
                 </div>
                 <div class="col-sm-3  col-md-3">
                 <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search1.subject">
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[1].subjectName">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
                   <option value="English Language Development">English Language Development</option>
@@ -235,25 +235,65 @@
                          <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[1].standards"></input>
                         <br>
                         <br>
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-3 col-md-4">
             </div>
-            <div class="col-sm-4  col-md-4">
-            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show3 = true;">Add another subject</button></center></div>
+            <div class="col-sm-5  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show3 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
             
               
               
-               <div ng-show="show3">
+              <div ng-show="show3">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-5 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[2].mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-4  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[2].subjectName">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[2].details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[2].standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-3 col-md-4">
+            </div>
+            <div class="col-sm-5  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show4 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
+            </div>
+            
+            
+         <div ng-show="show4">
                 <br>
                 <br>
                 <div class = "row">
                 <div class="col-sm-7 col-md-7">
                 <a><font size = "3">Main Idea: </font></a>
-                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[3].mainIdea"> </textarea>
                 </div>
                 <div class="col-sm-3  col-md-3">
                 <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search2.subject">
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[3].subjectName">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
                   <option value="English Language Development">English Language Development</option>
@@ -272,56 +312,15 @@
               <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
               
                         Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[3].details"></textarea>
                         Linked Standard(s): 
-                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[3].standards"></input>
                         <br>
                         <br>
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-3 col-md-4">
             </div>
-            <div class="col-sm-4  col-md-4">
-            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show4 = true;">Add another subject</button></center></div>
-            </div>
-            
-            
-            <div ng-show="show4">
-                <br>
-                <br>
-                <div class = "row">
-                <div class="col-sm-7 col-md-7">
-                <a><font size = "3">Main Idea: </font></a>
-                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
-                </div>
-                <div class="col-sm-3  col-md-3">
-                <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search3.subject">
-                  <option value="">Select one...</option>
-                  <option value="Dance">Dance</option>
-                  <option value="English Language Development">English Language Development</option>
-                  <option value="Gifted">Gifted</option>
-                  <option value="Health Education">Health Education</option>
-                  <option value="Music">Music</option>
-                  <option value="Physical Education">Physical Education</option>
-                  <option value="Special Skills">Special Skills</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Theatre">Theatre</option>
-                  <option value="Visual Art">Visual Art</option>
-                </select>
-              </h4>
-              </div>
-              </div>
-              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
-              
-                        Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
-                        Linked Standard(s): 
-                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
-                        <br>
-                        <br>
-            <div class="col-sm-4 col-md-4">
-            </div>
-            <div class="col-sm-4  col-md-4">
-            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show5 = true;">Add another subject</button></center></div>
+            <div class="col-sm-5  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show5 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
             
              
@@ -332,11 +331,11 @@
                 <div class = "row">
                 <div class="col-sm-7 col-md-7">
                 <a><font size = "3">Main Idea: </font></a>
-                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> </textarea>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[4].mainIdea"> </textarea>
                 </div>
                 <div class="col-sm-3  col-md-3">
                 <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search4.subject">
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[4].subjectName">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
                   <option value="English Language Development">English Language Development</option>
@@ -352,12 +351,11 @@
               </h4>
               </div>
               </div>
-              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
               
                         Essential Details & What students will do:
-                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[4].details"></textarea>
                         Linked Standard(s): 
-                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards"></input>
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[4].standards"></input>
                         <br>
                         <br>
             </div>
