@@ -9,10 +9,12 @@ module.exports = function(app) {
 		.get(projects.list).all(projectsPolicy.isAllowed)
 		.post(projects.create);
 
-	app.route('/api/projects/:projectId').all(projectsPolicy.isAllowed)
+	app.route('/api/projects/:projectId').all()
 		.get(projects.read)
 		.put(projects.update)
 		.delete(projects.delete);
+
+	app.route('/api/projects/picture/:projectId').post(projects.uploadDiagram);
 
 	// Finish by binding the Project middleware
 	app.param('projectId', projects.projectByID);
