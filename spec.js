@@ -12,17 +12,334 @@ describe('issle Demo App', function() {
        expect(browser.getTitle()).toEqual('issle - Development Environment');
    });
 
-   // Search for projects
-   it('Search for projects', function() {
+    // Search for projects test1
+    it('Search for projects test1', function() {
        browser.get('http://localhost:3000/projects');
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
-   });
+       element(by.cssContainingText('option', 'Dance')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test2
+    it('Search for projects test2', function() {
+       //browser.get('http://localhost:3000/projects');
+       //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+       element(by.cssContainingText('option', 'English Language Development')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test3
+    it('Search for projects test3', function() {
+       //browser.get('http://localhost:3000/projects');
+       //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+       element(by.cssContainingText('option', 'Gifted')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test4
+    it('Search for projects test4', function() {
+       //browser.get('http://localhost:3000/projects');
+       //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+       element(by.cssContainingText('option', 'Health Education')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test5
+    it('Search for projects test5', function() {
+       //browser.get('http://localhost:3000/projects');
+       //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+       element(by.cssContainingText('option', 'Music')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test6
+    it('Search for projects test6', function() {
+        //browser.get('http://localhost:3000/projects');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+        element(by.cssContainingText('option', 'Physical Education')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test7
+    it('Search for projects test7', function() {
+        //browser.get('http://localhost:3000/projects');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+       element(by.cssContainingText('option', 'Special Skills')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test8
+    it('Search for projects test8', function() {
+        browser.get('http://localhost:3000/projects');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+        element(by.cssContainingText('option', 'Theatre')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test9
+    it('Search for projects test9', function() {
+        //browser.get('http://localhost:3000/projects');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+        element(by.cssContainingText('option', 'Visual Art')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test10
+    it('Search for projects test10', function() {
+        //browser.get('http://localhost:3000/projects');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+        element(by.id('standard')).sendKeys('MAFS.7.SP.1.1');
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+    // Search for projects test11
+    it('Search for projects test11', function() {
+        //browser.get('http://localhost:3000/projects');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+        element(by.id('project')).sendKeys('Raz');
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('prj in projects')).count()).toEqual(2);
+        //browser.driver.sleep(1000);
+        element.all(by.repeater('prj in projects')).get(0).element(by.id('link')).click();
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects/564e0c90110ba90e00c720b4');
+    });
 
-   // List standards
-   it('List standards', function() {
+    // Search for projects test12
+    it('Search for projects test12', function() {
+        browser.get('http://localhost:3000/projects');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
+        element(by.id('project')).clear();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+    });
+
+   // Search for standards test1
+   it('Search for standards test1', function() {
        browser.get('http://localhost:3000/standards');
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+       element(by.cssContainingText('option', 'Dance')).click();
+       element(by.id('submit')).click();
+       expect(element.all(by.repeater('std in standards')).count()).toEqual(315);
    });
+
+    // Search for standards test2
+    it('Search for standards test2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'English Language Arts')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(574);
+    });
+
+    // Search for standards test3
+    it('Search for standards test3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'English Language Development')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test4
+    it('Search for standards test4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Gifted')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test5
+    it('Search for standards test5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Health Education')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(297);
+    });
+
+    // Search for standards test6
+    it('Search for standards test6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Mathematics')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(451);
+    });
+
+    // Search for standards test7
+    it('Search for standards test7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Music')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(254);
+    });
+
+    // Search for standards test8
+    it('Search for standards test8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Physical Education')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(467);
+    });
+
+    // Search for standards test9
+    it('Search for standards test9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Science')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(498);
+    });
+
+    // Search for standards test10
+    it('Search for standards test10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Social Studies')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1175);
+    });
+
+    // Search for standards test11
+    it('Search for standards test11', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Special Skills')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test12
+    it('Search for standards test12', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Theatre')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(332);
+    });
+
+    // Search for standards test13
+    it('Search for standards test13', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Visual Art')).click();
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(367);
+    });
+
+    // Search for standards test14
+    it('Search for standards test14', function() {
+        browser.get('http://localhost:3000/standards');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(845);
+    });
+
+    // Search for standards test15
+    it('Search for standards test15', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(868);
+    });
+
+    // Search for standards test16
+    it('Search for standards test16', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(888);
+    });
+
+    // Search for standards test17
+    it('Search for standards test17', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(920);
+    });
+
+    // Search for standards test18
+    it('Search for standards test18', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(988);
+    });
+
+    // Search for standards test19
+    it('Search for standards test19', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(997);
+    });
+
+    // Search for standards test20
+    it('Search for standards test20', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1133);
+    });
+
+    // Search for standards test21
+    it('Search for standards test21', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1093);
+    });
+
+    // Search for standards test22
+    it('Search for standards test22', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1160);
+    });
+
+    // Search for standards test23
+    it('Search for standards test23', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(2258);
+    });
 
    //Show example1 test
    it('Show example1 test', function() {
@@ -89,7 +406,7 @@ describe('issle Demo App', function() {
    it('Fail login because no password test', function() {
        browser.get('http://localhost:3000/authentication/signin');
        element(by.id('username')).clear();
-       element(by.id('username')).sendKeys('a');
+       element(by.id('username')).sendKeys('RazAloni');
        element(by.id('password')).clear();
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/authentication/signin');
    });
@@ -131,7 +448,7 @@ describe('issle Demo App', function() {
    it('Fail signup because username in use test', function() {
        browser.get('http://localhost:3000/authentication/signup');
        element(by.id('username')).clear();
-       element(by.id('username')).sendKeys('a');
+       element(by.id('username')).sendKeys('RazAloni');
        element(by.id('password')).clear();
        element(by.id('password')).sendKeys('aaaaaaaa');
        element(by.id('email')).clear();
@@ -157,7 +474,7 @@ describe('issle Demo App', function() {
    it('Successful login test', function() {
        browser.get('http://localhost:3000/authentication/signin');
        element(by.id('username')).clear();
-       element(by.id('username')).sendKeys('a');
+       element(by.id('username')).sendKeys('RazAloni');
        element(by.id('password')).clear();
        element(by.id('password')).sendKeys('aaaaaaaa');
        element(by.id('login')).click();
@@ -208,15 +525,15 @@ describe('issle Demo App', function() {
    it('Edit profile settings test', function() {
        browser.get('http://localhost:3000/settings/profile');
        element(by.id('firstName')).clear();
-       element(by.id('firstName')).sendKeys('Severus');
+       element(by.id('firstName')).sendKeys('Raz');
        element(by.id('lastName')).clear();
-       element(by.id('lastName')).sendKeys('Snape');
+       element(by.id('lastName')).sendKeys('Aloni');
        element(by.id('school')).clear();
-       element(by.id('school')).sendKeys('Hogwarts');
+       element(by.id('school')).sendKeys('University of Florida');
        element(by.id('email')).clear();
-       element(by.id('email')).sendKeys('snape@hogwards.edu');
+       element(by.id('email')).sendKeys('raloni@ufl.edu');
        element(by.id('username')).clear();
-       element(by.id('username')).sendKeys('a');
+       element(by.id('username')).sendKeys('RazAloni');
        element(by.id('submit')).click();
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/settings/profile');
    });
