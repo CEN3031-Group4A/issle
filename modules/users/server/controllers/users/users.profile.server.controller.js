@@ -54,7 +54,6 @@ exports.update = function (req, res) {
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
-  console.log(process);
   var user = req.user;
   var message = null;
   if (user) {
