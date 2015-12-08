@@ -80,7 +80,18 @@
                         <h3>Plan</h3>
                         <font size="3">Draw a diagram or any other representation of your project.</font><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
                         <br>
-                        <textarea class="form-control" rows="4" data-ng-model="imagine.plan"></textarea>
+
+                        <!-- Picture upload -->
+                        <div class="form-group text-center">
+                            <img data-ng-src="{{imageURL}}" alt="No Picture Uploaded Yet" class="img-thumbnail">
+                        </div>
+                        <div class="text-center form-group">
+                            <span class="btn btn-default btn-file">
+                                Select Image <input type="file" nv-file-select uploader="uploader" accept="image/jpeg">
+                            </span>
+                        </div>
+
+                        <!--<textarea class="form-control" rows="4" data-ng-model="imagine.plan"></textarea>-->
                         <br>
                         <a name="5"><font size = "3">List the materials you need.</font></a><span class="glyphicon glyphicon-question-sign"
                                                                                                   data-toggle="tooltip" data-original-title="Share" title ="Include only the basic items/utensils needed to complete the task. No need to list every little think. Check the tip section for a list of items not to include if you are unsure."></span>

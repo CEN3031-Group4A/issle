@@ -14,6 +14,8 @@ module.exports = function(app) {
 		.put(projects.update)
 		.delete(projects.delete);
 
+	app.route('/api/projects/picture/:projectId').post(projects.uploadDiagram);
+
 	// Finish by binding the Project middleware
 	app.param('projectId', projects.projectByID);
 
