@@ -13,7 +13,7 @@
     "angular-ui-router": "~0.2",
     "angular-file-upload": "1.1.5",
     "load-awesome": "~1.1.0",
-    "angular-markdown-directive": "~0.3.1"
+    "angular-linkify": "~1.2.0"
   },
   "resolutions": {
     "angular": "~1.3"

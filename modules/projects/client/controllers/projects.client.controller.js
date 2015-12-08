@@ -1,7 +1,7 @@
 'use strict';
 // Projects controller
-angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Projects',
-	function($scope, $stateParams, $location, Authentication, Projects ) {
+angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$sce', '$location', 'Authentication', 'Projects', 'linkify',
+	function($scope, $stateParams, $sce, $location, Authentication, Projects, linkify) {
 		$scope.authentication = Authentication;
 
 		// Create new Project
@@ -78,6 +78,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				projectId: $stateParams.projectId
 			});
 		};
+
+		$scope.linkify = function(link) {
+			return $sce.trustAsHtml(linkify.normal(link));
+		} 
 /*	-------------------------------------Star Rating Stuff-------------------------------------- */
 		
 		/*	

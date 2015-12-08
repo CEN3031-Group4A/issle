@@ -29,7 +29,7 @@
                     <div class="panel-body">
                         <h4 class="blue">Goal</h4>
 
-                        <h5 class="tab"><btf-markdown>{{project.ask.goal}}</btf-markdown></h5>
+                        <h5 class="tab"><span ng-bind-html="linkify(project.ask.goal)"><span></h5>
                         </br>
                         <h4 class="blue">Major Problem/Underlying Statement</h4>
                         <h5 class="tab">{{project.ask.problemStatement}}</h5>
