@@ -172,18 +172,7 @@
                 </div>
                 <div class="col-sm-4  col-md-3">
                 <h4>Subject: 
-                <select style="height:27px; width: 250px" data-ng-model="essentialDetails.otherSubject[0].subjectName">
-                  <option value="">Select one...</option>
-                  <option value="Dance">Dance</option>
-                  <option value="English Language Development">English Language Development</option>
-                  <option value="Gifted">Gifted</option>
-                  <option value="Health Education">Health Education</option>
-                  <option value="Music">Music</option>
-                  <option value="Physical Education">Physical Education</option>
-                  <option value="Special Skills">Special Skills</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Theatre">Theatre</option>
-                  <option value="Visual Art">Visual Art</option>
+                <select style="height:27px; width: 250px" data-ng-options="additionalSubjects" data-ng-model= "essentialDetails.otherSubject[0].subjectName" >
                 </select>
               </h4>
               </div>

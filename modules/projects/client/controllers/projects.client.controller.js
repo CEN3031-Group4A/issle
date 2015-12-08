@@ -29,6 +29,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				essentialDetails: this.essentialDetails,
 				rating: null
 			});
+			
+			
+		$scope.additionalSubjects = ['Dance', 'English Language Development', 'Gifted', 'Health Education', 'Music', 'Physical Education',
+		'Special Skills', 'Technology', 'Theatre', 'Visual Art'];
 
 			// Redirect after save
 			project.$save(function(response) {
