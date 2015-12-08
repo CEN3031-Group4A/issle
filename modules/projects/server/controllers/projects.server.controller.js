@@ -107,7 +107,7 @@
  			});
  		} else if(req.query.benchmark) {
  			Project.find().
- 			where('benchmark').equals(req.query.benchmark).
+ 			where('essentialDetails.overallStandards').regex(new RegExp(req.query.benchmark, 'i')).
  			sort('-created').populate('user', 'displayName').
  			exec(function(err, projects) {
  				if (err) {

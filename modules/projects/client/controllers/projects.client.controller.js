@@ -7,6 +7,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
+			//if((this.essentialDetails && essentialDetails.litDetails.standards) || (this.essentialDetails && this.essentialDetails.mathDetails.standards) || (this.essentialDetails && essentialDetails.scienceDetails.standards) || (this.essentialDetails && essentialDetails.ssDetails.standards)){ 
+			this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ',' + this.essentialDetails.mathDetails.standards + ',' + this.essentialDetails.scienceDetails.standards + ',' + this.essentialDetails.ssDetails.standards;
+			//} 
+			//else{
+				//this.essentialDetails.overallStandards = '';
+			//}
 			var project = new Projects ({
 				name: this.name,
 				created: this.created,
@@ -51,6 +57,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Update existing Project
 		$scope.update = function() {
             console.log('In $scope.update');
+            this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ',' + this.essentialDetails.mathDetails.standards + ',' + this.essentialDetails.scienceDetails.standards + ',' + this.essentialDetails.ssDetails.standards;
 			var project = $scope.project;
 
 			project.$update(function() {

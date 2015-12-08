@@ -124,6 +124,10 @@ var ProjectSchema = new Schema({
 			type: [SubjectSchema]
 		},
 		// stuff starting here
+		overallStandards: {
+		type: String, //Should be a list of standards in the future
+		default: ''
+		},
 		mainIncludeDance: {
 		type: Boolean,
 		default:'false' 
