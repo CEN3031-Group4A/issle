@@ -9,6 +9,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			url: '/api/projects/picture'
 		});
 
+		$scope.uploaderC = new FileUploader({
+			url: '/api/projects/picture'
+		});
+
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
@@ -30,8 +34,9 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			project.$save(function(response) {
 
 				// Start upload of picture
-				$scope.uploader.queue[0].url = '/api/projects/picture/' + response._id;
-				$scope.uploader.uploadAll();
+
+				$scope.uploaderC.queue[0].url = '/api/projects/picture/' + response._id;
+				$scope.uploaderC.uploadAll();
 
 
 				// Clear form fields
@@ -66,14 +71,19 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Update existing Project
 		$scope.update = function() {
-            console.log('In $scope.update');
 			var project = $scope.project;
+			
+			project.imagine.plan = '';
 
 			project.$update(function() {
+
 				$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+
+			$scope.uploader.queue[0].url = '/api/projects/picture/' + project._id;
+			$scope.uploader.uploadAll();
 		};
 
 		// Find a list of Projects
@@ -87,11 +97,23 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				projectId: $stateParams.projectId
 			});
 
-			$scope.imageURL = $scope.project.imagine.plan;
 		};
 
 		// Called after the user selected a new picture file
 		$scope.uploader.onAfterAddingFile = function (fileItem) {
+			if ($window.FileReader) {
+				var fileReader = new FileReader();
+				fileReader.readAsDataURL(fileItem._file);
+
+				fileReader.onload = function (fileReaderEvent) {
+					$timeout(function () {
+						$scope.project.imagine.plan = fileReaderEvent.target.result;
+					}, 0);
+				};
+			}
+		};
+
+		$scope.uploaderC.onAfterAddingFile = function (fileItem) {
 			if ($window.FileReader) {
 				var fileReader = new FileReader();
 				fileReader.readAsDataURL(fileItem._file);
