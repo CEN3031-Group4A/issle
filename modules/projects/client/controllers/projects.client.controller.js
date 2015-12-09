@@ -1,8 +1,8 @@
 'use strict';
 // Projects controller
 
-angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', '$window', '$timeout', 'Authentication', 'Projects', 'FileUploader', 'linkify',
-	function($scope, $stateParams, $location, $window, $timeout, Authentication, Projects, FileUploader, linkify ) {
+angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$sce', '$location', '$window', '$timeout', 'Authentication', 'Projects', 'FileUploader', 'linkify',
+	function($scope, $stateParams, $sce, $location, $window, $timeout, Authentication, Projects, FileUploader, linkify ) {
 		$scope.authentication = Authentication;
 
 		// Create file uploader instance
