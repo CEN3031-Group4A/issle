@@ -24,9 +24,31 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			if($scope.essentialDetails.litDetails.standards !== undefined){
 				$scope.essentialDetails.overallStandards += $scope.essentialDetails.litDetails.standards + ', ';
 			}
-			if(this.essentialDetails.mathDetails.standards){
+			if($scope.essentialDetails.mathDetails.standards !== undefined){
 				$scope.essentialDetails.overallStandards += $scope.essentialDetails.mathDetails.standards + ', ';
 			}
+			if($scope.essentialDetails.scienceDetails.standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.scienceDetails.standards + ', ';
+			}
+			if($scope.essentialDetails.ssDetails.standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.ssDetails.standards + ', ';
+			}
+			if($scope.essentialDetails.otherSubject[0].standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[0].standards + ', ';
+			}
+			if($scope.essentialDetails.otherSubject[1].standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[1].standards + ', ';
+			}
+			if($scope.essentialDetails.otherSubject[2].standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[2].standards + ', ';
+			}
+			if($scope.essentialDetails.otherSubject[3].standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[3].standards + ', ';
+			}
+			if($scope.essentialDetails.otherSubject[4].standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[4].standards;
+			}
+			
 			//this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ', ' + this.essentialDetails.mathDetails.standards + ', ' + this.essentialDetails.scienceDetails.standards + ', ' + this.essentialDetails.ssDetails.standards;
 			//} 
 			//else{
