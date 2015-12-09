@@ -17,8 +17,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
-			//if((this.essentialDetails && essentialDetails.litDetails.standards) || (this.essentialDetails && this.essentialDetails.mathDetails.standards) || (this.essentialDetails && essentialDetails.scienceDetails.standards) || (this.essentialDetails && essentialDetails.ssDetails.standards)){ 
-
+			
 			$scope.essentialDetails.overallStandards = '';
 
 			if($scope.essentialDetails.litDetails.standards !== undefined){
@@ -33,27 +32,38 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			if($scope.essentialDetails.ssDetails.standards !== undefined){
 				$scope.essentialDetails.overallStandards += $scope.essentialDetails.ssDetails.standards + ', ';
 			}
-			if($scope.essentialDetails.otherSubject[0].standards !== undefined){
-				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[0].standards + ', ';
+			if(typeof $scope.essentialDetails.otherSubject !== 'undefined'){
+				if(typeof $scope.essentialDetails.otherSubject[0] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[0].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[0].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[1] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[1].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[1].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[2] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[2].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[2].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[3] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[3].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[3].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[4] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[4].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[4].standards + ', ';
+					}
+				}
+				
 			}
-			if($scope.essentialDetails.otherSubject[1].standards !== undefined){
-				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[1].standards + ', ';
-			}
-			if($scope.essentialDetails.otherSubject[2].standards !== undefined){
-				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[2].standards + ', ';
-			}
-			if($scope.essentialDetails.otherSubject[3].standards !== undefined){
-				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[3].standards + ', ';
-			}
-			if($scope.essentialDetails.otherSubject[4].standards !== undefined){
-				$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[4].standards;
-			}
+
+			$scope.essentialDetails.overallStandards = $scope.essentialDetails.overallStandards.slice(0, -2);
 			
-			//this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ', ' + this.essentialDetails.mathDetails.standards + ', ' + this.essentialDetails.scienceDetails.standards + ', ' + this.essentialDetails.ssDetails.standards;
-			//} 
-			//else{
-				//this.essentialDetails.overallStandards = '';
-			//}
+			
 			var project = new Projects ({
 				name: this.name,
 				created: this.created,
