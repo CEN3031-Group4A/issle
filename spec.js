@@ -122,6 +122,117 @@ describe('issle Demo App', function() {
        expect(element.all(by.repeater('std in standards')).count()).toEqual(315);
    });
 
+    // Search for standards test1.1
+    it('Search for standards test1.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
+    });
+
+    // Search for standards test1.2
+    it('Search for standards test1.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(23);
+    });
+
+    // Search for standards test1.3
+    it('Search for standards test1.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(26);
+    });
+
+    // Search for standards test1.4
+    it('Search for standards test1.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
+    });
+
+    // Search for standards test1.5
+    it('Search for standards test1.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
+    });
+
+    // Search for standards test1.6
+    it('Search for standards test1.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(44);
+    });
+
+    // Search for standards test1.7
+    it('Search for standards test1.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(60);
+    });
+
+    // Search for standards test1.8
+    it('Search for standards test1.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(60);
+    });
+
+    // Search for standards test1.9
+    it('Search for standards test1.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(60);
+    });
+
+    // Search for standards test1.10
+    it('Search for standards test1.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(72);
+    });
+
     // Search for standards test2
     it('Search for standards test2', function() {
         //browser.get('http://localhost:3000/standards');
@@ -131,12 +242,234 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(574);
     });
 
+    // Search for standards test2.1
+    it('Search for standards test2.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(73);
+    });
+
+    // Search for standards test2.2
+    it('Search for standards test2.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(73);
+    });
+
+    // Search for standards test2.3
+    it('Search for standards test2.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(72);
+    });
+
+    // Search for standards test2.4
+    it('Search for standards test2.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(74);
+    });
+
+    // Search for standards test2.5
+    it('Search for standards test2.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(75);
+    });
+
+    // Search for standards test2.6
+    it('Search for standards test2.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(75);
+    });
+
+    // Search for standards test2.7
+    it('Search for standards test2.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
+    });
+
+    // Search for standards test2.8
+    it('Search for standards test2.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
+    });
+
+    // Search for standards test2.9
+    it('Search for standards test2.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
+    });
+
+    // Search for standards test2.10
+    it('Search for standards test2.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(172);
+    });
+
     // Search for standards test3
     it('Search for standards test3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'English Language Development')).click();
         element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.1
+    it('Search for standards test3.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.2
+    it('Search for standards test3.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.3
+    it('Search for standards test3.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.4
+    it('Search for standards test3.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.5
+    it('Search for standards test3.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.6
+    it('Search for standards test3.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.7
+    it('Search for standards test3.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.8
+    it('Search for standards test3.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.9
+    it('Search for standards test3.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
+    });
+
+    // Search for standards test3.10
+    it('Search for standards test3.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
@@ -149,6 +482,117 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
+    // Search for standards test4.1
+    it('Search for standards test4.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.2
+    it('Search for standards test4.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.3
+    it('Search for standards test4.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.4
+    it('Search for standards test4.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.5
+    it('Search for standards test4.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.6
+    it('Search for standards test4.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.7
+    it('Search for standards test4.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.8
+    it('Search for standards test4.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.9
+    it('Search for standards test4.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
+    // Search for standards test4.10
+    it('Search for standards test4.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
+    });
+
     // Search for standards test5
     it('Search for standards test5', function() {
         //browser.get('http://localhost:3000/standards');
@@ -156,6 +600,117 @@ describe('issle Demo App', function() {
         element(by.cssContainingText('option', 'Health Education')).click();
         element(by.id('submit')).click();
         expect(element.all(by.repeater('std in standards')).count()).toEqual(297);
+    });
+
+    // Search for standards test5.1
+    it('Search for standards test5.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
+    });
+
+    // Search for standards test5.2
+    it('Search for standards test5.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(20);
+    });
+
+    // Search for standards test5.3
+    it('Search for standards test5.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(20);
+    });
+
+    // Search for standards test5.4
+    it('Search for standards test5.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(27);
+    });
+
+    // Search for standards test5.5
+    it('Search for standards test5.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(28);
+    });
+
+    // Search for standards test5.6
+    it('Search for standards test5.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(31);
+    });
+
+    // Search for standards test5.7
+    it('Search for standards test5.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
+    });
+
+    // Search for standards test5.8
+    it('Search for standards test5.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(36);
+    });
+
+    // Search for standards test5.9
+    it('Search for standards test5.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
+    });
+
+    // Search for standards test5.10
+    it('Search for standards test5.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(40);
     });
 
     // Search for standards test6
@@ -167,6 +722,117 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(451);
     });
 
+    // Search for standards test6.1
+    it('Search for standards test6.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(31);
+    });
+
+    // Search for standards test6.2
+    it('Search for standards test6.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
+    });
+
+    // Search for standards test6.3
+    it('Search for standards test6.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(35);
+    });
+
+    // Search for standards test6.4
+    it('Search for standards test6.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
+    });
+
+    // Search for standards test6.5
+    it('Search for standards test6.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
+    });
+
+    // Search for standards test6.6
+    it('Search for standards test6.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(34);
+    });
+
+    // Search for standards test6.7
+    it('Search for standards test6.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
+    });
+
+    // Search for standards test6.8
+    it('Search for standards test6.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(32);
+    });
+
+    // Search for standards test6.9
+    it('Search for standards test6.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(36);
+    });
+
+    // Search for standards test6.10
+    it('Search for standards test6.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(217);
+    });
+
     // Search for standards test7
     it('Search for standards test7', function() {
         //browser.get('http://localhost:3000/standards');
@@ -174,6 +840,117 @@ describe('issle Demo App', function() {
         element(by.cssContainingText('option', 'Music')).click();
         element(by.id('submit')).click();
         expect(element.all(by.repeater('std in standards')).count()).toEqual(254);
+    });
+
+    // Search for standards test7.1
+    it('Search for standards test7.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(20);
+    });
+
+    // Search for standards test7.2
+    it('Search for standards test7.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(24);
+    });
+
+    // Search for standards test7.3
+    it('Search for standards test7.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(24);
+    });
+
+    // Search for standards test7.4
+    it('Search for standards test7.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(27);
+    });
+
+    // Search for standards test7.5
+    it('Search for standards test7.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
+    });
+
+    // Search for standards test7.6
+    it('Search for standards test7.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
+    });
+
+    // Search for standards test7.7
+    it('Search for standards test7.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(47);
+    });
+
+    // Search for standards test7.8
+    it('Search for standards test7.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(47);
+    });
+
+    // Search for standards test7.9
+    it('Search for standards test7.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(47);
+    });
+
+    // Search for standards test7.10
+    it('Search for standards test7.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(49);
     });
 
     // Search for standards test8
@@ -185,6 +962,117 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(467);
     });
 
+    // Search for standards test8.1
+    it('Search for standards test8.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(40);
+    });
+
+    // Search for standards test8.2
+    it('Search for standards test8.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(43);
+    });
+
+    // Search for standards test8.3
+    it('Search for standards test8.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(44);
+    });
+
+    // Search for standards test8.4
+    it('Search for standards test8.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(43);
+    });
+
+    // Search for standards test8.5
+    it('Search for standards test8.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(43);
+    });
+
+    // Search for standards test8.6
+    it('Search for standards test8.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(42);
+    });
+
+    // Search for standards test8.7
+    it('Search for standards test8.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(54);
+    });
+
+    // Search for standards test8.8
+    it('Search for standards test8.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
+    });
+
+    // Search for standards test8.9
+    it('Search for standards test8.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
+    });
+
+    // Search for standards test8.10
+    it('Search for standards test8.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(84);
+    });
+
     // Search for standards test9
     it('Search for standards test9', function() {
         //browser.get('http://localhost:3000/standards');
@@ -192,6 +1080,117 @@ describe('issle Demo App', function() {
         element(by.cssContainingText('option', 'Science')).click();
         element(by.id('submit')).click();
         expect(element.all(by.repeater('std in standards')).count()).toEqual(498);
+    });
+
+    // Search for standards test9.1
+    it('Search for standards test9.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
+    });
+
+    // Search for standards test9.2
+    it('Search for standards test9.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
+    });
+
+    // Search for standards test9.3
+    it('Search for standards test9.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
+    });
+
+    // Search for standards test9.4
+    it('Search for standards test9.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(32);
+    });
+
+    // Search for standards test9.5
+    it('Search for standards test9.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(42);
+    });
+
+    // Search for standards test9.6
+    it('Search for standards test9.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
+    });
+
+    // Search for standards test9.7
+    it('Search for standards test9.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(35);
+    });
+
+    // Search for standards test9.8
+    it('Search for standards test9.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(34);
+    });
+
+    // Search for standards test9.9
+    it('Search for standards test9.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(40);
+    });
+
+    // Search for standards test9.10
+    it('Search for standards test9.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(210);
     });
 
     // Search for standards test10
@@ -203,12 +1202,234 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1175);
     });
 
+    // Search for standards test10.1
+    it('Search for standards test10.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(27);
+    });
+
+    // Search for standards test10.2
+    it('Search for standards test10.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
+    });
+
+    // Search for standards test10.3
+    it('Search for standards test10.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(28);
+    });
+
+    // Search for standards test10.4
+    it('Search for standards test10.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
+    });
+
+    // Search for standards test10.5
+    it('Search for standards test10.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(69);
+    });
+
+    // Search for standards test10.6
+    it('Search for standards test10.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(64);
+    });
+
+    // Search for standards test10.7
+    it('Search for standards test10.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(82);
+    });
+
+    // Search for standards test10.8
+    it('Search for standards test10.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(67);
+    });
+
+    // Search for standards test10.9
+    it('Search for standards test10.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(122);
+    });
+
+    // Search for standards test10.10
+    it('Search for standards test10.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(653);
+    });
+
     // Search for standards test11
     it('Search for standards test11', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Special Skills')).click();
         element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.1
+    it('Search for standards test11.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.2
+    it('Search for standards test11.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.3
+    it('Search for standards test11.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.4
+    it('Search for standards test11.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.5
+    it('Search for standards test11.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.6
+    it('Search for standards test11.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.7
+    it('Search for standards test11.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.8
+    it('Search for standards test11.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.9
+    it('Search for standards test11.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
+    });
+
+    // Search for standards test11.10
+    it('Search for standards test11.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
@@ -221,6 +1442,117 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(332);
     });
 
+    // Search for standards test12.1
+    it('Search for standards test12.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(18);
+    });
+
+    // Search for standards test12.2
+    it('Search for standards test12.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(21);
+    });
+
+    // Search for standards test12.3
+    it('Search for standards test12.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(23);
+    });
+
+    // Search for standards test12.4
+    it('Search for standards test12.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(29);
+    });
+
+    // Search for standards test12.5
+    it('Search for standards test12.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(34);
+    });
+
+    // Search for standards test12.6
+    it('Search for standards test12.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(39);
+    });
+
+    // Search for standards test12.7
+    it('Search for standards test12.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(66);
+    });
+
+    // Search for standards test12.8
+    it('Search for standards test12.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(66);
+    });
+
+    // Search for standards test12.9
+    it('Search for standards test12.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(66);
+    });
+
+    // Search for standards test12.10
+    it('Search for standards test12.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
+    });
+
     // Search for standards test13
     it('Search for standards test13', function() {
         //browser.get('http://localhost:3000/standards');
@@ -230,9 +1562,120 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(367);
     });
 
+    // Search for standards test13.1
+    it('Search for standards test13.1', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        //element(by.cssContainingText('option', 'Select one...')).click();
+        element(by.id('min0')).click();
+        element(by.id('max0')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(25);
+    });
+
+    // Search for standards test13.2
+    it('Search for standards test13.2', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min1')).click();
+        element(by.id('max1')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(31);
+    });
+
+    // Search for standards test13.3
+    it('Search for standards test13.3', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min2')).click();
+        element(by.id('max2')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(32);
+    });
+
+    // Search for standards test13.4
+    it('Search for standards test13.4', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min3')).click();
+        element(by.id('max3')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(35);
+    });
+
+    // Search for standards test13.5
+    it('Search for standards test13.5', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min4')).click();
+        element(by.id('max4')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
+    });
+
+    // Search for standards test13.6
+    it('Search for standards test13.6', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min5')).click();
+        element(by.id('max5')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(44);
+    });
+
+    // Search for standards test13.7
+    it('Search for standards test13.7', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min6')).click();
+        element(by.id('max6')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(58);
+    });
+
+    // Search for standards test13.8
+    it('Search for standards test13.8', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min7')).click();
+        element(by.id('max7')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(58);
+    });
+
+    // Search for standards test13.9
+    it('Search for standards test13.9', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min8')).click();
+        element(by.id('max8')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(58);
+    });
+
+    // Search for standards test13.10
+    it('Search for standards test13.10', function() {
+        //browser.get('http://localhost:3000/standards');
+        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('min912')).click();
+        element(by.id('max912')).click();
+        element(by.id('submit')).click();
+        //browser.driver.sleep(1000);
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(105);
+    });
+
     // Search for standards test14
     it('Search for standards test14', function() {
-        browser.get('http://localhost:3000/standards');
+        //browser.get('http://localhost:3000/standards');
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Select one...')).click();
         element(by.id('min0')).click();
@@ -242,8 +1685,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(845);
     });
 
-    // Search for standards test15
-    it('Search for standards test15', function() {
+    // Search for standards test14.1
+    it('Search for standards test14.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -253,8 +1696,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(868);
     });
 
-    // Search for standards test16
-    it('Search for standards test16', function() {
+    // Search for standards test14.2
+    it('Search for standards test14.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -264,8 +1707,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(888);
     });
 
-    // Search for standards test17
-    it('Search for standards test17', function() {
+    // Search for standards test14.3
+    it('Search for standards test14.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -275,8 +1718,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(920);
     });
 
-    // Search for standards test18
-    it('Search for standards test18', function() {
+    // Search for standards test14.4
+    it('Search for standards test14.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -286,8 +1729,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(988);
     });
 
-    // Search for standards test19
-    it('Search for standards test19', function() {
+    // Search for standards test14.5
+    it('Search for standards test14.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -297,8 +1740,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(997);
     });
 
-    // Search for standards test20
-    it('Search for standards test20', function() {
+    // Search for standards test14.6
+    it('Search for standards test14.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -308,8 +1751,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1133);
     });
 
-    // Search for standards test21
-    it('Search for standards test21', function() {
+    // Search for standards test14.7
+    it('Search for standards test14.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -319,8 +1762,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1093);
     });
 
-    // Search for standards test22
-    it('Search for standards test22', function() {
+    // Search for standards test14.8
+    it('Search for standards test14.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -330,8 +1773,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1160);
     });
 
-    // Search for standards test23
-    it('Search for standards test23', function() {
+    // Search for standards test14.9
+    it('Search for standards test14.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
