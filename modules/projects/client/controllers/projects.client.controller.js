@@ -91,10 +91,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 
 		$scope.CombineStandards = function(){
-			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.litDetails[0].standards + ', '
-				+ $scope.project.essentialDetails.mathDetails[0].standards + ', '
-				+ $scope.project.essentialDetails.scienceDetails[0].standards + ', '
-				+ $scope.project.essentialDetails.ssDetails[0].standards;
+			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.litDetails[0].standards + ', ' + $scope.project.essentialDetails.mathDetails[0].standards + ', ' + $scope.project.essentialDetails.scienceDetails[0].standards + ', ' + $scope.project.essentialDetails.ssDetails[0].standards;
 		};
 
 		// Update existing Project
