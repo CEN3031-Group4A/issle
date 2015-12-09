@@ -126,7 +126,51 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 
 		$scope.CombineStandards = function(){
-			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.litDetails[0].standards + ', ' + $scope.project.essentialDetails.mathDetails[0].standards + ', ' + $scope.project.essentialDetails.scienceDetails[0].standards + ', ' + $scope.project.essentialDetails.ssDetails[0].standards;
+			//$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.litDetails[0].standards + ', ' + $scope.project.essentialDetails.mathDetails[0].standards + ', ' + $scope.project.essentialDetails.scienceDetails[0].standards + ', ' + $scope.project.essentialDetails.ssDetails[0].standards;
+			$scope.project.essentialDetails.overallStandards = '';
+
+			if($scope.project.essentialDetails.litDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.litDetails[0].standards + ', ';
+			}
+			if($scope.project.essentialDetails.mathDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.mathDetails[0].standards + ', ';
+			}
+			if($scope.project.essentialDetails.scienceDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.scienceDetails[0].standards + ', ';
+			}
+			if($scope.project.essentialDetails.ssDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.ssDetails[0].standards + ', ';
+			}
+			if(typeof $scope.project.essentialDetails.otherSubject !== 'undefined'){
+				if(typeof $scope.project.essentialDetails.otherSubject[0] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[0].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[0].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[1] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[1].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[1].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[2] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[2].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[2].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[3] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[3].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[3].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[4] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[4].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[4].standards + ', ';
+					}
+				}
+				
+			}
+
+			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.overallStandards.slice(0, -2);
 		};
 
 		// Update existing Project
