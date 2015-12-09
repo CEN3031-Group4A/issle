@@ -10,7 +10,7 @@
             <div class="panel-heading">I want standards with this subject...</div>
             <div class="panel-body">                                      
               <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search.subject">
+                <select style="height:27px; width: 265px" ng-model="search.subject">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
                   <option value="English Language Arts">English Language Arts</option>
@@ -41,29 +41,29 @@
               <h4>Grade(s) : 
                 <select style="height:27px" ng-model="search.minGrade">
                   <option value="">Select one...</option>
-                  <option value="0">K</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="912">9-12</option>
+                  <option id="min0" value="0">K</option>
+                  <option id="min1" value="1">1</option>
+                  <option id="min2" value="2">2</option>
+                  <option id="min3" value="3">3</option>
+                  <option id="min4" value="4">4</option>
+                  <option id="min5" value="5">5</option>
+                  <option id="min6" value="6">6</option>
+                  <option id="min7" value="7">7</option>
+                  <option id="min8" value="8">8</option>
+                  <option id="min912" value="912">9-12</option>
                 </select> -
                 <select style="height:27px" ng-model="search.maxGrade">
                   <option value="">Select one...</option>
-                  <option value="0">K</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="912">9-12</option>
+                  <option id="max0" value="0">K</option>
+                  <option id="max1" value="1">1</option>
+                  <option id="max2" value="2">2</option>
+                  <option id="max3" value="3">3</option>
+                  <option id="max4" value="4">4</option>
+                  <option id="max5" value="5">5</option>
+                  <option id="max6" value="6">6</option>
+                  <option id="max7" value="7">7</option>
+                  <option id="max8" value="8">8</option>
+                  <option id="max912" value="912">9-12</option>
                 </select>
               </h4>  
             </div>
@@ -85,7 +85,7 @@
     </div>
     <br>
     <br>
-    <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
+    <div class = "text-center"><button id="submit" type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
     <br>
     <div class="panel panel-blue" ng-show="show">
       <div class="panel-heading"> <h2 class="panel-title"> Search Results </h2></div>
@@ -101,7 +101,7 @@
            <th>Topic</th>
          </tr>
          <!-- {{standards.length}} -->
-           <tr class="searchRow" ng-repeat="std in standards | filter:searchText">
+           <tr class="searchRow" ng-repeat="std in standards" | filter:searchText">
             <!--<td>{{std.benchmark}}</td> !-->
             <td class = "line-break">{{std.benchmark}}</td>
             <td class = "line-break">{{std.description}}</td>

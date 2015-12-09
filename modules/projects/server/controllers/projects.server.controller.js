@@ -7,8 +7,9 @@
  path = require('path'),
  mongoose = require('mongoose'),
  Project = mongoose.model('Project'),
- errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
-
+ errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+ knox = require(path.resolve('./config/lib/knox.js')),
+ knoxClient = knox.knoxClient;
 /**
  * Create a Project
  */
@@ -107,7 +108,7 @@
  			});
  		} else if(req.query.benchmark) {
  			Project.find().
- 			where('benchmark').equals(req.query.benchmark).
+ 			where('essentialDetails.overallStandards').regex(new RegExp(req.query.benchmark, 'i')).
  			sort('-created').populate('user', 'displayName').
  			exec(function(err, projects) {
  				if (err) {
@@ -122,7 +123,7 @@
  			Project.find().
  			where('minGrade').gte(req.query.minGrade).
  			where('maxGrade').lte(req.query.maxGrade).
- 			where('subject').equals(req.query.subject).
+ 			where('essentialDetails.overallSubjects').regex(new RegExp(req.query.subject,'i')).
  			sort('-created').populate('user', 'displayName').
  			exec(function(err, projects) {
  				if (err) {
@@ -149,6 +150,39 @@
  			});
  		}
  	}
+ };
+
+/**
+ * Upload picture for project
+ */
+ exports.uploadDiagram = function (req,res){
+
+	 var project = req.project;
+	 knoxClient.putBuffer(req.files.file.buffer, 'ProjectDrawings/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
+		 if (uploadError) {
+			 return res.status(400).send({
+				 message: 'Error occurred while uploading project drawing'
+			 });
+		 } else {
+			 knoxClient.deleteFile(project.imagine.plan.substring(project.imagine.plan.search('ProjectDrawings/')),{'Content-Type': 'image/jpeg'}, function(err){
+				 if(err){
+					 return err.message;
+				 }
+			 });
+			 project.imagine.plan = 'https://s3.amazonaws.com/isslepictures/ProjectDrawings/' + req.files.file.name;
+			 console.log('updating pic');
+			 project.save(function(err) {
+				 if (err) {
+					 return res.status(400).send({
+						 message: errorHandler.getErrorMessage(err)
+					 });
+				 } else {
+					 res.jsonp(project);
+				 }
+			 });
+			 console.log('done upload');
+		 }
+	 });
  };
 
 /**

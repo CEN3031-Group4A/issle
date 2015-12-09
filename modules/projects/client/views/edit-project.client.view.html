@@ -83,7 +83,15 @@
                             <h3>Plan</h3>
                             <font size="3">Draw a diagram or any other representation of your project.</font><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
                             <br>
-                            <textarea class="form-control" rows="4" data-ng-model="project.imagine.plan"></textarea>
+                            <!-- Picture upload -->
+                            <div class="form-group text-center" ng-init="setImgURL(project)">
+                                <img data-ng-src="{{project.imagine.plan}}" alt="No Picture Uploaded Yet" class="img-thumbnail">
+                            </div>
+                            <div class="text-center form-group">
+                            <span class="btn btn-default btn-file">
+                                Select Image <input type="file" nv-file-select uploader="uploader" accept="image/jpeg">
+                            </span>
+                            </div>
                             <br>
                             <a name="5"><font size = "3">List the materials you need.</font></a><span class="glyphicon glyphicon-question-sign"
                                                                                                       data-toggle="tooltip" data-original-title="Share" title ="Include only the basic items/utensils needed to complete the task. No need to list every little think. Check the tip section for a list of items not to include if you are unsure."></span>
@@ -144,10 +152,10 @@
                             <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].mainIdea"> Essential Details & What students will do:
                             <textarea class="form-control" rows="4" data-ng-model="project.essentialDetails.scienceDetails[0].details"></textarea>
                             Linked Science Standard(s):
-                            <input type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].standards">
+                            <input id="sci" type="text" class="form-control" placeholder="" data-ng-model="project.essentialDetails.scienceDetails[0].standards">
                             <br>
                             <br>
-
+                            
                             <a name="8"><font size = "3">Main Idea-literature:</font></a><span class="glyphicon glyphicon-question-sign"
                                                                                                data-toggle="tooltip" data-original-title="Share" title ="Try tying your main problem/goal into a literature standard. You can look at the examples for some ideas or search standards for more information."></span>
                             <br>
@@ -170,6 +178,35 @@
                             <br>
                             <br>
 
+                            <div data-ng-repeat="subz in project.essentialDetails.otherSubject">
+                            <div class="panel panel-blue">
+                            <div class="panel-heading">
+                               <h3 class="panel-title">{{subz.subjectName}}</h3>
+                                </div>
+                                
+                                
+                                
+                                <div class="panel-body">
+                              <div class = "row">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="subz.mainIdea"> </textarea>
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="subz.details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="subz.standards"></input>
+                        <br>
+                        <br>
+                        </div>
+                                   
+                            </div>
+                            </div>
+                            </div>
+                            
+                            
+                            
+                    
+
+
                             <a>
                                 <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
                                                                                                        data-toggle="tooltip" data-original-title="Share" title ="Be sure that this method of communication is feasible. Presentations, diagrams, reports or demos are some common ways to present findings."></span>
@@ -181,10 +218,10 @@
 
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1">
-                            <button type="button" class="btn btn-success btn-block btn-lg" data-ng-click="project.status = 'Active'; update();">Submit</button>
+                            <button type="button" class="btn btn-success btn-block btn-lg" data-ng-click="project.status = 'Active'; CombineStandards(); update();">Submit</button>
                         </div>
                         <div class="col-md-3 col-md-offset-4">
-                            <button type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="project.status = 'In Progress'; update()";>Save Draft</button>
+                            <button type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="project.status = 'In Progress'; CombineStandards(); update()";>Save Draft</button>
                         </div>
                     </div>
                 </div>

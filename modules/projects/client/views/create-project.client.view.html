@@ -6,15 +6,15 @@
                     <li class="active">
                     <li class="active"><a href="#"><h4>Design Menu</h4></a></li>
                     <p class="text-center">
-                    <li><a href="#1">Basic Goal</a></li>
-                    <li><a href="#2">Identifying Problem</a></li>
-                    <li><a href="#3">Figuring Constraints</a></li>
-                    <li><a href="#4">Brainstorm Solutions</a></li>
-                    <li><a href="#5">Listing Materials</a></li>
-                    <li><a href="#6">E.Sketch- Math</a></li>
-                    <li><a href="#7">E.Sketch- Science</a></li>
-                    <li><a href="#8">E.Sketch- Literature</a></li>
-                    <li><a href="#9">E.Sketch- SocialStudies</a></li>
+                    <li><a id="#1" href="#1">Basic Goal</a></li>
+                    <li><a id="#2" href="#2">Identifying Problem</a></li>
+                    <li><a id="#3" href="#3">Figuring Constraints</a></li>
+                    <li><a id="#4" href="#4">Brainstorm Solutions</a></li>
+                    <li><a id="#5" href="#5">Listing Materials</a></li>
+                    <li><a id="#6" href="#6">E.Sketch- Math</a></li>
+                    <li><a id="#7" href="#7">E.Sketch- Science</a></li>
+                    <li><a id="#8" href="#8">E.Sketch- Literature</a></li>
+                    <li><a id="#9" href="#9">E.Sketch- SocialStudies</a></li>
                     <li class="active"><a href="#"><H4>Help Menu</h4></a></li>
                     <li><a data-ui-sref="projects.list">View other Projects</a></li>
                     <li><a data-ui-sref="support.examples">Examples</a></li>
@@ -23,9 +23,9 @@
                 </ul>
             </div>
 
-            <div class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-2 main" data-ng-hide="authentication.user._id===NULL">
+            <div class="col-sm-7 col-sm-offset-3 col-md-8 col-md-offset-2 main" data-ng-hide="authentication.user._id==NULL">
 
-                <h2 class="sub-header">Design : <input type="text" placeholder="Project Name" data-ng-model="name"></h2>
+                <h2 class="sub-header">Design : <input id="name" type="text" placeholder="Project Name" data-ng-model="name"></h2>
 
                 <h4 class="sub-header" style="display: inline-block;">Grade(s) : <input type="number" min="0" max="12" placeholder="3" data-ng-model="minGrade">
                     - <input type="number" min="0" max="12" placeholder="5" data-ng-model="maxGrade"></h4>
@@ -80,7 +80,18 @@
                         <h3>Plan</h3>
                         <font size="3">Draw a diagram or any other representation of your project.</font><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
                         <br>
-                        <textarea class="form-control" rows="4" data-ng-model="imagine.plan"></textarea>
+
+                        <!-- Picture upload -->
+                        <div class="form-group text-center">
+                            <img data-ng-src="{{imageURL}}" alt="No Picture Uploaded Yet" class="img-thumbnail">
+                        </div>
+                        <div class="text-center form-group">
+                            <span class="btn btn-default btn-file">
+                                Select Image <input type="file" nv-file-select uploader="uploaderC" accept="image/jpeg">
+                            </span>
+                        </div>
+
+                        <!--<textarea class="form-control" rows="4" data-ng-model="imagine.plan"></textarea>-->
                         <br>
                         <a name="5"><font size = "3">List the materials you need.</font></a><span class="glyphicon glyphicon-question-sign"
                                                                                                   data-toggle="tooltip" data-original-title="Share" title ="Include only the basic items/utensils needed to complete the task. No need to list every little think. Check the tip section for a list of items not to include if you are unsure."></span>
@@ -140,29 +151,241 @@
                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.mainIdea"> Essential Details & What students will do:
                         <textarea class="form-control" rows="4" data-ng-model="essentialDetails.ssDetails.details"></textarea>
                         Linked Social Studies Standard(s):
-                        <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards">
+                        <input id="ss" type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.ssDetails.standards">
                         <br>
                         <br>
 
-                        <a>
-                            <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
-                                                                                                   data-toggle="tooltip" data-original-title="Share" title ="Be sure that this method of communication is feasible. Presentations, diagrams, reports or demos are some common ways to present findings."></span>
+        <!-- modified code starts here- need the schema properly linked. All current fields refer to socialstudies -->
+            <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <center><button type="submit" class="btn btn-primary btn-block" ng-click="show1 = true; essentialDetails.otherSubject = []; essentialDetails.otherSubject.push()">Add a subject</button></center></div>
+            
+            <div ng-show="show1">
+                
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-5 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[0].mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-4  col-md-3">
+                <h4>
+             <!--   <select style="height:27px; width: 250px" data-ng-options="additionalSubjects" data-ng-model= "essentialDetails.otherSubject[0].subjectName" >
+             -->
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[0].subjectName">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[0].details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[0].standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-4">
+            <center><button type="submit" class="btn btn-primary btn-block" ng-click="show2 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
+            </div>
+            
+                <div ng-show="show2">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[1].mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[1].subjectName">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[1].details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[1].standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-3 col-md-4">
+            </div>
+            <div class="col-sm-5  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show3 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
+            </div>
+            
+              
+              
+              <div ng-show="show3">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-5 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[2].mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-4  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[2].subjectName">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[2].details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[2].standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-3 col-md-4">
+            </div>
+            <div class="col-sm-5  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show4 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
+            </div>
+            
+            
+         <div ng-show="show4">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[3].mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[3].subjectName">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              <span data-ng-init="essentialDetails.ssDetails.subjectName = 'SocialStudies'"></span>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[3].details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[3].standards"></input>
+                        <br>
+                        <br>
+            <div class="col-sm-3 col-md-4">
+            </div>
+            <div class="col-sm-5  col-md-4">
+            <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show5 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
+            </div>
+            
+             
+             
+             <div ng-show="show5">
+                <br>
+                <br>
+                <div class = "row">
+                <div class="col-sm-7 col-md-7">
+                <a><font size = "3">Main Idea: </font></a>
+                <textarea class="form-control" rows="3" placeholder="" data-ng-model="essentialDetails.otherSubject[4].mainIdea"> </textarea>
+                </div>
+                <div class="col-sm-3  col-md-3">
+                <h4>Subject: 
+                <select style="height:27px; width: 250px" ng-model="essentialDetails.otherSubject[4].subjectName">
+                  <option value="">Select one...</option>
+                  <option value="Dance">Dance</option>
+                  <option value="English Language Development">English Language Development</option>
+                  <option value="Gifted">Gifted</option>
+                  <option value="Health Education">Health Education</option>
+                  <option value="Music">Music</option>
+                  <option value="Physical Education">Physical Education</option>
+                  <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Visual Art">Visual Art</option>
+                </select>
+              </h4>
+              </div>
+              </div>
+              
+                        Essential Details & What students will do:
+                        <textarea class="form-control" rows="4" data-ng-model="essentialDetails.otherSubject[4].details"></textarea>
+                        Linked Standard(s): 
+                         <input type="text" class="form-control" placeholder="" data-ng-model="essentialDetails.otherSubject[4].standards"></input>
+                        <br>
+                        <br>
+            </div>
+            
+            <!-- modified code ends here-->
+            
+            <div class="col-sm-4 col-md-4">
+            </div>
+            <div class="col-sm-4  col-md-4">
+            </div>
+            </div>
+             
+          <a> <font size="3">How will students communicate findings?</font></a><span class="glyphicon glyphicon-question-sign"
+                        data-toggle="tooltip" data-original-title="Share" title ="Be sure that this method of communication is feasible. Presentations, diagrams, reports or demos are some common ways to present findings."></span>
                         <br>
                         <textarea class="form-control" rows="5" data-ng-model="essentialDetails.communicateFindings"></textarea>
                         <br>
                     </div>
-                </div>
 
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1">
                         <button type="button" class="btn btn-success btn-block btn-lg" data-ng-click="status = 'Active'; create();">Submit</button>
                     </div>
                     <div class="col-md-3 col-md-offset-4">
-                        <button type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="status = 'In Progress'; create()";>Save Draft</button>
+                        <button id="save" type="button" class="btn btn-primary btn-block btn-lg" data-ng-click="status = 'In Progress'; create()";>Save Draft</button>
                     </div>
                 </div>
 
             </div>
+                 
+            
             <div class="col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-3 main">
             <span data-ng-show="authentication.user._id===NULL">
                 <div class="alert alert-success" role="alert">
