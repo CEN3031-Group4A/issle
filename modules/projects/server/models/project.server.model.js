@@ -123,40 +123,9 @@ var ProjectSchema = new Schema({
 		ssDetails: {
 			type: [SubjectSchema]
 		},
-		// stuff starting here
-		mainIncludeDance: {
-		type: Boolean,
-		default:'false' 
+		otherSubject:{
+			type: [SubjectSchema]
 		},
-		mainIncludeSpecialSkills: {
-		type: Boolean,
-		default:'false' 
-		},
-		mainIncludeEnglishLA: {
-		type: Boolean,
-		default:'false' 
-		},
-		mainIncludeMusic: {
-		type: Boolean,
-		default:'false' 
-		},
-		mainIncludeTheatre: {
-		type: Boolean,
-		default:'false' 
-		},
-		mainIncludeEnglishLD: {
-		type: Boolean,
-		default:'false' 
-		},
-		mainIncludePE: {
-		type: Boolean,
-		default:'false' 
-		},
-		mainIncludeVisualArt: {
-		type: Boolean,
-		default:'false' 
-		},
-		// stuff ending here 
 		communicateFindings: {
 			type: String,
 			default: ''

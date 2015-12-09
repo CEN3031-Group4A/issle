@@ -135,7 +135,27 @@
                                     </br>
                                 </div>
                             </div>
-
+                            
+      
+                            <div data-ng-repeat="subz in project.essentialDetails.otherSubject">
+                            <div class="panel panel-blue">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{subz.subjectName}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="blue">Main Idea:</h4>
+                                    <h5 class="tab">{{subz.mainIdea}}</h5>
+                                    </br>
+                                    <h4 class="blue">Essential Details:</h4>
+                                    <h5 class="tab">{{subz.details}}</h5>
+                                    </br>
+                                    <h4 class="blue">Linked Standard(s):</h4>
+                                    <h5 class ="tab">{{subz.standards}}</h5>
+                                    </br>
+                                </div>
+                            </div>
+                            </div>
+                            
                             <h4 class="blue">How will students communicate findings?</h4>
                             <h5 class="tab">{{project.essentialDetails.communicateFindings}}</h5>
 
