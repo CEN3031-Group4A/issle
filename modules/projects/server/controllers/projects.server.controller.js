@@ -7,8 +7,9 @@
  path = require('path'),
  mongoose = require('mongoose'),
  Project = mongoose.model('Project'),
- errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
-
+ errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+ knox = require(path.resolve('./config/lib/knox.js')),
+ knoxClient = knox.knoxClient;
 /**
  * Create a Project
  */
@@ -149,6 +150,40 @@
  			});
  		}
  	}
+ };
+
+/**
+ * Upload picture for project
+ */
+ exports.uploadDiagram = function (req,res){
+	 console.log("Uploading")
+
+	 var project = req.project;
+	 knoxClient.putBuffer(req.files.file.buffer, 'ProjectDrawings/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
+		 if (uploadError) {
+			 return res.status(400).send({
+				 message: 'Error occurred while uploading project drawing'
+			 });
+		 } else {
+			 knoxClient.deleteFile(project.imagine.plan.substring(project.imagine.plan.search('ProjectDrawings/')),{'Content-Type': 'image/jpeg'}, function(err){
+				 if(err){
+					 return err.message;
+				 }
+			 });
+			 project.imagine.plan = 'https://s3.amazonaws.com/isslepictures/ProjectDrawings/' + req.files.file.name;
+			 console.log('updating pic');
+			 project.save(function(err) {
+				 if (err) {
+					 return res.status(400).send({
+						 message: errorHandler.getErrorMessage(err)
+					 });
+				 } else {
+					 res.jsonp(project);
+				 }
+			 });
+			 console.log('done upload');
+		 }
+	 });
  };
 
 /**

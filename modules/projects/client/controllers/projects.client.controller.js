@@ -1,8 +1,17 @@
 'use strict';
 // Projects controller
-angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Projects',
-	function($scope, $stateParams, $location, Authentication, Projects ) {
+angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', '$window', '$timeout', 'Authentication', 'Projects', 'FileUploader',
+	function($scope, $stateParams, $location, $window, $timeout, Authentication, Projects, FileUploader ) {
 		$scope.authentication = Authentication;
+
+		// Create file uploader instance
+		$scope.uploader = new FileUploader({
+			url: '/api/projects/picture'
+		});
+
+		$scope.uploaderC = new FileUploader({
+			url: '/api/projects/picture'
+		});
 
 		// Create new Project
 		$scope.create = function() {
@@ -23,13 +32,25 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 			// Redirect after save
 			project.$save(function(response) {
-				$location.path('projects/' + response._id);
+
+				// Start upload of picture
+
+				$scope.uploaderC.queue[0].url = '/api/projects/picture/' + response._id;
+				$scope.uploaderC.uploadAll();
+
 
 				// Clear form fields
 				$scope.name = '';
+
+
+				$location.path('projects/' + response._id);
+
+
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+
+
 		};
 
 		// Remove existing Project
@@ -50,14 +71,19 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Update existing Project
 		$scope.update = function() {
-            console.log('In $scope.update');
 			var project = $scope.project;
 
+			project.imagine.plan = '';
+
 			project.$update(function() {
+
 				$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+
+			$scope.uploader.queue[0].url = '/api/projects/picture/' + project._id;
+			$scope.uploader.uploadAll();
 		};
 
 		// Find a list of Projects
@@ -70,14 +96,37 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			$scope.project = Projects.get({ 
 				projectId: $stateParams.projectId
 			});
+
 		};
+
+		// Called after the user selected a new picture file
+		$scope.uploader.onAfterAddingFile = function (fileItem) {
+			if ($window.FileReader) {
+				var fileReader = new FileReader();
+				fileReader.readAsDataURL(fileItem._file);
+
+				fileReader.onload = function (fileReaderEvent) {
+					$timeout(function () {
+						$scope.project.imagine.plan = fileReaderEvent.target.result;
+					}, 0);
+				};
+			}
+		};
+
+		$scope.uploaderC.onAfterAddingFile = function (fileItem) {
+			if ($window.FileReader) {
+				var fileReader = new FileReader();
+				fileReader.readAsDataURL(fileItem._file);
+
+				fileReader.onload = function (fileReaderEvent) {
+					$timeout(function () {
+						$scope.imageURL = fileReaderEvent.target.result;
+					}, 0);
+				};
+			}
+		};
+
 /*	-------------------------------------Star Rating Stuff-------------------------------------- */
-		
-		/*	
-			TODO (IMPORTANT!!): Find a way to pull this particular user's previous rating from the
-			schema's ratings field (which holds an array of userID-Rating pairs) and use it as the
-			initial rating, instead of 0.
-		*/
 
 
 

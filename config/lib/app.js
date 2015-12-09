@@ -6,6 +6,7 @@
 var config = require('../config'),
 	mongoose = require('./mongoose'),
 	express = require('./express'),
+	knox = require('./knox'),
 	chalk = require('chalk');
 
 // Initialize Models
@@ -17,12 +18,16 @@ module.exports.loadModels = function loadModels() {
 
 module.exports.init = function init(callback) {
 
+	console.log('Connecting to MongoDB');
 	mongoose.connect(function (db) {
 		// Initialize express
 		var app = express.init(db);
 		if (callback) callback(app, db, config);
 
 	});
+
+	console.log('Connecting to S3 Images');
+	knox.connect();
 };
 
 module.exports.start = function start(callback) {
