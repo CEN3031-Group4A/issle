@@ -156,7 +156,6 @@
  * Upload picture for project
  */
  exports.uploadDiagram = function (req,res){
-	 console.log("Uploading")
 
 	 var project = req.project;
 	 knoxClient.putBuffer(req.files.file.buffer, 'ProjectDrawings/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
