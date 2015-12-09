@@ -20,6 +20,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			
 			$scope.essentialDetails.overallStandards = '';
 
+			$scope.essentialDetails.overallSubjects = '';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.litDetails.subjectName + ' , ';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.mathDetails.subjectName + ' , ';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.scienceDetails.subjectName + ' , ';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.ssDetails.subjectName + ' , ';
+
 			if($scope.essentialDetails.litDetails.standards !== undefined){
 				$scope.essentialDetails.overallStandards += $scope.essentialDetails.litDetails.standards + ', ';
 			}
@@ -34,26 +40,41 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			}
 			if(typeof $scope.essentialDetails.otherSubject !== 'undefined'){
 				if(typeof $scope.essentialDetails.otherSubject[0] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[0].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[0].subjectName + ' , ';
+					}
 					if($scope.essentialDetails.otherSubject[0].standards !== undefined){
 						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[0].standards + ', ';
 					}
 				}
 				if(typeof $scope.essentialDetails.otherSubject[1] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[1].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[1].subjectName + ' , ';
+					}
 					if($scope.essentialDetails.otherSubject[1].standards !== undefined){
 						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[1].standards + ', ';
 					}
 				}
 				if(typeof $scope.essentialDetails.otherSubject[2] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[2].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[2].subjectName + ' , ';
+					}
 					if($scope.essentialDetails.otherSubject[2].standards !== undefined){
 						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[2].standards + ', ';
 					}
 				}
 				if(typeof $scope.essentialDetails.otherSubject[3] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[3].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[3].subjectName + ' , ';
+					}
 					if($scope.essentialDetails.otherSubject[3].standards !== undefined){
 						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[3].standards + ', ';
 					}
 				}
 				if(typeof $scope.essentialDetails.otherSubject[4] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[4].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[4].subjectName + ' , ';
+					}
 					if($scope.essentialDetails.otherSubject[4].standards !== undefined){
 						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[4].standards + ', ';
 					}

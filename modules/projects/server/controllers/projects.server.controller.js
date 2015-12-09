@@ -123,7 +123,7 @@
  			Project.find().
  			where('minGrade').gte(req.query.minGrade).
  			where('maxGrade').lte(req.query.maxGrade).
- 			where('subject').equals(req.query.subject).
+ 			where('essentialDetails.overallSubjects').regex(new RegExp(req.query.subject,'i')).
  			sort('-created').populate('user', 'displayName').
  			exec(function(err, projects) {
  				if (err) {

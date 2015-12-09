@@ -127,6 +127,10 @@ var ProjectSchema = new Schema({
 		type: String, //Should be a list of standards in the future
 		default: ''
 		},
+		overallSubjects: {
+		type: String, 
+		default: ''
+		},
 		otherSubject:{
 			type: [SubjectSchema]
 		},
