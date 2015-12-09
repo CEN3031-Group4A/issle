@@ -46,15 +46,18 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				rating: null
 			});
 
-			//project.essentialDetails.overallStandards = $scope.essentialDetails.overallStandards;
+			
+			
+		$scope.additionalSubjects = ['Dance', 'English Language Development', 'Gifted', 'Health Education', 'Music', 'Physical Education',
+		'Special Skills', 'Technology', 'Theatre', 'Visual Art'];
 
 			// Redirect after save
 			project.$save(function(response) {
 
 				// Start upload of picture
 
-				if ($scope.uploaderC.queue.length > 0)
-				{
+				if($scope.uploaderC.queue.length > 0) {
+
 					$scope.uploaderC.queue[0].url = '/api/projects/picture/' + response._id;
 					$scope.uploaderC.uploadAll();
 				}
