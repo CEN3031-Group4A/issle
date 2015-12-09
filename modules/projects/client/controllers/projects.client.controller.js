@@ -18,7 +18,13 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		$scope.create = function() {
 			// Create new Project object
 			//if((this.essentialDetails && essentialDetails.litDetails.standards) || (this.essentialDetails && this.essentialDetails.mathDetails.standards) || (this.essentialDetails && essentialDetails.scienceDetails.standards) || (this.essentialDetails && essentialDetails.ssDetails.standards)){ 
-			this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ',' + this.essentialDetails.mathDetails.standards + ',' + this.essentialDetails.scienceDetails.standards + ',' + this.essentialDetails.ssDetails.standards;
+			if(this.essentialDetails.litDetails.standards !== undefined){
+				this.essentialDetails.overallStandards += this.essentialDetails.litDetails.standards + ', ';
+			}
+			if(this.essentialDetails.mathDetails.standards){
+				this.essentialDetails.overallStandards += this.essentialDetails.mathDetails.standards + ', ';
+			}
+			//this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ', ' + this.essentialDetails.mathDetails.standards + ', ' + this.essentialDetails.scienceDetails.standards + ', ' + this.essentialDetails.ssDetails.standards;
 			//} 
 			//else{
 				//this.essentialDetails.overallStandards = '';
@@ -79,9 +85,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Update existing Project
 		$scope.update = function() {
             console.log('In $scope.update');
-            this.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ',' + this.essentialDetails.mathDetails.standards + ',' + this.essentialDetails.scienceDetails.standards + ',' + this.essentialDetails.ssDetails.standards;
+            
 			var project = $scope.project;
 
+			project.essentialDetails.overallStandards = this.essentialDetails.litDetails.standards + ', ' + this.essentialDetails.mathDetails.standards + ', ' + project.essentialDetails.scienceDetails.standards + ', ' + project.essentialDetails.ssDetails.standards;
 			project.imagine.plan = '';
 
 			project.$update(function() {
