@@ -81,7 +81,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		$scope.linkify = function(link) {
 			return $sce.trustAsHtml(linkify.normal(link));
-		} 
+		}; 
 /*	-------------------------------------Star Rating Stuff-------------------------------------- */
 		
 		/*	
