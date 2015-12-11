@@ -18,7 +18,7 @@ describe('issle Demo App', function() {
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
        element(by.cssContainingText('option', 'Dance')).click();
        element(by.id('submit')).click();
-       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(2);
     });
     // Search for projects test2
     it('Search for projects test2', function() {
@@ -34,7 +34,7 @@ describe('issle Demo App', function() {
        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
        element(by.cssContainingText('option', 'Gifted')).click();
        element(by.id('submit')).click();
-       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(1);
     });
     // Search for projects test4
     it('Search for projects test4', function() {
@@ -66,7 +66,7 @@ describe('issle Demo App', function() {
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
        element(by.cssContainingText('option', 'Special Skills')).click();
        element(by.id('submit')).click();
-       expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
+       expect(element.all(by.repeater('prj in projects')).count()).toEqual(1);
     });
     // Search for projects test8
     it('Search for projects test8', function() {
@@ -113,11 +113,49 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
 
+    // Search for standards MAFS.7.SP.1.1&2
+    it('Search for standards MAFS.7.SP.1.1&2', function() {
+        browser.get('http://localhost:3000/standards');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('standard')).sendKeys('MAFS.7.SP.1.1');
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1);
+        element(by.id('standard')).clear();
+        element(by.id('standard')).sendKeys('MAFS.7.SP.1.2');
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1);
+        element(by.id('keyword')).sendKeys('population');
+        element(by.id('submit')).click();
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(1);
+    });
+
+    // Search for standards population
+    it('Search for standards population', function() {
+        //browser.get('http://localhost:3000/standards');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('standard')).clear();
+        element(by.id('submit')).click();
+        //element(by.id('keyword')).sendKeys('population');
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(29);
+    });
+
+    // Search for standards water
+    it('Search for standards water', function() {
+        //browser.get('http://localhost:3000/standards');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
+        element(by.id('keyword')).clear();
+        element(by.id('keyword')).sendKeys('water');
+        element(by.id('submit')).click();
+        //element(by.id('keyword')).sendKeys('population');
+        expect(element.all(by.repeater('std in standards')).count()).toEqual(50);
+    });
+
    // Search for standards test1
-   it('Search for standards test1', function() {
-       browser.get('http://localhost:3000/standards');
+    it('Search for standards test1', function() {
+       //browser.get('http://localhost:3000/standards');
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
        element(by.cssContainingText('option', 'Dance')).click();
+       element(by.id('keyword')).clear();
        element(by.id('submit')).click();
        expect(element.all(by.repeater('std in standards')).count()).toEqual(315);
    });

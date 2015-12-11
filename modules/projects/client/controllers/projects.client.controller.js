@@ -264,7 +264,11 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 
 		$scope.linkify = function(link) {
-			return $sce.trustAsHtml(linkify.normal(link));
+			var text = linkify.normal(link);
+			if(text) {
+				text = text.replace(/<a href="www./gi, '<a href="http://www.');
+			}
+			return $sce.trustAsHtml(text);
 		}; 
 
 		$scope.uploaderC.onAfterAddingFile = function (fileItem) {
