@@ -132,6 +132,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Remove existing Project
 		$scope.remove = function( project ) {
+		  if (confirm("Are you sure you want to delete this project?")) {
 			if ( project ) { project.$remove();
 
 				for (var i in $scope.projects ) {
@@ -144,6 +145,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 					$location.path('projects');
 				});
 			}
+		  }
+		  return false;
 		};
 
 		$scope.CombineStandards = function(){
