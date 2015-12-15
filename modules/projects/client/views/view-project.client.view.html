@@ -136,8 +136,8 @@
                                     </br>
                                 </div>
                             </div>
-                            
-      
+
+
                             <div data-ng-repeat="subz in project.essentialDetails.otherSubject">
                             <div class="panel panel-blue">
                                 <div class="panel-heading">
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             </div>
-                            
+
                             <h4 class="blue">How will students communicate findings?</h4>
                             <h5 class="tab"><span ng-bind-html="linkify(project.essentialDetails.communicateFindings)"><span></h5>
 
@@ -177,17 +177,17 @@
                 </div>
             </div>
 
-				  
+
             <div class = "row" data-ng-show="authentication.user._id && authentication.user._id !== project.user._id">
                 <div class="col-md-12">
-                    <h2>Rate this Project:
+                    <h2>Rate this Project: <!-- Uses string array from controller to decide which star glyphicon to use -->
                         <!-- ng-mouseleave has a timeout of 500ms so the stars don't update too quickly. Looks smoother. -->
                         <a href="#"><div class="{{glyphs[0]}}" style="font-size:1em" ng-mouseenter="rating_hover(1)"
                                     ng-mouseleave="reset_hover()" ng-click="rating = 1; rate()"> </div></a>
-
+                                          <!-- When a star is hovered over, stars fill up to that star -->
                         <a href="#"><div class="{{glyphs[1]}}" style="font-size:1em" ng-mouseenter="rating_hover(2)"
                                     ng-mouseleave="reset_hover()" ng-click="rating = 2; rate()"> </div></a>
-
+                                        <!-- When mouse leaves the star, the glyphicons reset to the current rating -->
                         <a href="#"><div class="{{glyphs[2]}}" style="font-size:1em" ng-mouseenter="rating_hover(3)"
                                     ng-mouseleave="reset_hover()" ng-click="rating = 3; rate()"> </div></a>
 
@@ -197,7 +197,7 @@
                         <a href="#"><div class="{{glyphs[4]}}" style="font-size:1em" ng-mouseenter="rating_hover(5)"
                                     ng-mouseleave="reset_hover()" ng-click="rating = 5; rate()"> </div></a>
                    </h2>
-
+                   <!-- Shows user's rating - whether existing or new -->
                    <h4> {{getMyRating(authentication.user._id)}} </h4>
                     <br>
 
