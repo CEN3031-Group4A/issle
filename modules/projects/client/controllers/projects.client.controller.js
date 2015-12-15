@@ -266,8 +266,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		$scope.linkify = function(link) {
 			var text = linkify.normal(link);
 			if(text) {
+				//this is for every browser but firefox (and will only execute for compatible browsers)
 				text = text.replace(/<a href="www./gi, '<a href="http://www.');
+				//this line is specificly for linkify for the firefox browser
+				text = text.replace(/<a target="_blank" href="www./gi, '<a target="_blank" href="http://www.');
 			}
+			//console.log(text); //used for debugging
 			return $sce.trustAsHtml(text);
 		}; 
 
