@@ -13,7 +13,7 @@ angular.module('users').controller('SettingsController', ['$scope', 'Authenticat
     );};
 
     $scope.deleteProject = function(project,$location){
-     if (confirm("Are you sure you want to delete this project?")) {	  
+     if (confirm('Are you sure you want to delete this project?')) {	  
 	  if ( project ) { project.$remove();
 
         for (var i in $scope.userProjects ) {
