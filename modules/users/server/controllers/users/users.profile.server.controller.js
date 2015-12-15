@@ -9,8 +9,8 @@ var _ = require('lodash'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  knox = require(path.resolve('./config/lib/knox.js')),
-  knoxClient = knox.knoxClient;
+  knox = require(path.resolve('./config/lib/knox.js')), // Require Knox for interfacing with AWS S3 photo store
+  knoxClient = knox.knoxClient;                         
 
 /**
  * Update user details
@@ -57,17 +57,20 @@ exports.changeProfilePicture = function (req, res) {
   var user = req.user;
   var message = null;
   if (user) {
+    // Grab image buffer from front-end controller and upload it to S3 store
     knoxClient.putBuffer(req.files.file.buffer, 'ProfilePictures/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
       if (uploadError) {
         return res.status(400).send({
           message: 'Error occurred while uploading profile picture'
         });
       } else {
+        // Delete file previously used for profile picture
         knoxClient.deleteFile(user.profileImageURL.substring(user.profileImageURL.search('ProfilePictures/')),{'Content-Type': 'image/jpeg'}, function(err){
           if(err){
             return err.message;
           }
         });
+        // Concatenate URL to file name
         user.profileImageURL = 'https://s3.amazonaws.com/isslepictures/ProfilePictures/' + req.files.file.name;
 
         user.save(function (saveError) {
