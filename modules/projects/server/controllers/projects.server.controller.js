@@ -75,6 +75,13 @@
  * List of Projects
  */
  exports.list = function(req, res) {
+ 	//this is where the search querries for search by projects are created
+ 	//the way the search works is by a hiarchy
+    //if a project name is put in then that over takes all other search parameters
+    //if a standard is put in and but not a standard then that takes priority
+  	//if none of the text based search parameters are put in then it first checks if thier is a subject
+    //if there is put it in with the query if not, then just search by the min and max grade.
+
  	if (req.query.userId)
  	{
  		Project.find()

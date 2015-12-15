@@ -60,13 +60,15 @@ angular.module('standards').controller('StandardsController', ['$scope', '$state
 
 		// Find a list of Standards
 		$scope.find = function(search) {
-			//$scope.standards = Standards.query();
-			//search.minGrade = parseInt(search.minGrade, 10); //parseInt with radix
-			//$scope.standards = Standards.query({minGrade:search.minGrade,maxGrade:search.maxGrade,subject:search.subject,searchText:search.searchText});
-			
+			//if a min or max grade are not put in the min/max possible grade value is selected
 			if(!search.minGrade) search.minGrade = '0';
 			if(!search.maxGrade) search.maxGrade = '912';
 
+			//the way the search works is by a hiarchy
+			//if a standard is put in then that over takes all other search parameters
+			//if a description keyword is put in and but not a standard then that takes priority
+			//if none of the text based search parameters are put in then it first checks if thier is a subject
+			//if there is put it in with the query if not, then just search by the min and max grade.
 			if(search.searchText) {
 				$scope.standards = Standards.query({benchmark:search.searchText});
 			} else if(search.searchKeyword) {
