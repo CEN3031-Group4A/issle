@@ -200,7 +200,7 @@
             <div class="col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-4">
             <center><button type="submit" class="btn btn-primary btn-block" ng-click="show2 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
-            
+            <!-- This is the second subject they can add. -->
                 <div ng-show="show2">
                 <br>
                 <br>
@@ -241,8 +241,7 @@
             <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show3 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
             
-              
-              
+        <!-- This is the third subject you can add. -->
               <div ng-show="show3">
                 <br>
                 <br>
@@ -281,7 +280,7 @@
             <div class="col-sm-5  col-md-4">
             <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show4 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
-            
+    <!-- This is the fourth subject you can add -->     
             
          <div ng-show="show4">
                 <br>
@@ -323,8 +322,8 @@
             <center><button type="submit" class="btn btn-primary btn-block btn-md" ng-click="show5 = true; essentialDetails.otherSubject.push({})">Add another subject</button></center></div>
             </div>
             
-             
-             
+     <!-- This is the fifth subject you can add --> 
+     
              <div ng-show="show5">
                 <br>
                 <br>
@@ -382,7 +381,7 @@
                 </div>
 
             </div>
-                 
+    <!-- The form has ended. Below are the buttons to submit the informaton, which will link it to the database. -->              
             
             <div class="col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-3 main">
             <span data-ng-show="authentication.user._id===NULL">
