@@ -17,7 +17,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
-			
+
 			$scope.essentialDetails.overallStandards = '';
 
 			$scope.essentialDetails.overallSubjects = '';
@@ -79,12 +79,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[4].standards + ', ';
 					}
 				}
-				
+
 			}
 
 			$scope.essentialDetails.overallStandards = $scope.essentialDetails.overallStandards.slice(0, -2);
-			
-			
+
+
 			var project = new Projects ({
 				name: this.name,
 				created: this.created,
@@ -99,8 +99,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				rating: null
 			});
 
-			
-			
+
+
 		$scope.additionalSubjects = ['Dance', 'English Language Development', 'Gifted', 'Health Education', 'Music', 'Physical Education',
 		'Special Skills', 'Technology', 'Theatre', 'Visual Art'];
 
@@ -209,7 +209,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[4].standards + ', ';
 					}
 				}
-				
+
 			}
 
 			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.overallStandards.slice(0, -2);
@@ -218,7 +218,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Update existing Project
 		$scope.update = function() {
             console.log('In $scope.update');
-            
+
 			var project = $scope.project;
 
 			project.imagine.plan = '';
@@ -243,7 +243,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Find existing Project
 		$scope.findOne = function() {
-			$scope.project = Projects.get({ 
+			$scope.project = Projects.get({
 				projectId: $stateParams.projectId
 			});
 
@@ -269,7 +269,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				text = text.replace(/<a href="www./gi, '<a href="http://www.');
 			}
 			return $sce.trustAsHtml(text);
-		}; 
+		};
 
 		$scope.uploaderC.onAfterAddingFile = function (fileItem) {
 			if ($window.FileReader) {
@@ -286,7 +286,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 /*	-------------------------------------Star Rating Stuff-------------------------------------- */
 
-
+		/*BROKEN: Animation doesn't work after the first time the user rates a project.
+			Broke at some point during development after the feature was done, and it's
+			too late to go back in and fix it.
+		*/
 
 		//an array containing the name of the glyphicon to use for each star
 		$scope.glyphs = new Array(
@@ -297,7 +300,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			'gold glyphicon glyphicon-star-empty'
 		);
 
-		/*	
+		/*
 			Runs when a star glyphicon is hovered into. It sets all the stars up to the current one
 			to have the filled-in star glyphicon.
 		*/
@@ -308,8 +311,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			for(i = num; i < 5; i++){
 				$scope.glyphs[i] = 'gold glyphicon glyphicon-star-empty';
 			}
-		}; 
-			
+		};
+
 		//Runs when a star glyphicon is hovered out of. Resets the  stars' highlighing to the current rating
 		$scope.reset_hover = function(){
 			$scope.rating_hover($scope.rating);
@@ -332,7 +335,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			$scope.rating = 0;	//current rating
 			return 'This project has not yet been rated. Give it a couple of stars?';
 
-		}; 
+		};
 
         // Function to find the current rater
         var isRater = function(value){
@@ -342,28 +345,31 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		//Changes the user's rating of the project
 		$scope.rate = function(){
 			console.log('In $scope.rate');
-			if(!$scope.project.rating){
-				$scope.project.rating = {
-					ratings : [
+				if(!$scope.project.rating){
+				$scope.project.rating = {		//Update the project's rating entry in schema
+					ratings : [ // Create ratings array with  first rating and reviewer
 						{
 							num: $scope.rating,
 							reviewer: $scope.authentication.user._id
 						}
 					],
-					avg_rating : $scope.rating
+					avg_rating : $scope.rating // For first instance, avg = only rating
 				};
 			} else {
-                var rater = $scope.project.rating.ratings.filter(isRater)[0];
-                var length = $scope.project.rating.ratings.length;
+                var rater = $scope.project.rating.ratings.filter(isRater)[0]; // Check if current user already has submitted a rating
+                var length = $scope.project.rating.ratings.length;  // Hold current length
 				var rateToRemove = 0;
 
+								// Variable to hold resulting length after comptation
                 var newLength = length + 1;
 
+								// If length is 0, the average should be 0
                 if(length === 0)
                 {
                     $scope.project.rating.avg_rating = 0;
                 }
 
+				// If current user has already rated, delete previous rating
 				if(typeof rater !== 'undefined') {
                     rateToRemove = rater.num;
                     var rateIndex = $scope.project.rating.ratings.indexOf(rater);
@@ -371,19 +377,23 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
                     newLength -= 1;
                 }
 
+				// Add new rating to total rating and recalculaate average
 				$scope.project.rating.avg_rating = ($scope.project.rating.avg_rating * length + $scope.rating - rateToRemove)/(newLength);
 
+				// Push new rating object into project schema
 				$scope.project.rating.ratings.push({
 						num: $scope.rating,
 						reviewer: $scope.authentication.user._id
 				});
 			}
+
+			// Update project
 			$scope.update();
 
 
-		};  
+		};
 
-		
-		
+
+
 	}
 ]);
