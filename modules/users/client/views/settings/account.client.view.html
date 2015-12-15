@@ -1,4 +1,5 @@
 <section data-ng-controller="SettingsController">
+
     <div class="col-md-4">
       <h3 class="text-justify">School: {{user.school}}</h3>
       <h3 class="text-justify">Email: {{user.email}}</h3>
@@ -27,6 +28,7 @@
                 <div class="col-md-4 col-xs-4 col-sm-4" style="padding-top: 5%">
                   <button class="btn btn-info glyphicon glyphicon-edit" data-ui-sref="projects.edit({projectId : userProjectItem._id})"></button>
                   <button class="btn btn-danger glyphicon glyphicon-trash" data-ng-click="deleteProject(userProjectItem)"></button>
+				  <!--<button class="btn btn-danger glyphicon glyphicon-trash" data-toggle="modal" data-target="#confirm-delete"></button>-->
                 </div>
               </div>
               <div class="row">

@@ -6,7 +6,7 @@
         <fieldset>
           <div class ="form-group">
             <div data-ng-show="error" class="text-center text-danger">
-              <div class= "alert alert-danger" role= "alert">
+              <div class= "alert alert-danger" role= "alert" style="width:360px">
                 <strong data-ng-bind="error"></strong>
               </div>
             </div>
@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="text-center form-group">
-            <button type="submit" class="btn btn-lg btn-warning btn-block">Sign up</button>
+            <button id="signup" type="submit" class="btn btn-lg btn-warning btn-block">Sign up</button>
           </div>
           <div class = "text-center form-group">
             or&nbsp; <a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>

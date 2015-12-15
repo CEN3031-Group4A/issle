@@ -10,15 +10,20 @@
             <div class="panel-heading">I want projects with this subject...</div>
             <div class="panel-body">                                      
               <h4>Subject: 
-                <select style="height:27px; width: 250px" ng-model="search.subject">
+                <select style="height:27px; width: 265px" ng-model="search.subject">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
+                  <option value="English Language Arts">English Language Arts</option>
                   <option value="English Language Development">English Language Development</option>
                   <option value="Gifted">Gifted</option>
                   <option value="Health Education">Health Education</option>
+                  <option value="Mathematics">Mathematics</option>
                   <option value="Music">Music</option>
                   <option value="Physical Education">Physical Education</option>
+                  <option value="Science">Science</option>
+                  <option value="Social Studies">Social Studies</option>
                   <option value="Special Skills">Special Skills</option>
+                  <option value="Technology">Technology</option>
                   <option value="Theatre">Theatre</option>
                   <option value="Visual Art">Visual Art</option>
                 </select>
@@ -71,17 +76,17 @@
     <h3>Alternatively...</h3>
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="sizing-addon1">By Project...</span>
-      <input type="text" class="form-control" placeholder="eg. Raz's Balloons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
+      <input id="project" type="text" class="form-control" placeholder="eg. Raz's Balloons" aria-describedby="sizing-addon1" ng-model= "search.searchName" ng-keypress = "enterPressName($event, search, show)">
     </div>
     <br>
     <h3>Or...</h3>
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="sizing-addon1">By standard...</span>
-      <input type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText" ng-keypress = "enterPressStandard($event, search, show)">
+      <input id="standard" type="text" class="form-control" placeholder="eg. MAFS.7.SP.1.1" aria-describedby="sizing-addon1" ng-model= "search.searchText" ng-keypress = "enterPressStandard($event, search, show)">
     </div>
     <br>
     <br>
-    <div class = "text-center"><button type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
+    <div class = "text-center"><button id="submit" type="submit" class="btn btn-warning btn-block" ng-click="show = true; find(search)" style="width:50%; margin-left:25%">Submit</button></div>
     <br>
     <div class="panel panel-blue" ng-show="show">
       <div class="panel-heading">  </div>
@@ -97,7 +102,7 @@
                 <div class="panel-heading" data-ui-sref="projects.view({projectId : prj._id})">
                       <div class="row">
                               <div class="col-xs-6 col-md-3">
-                                  <a data-ui-sref="projects.view({projectId : prj._id})">
+                                  <a id="link" data-ui-sref="projects.view({projectId : prj._id})">
                                       <h4 class="gold" style="font-size:20">
                                       {{prj.name}}</h4> 
                                   </a> 
@@ -133,7 +138,7 @@
                               <div class="panel panel-default">
                                     <div class="panel-body">
                                         <h4> Standards Fulfilled </h4>
-                                        {{prj.standards}}
+                                        <p> {{prj.essentialDetails.overallStandards}} </p>
                                     </div>
                               </div>
                           </div>

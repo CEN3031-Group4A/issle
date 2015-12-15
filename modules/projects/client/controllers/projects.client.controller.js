@@ -1,7 +1,8 @@
 'use strict';
 // Projects controller
-angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', '$window', '$timeout', 'Authentication', 'Projects', 'FileUploader',
-	function($scope, $stateParams, $location, $window, $timeout, Authentication, Projects, FileUploader ) {
+
+angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$sce', '$location', '$window', '$timeout', 'Authentication', 'Projects', 'FileUploader', 'linkify',
+	function($scope, $stateParams, $sce, $location, $window, $timeout, Authentication, Projects, FileUploader, linkify ) {
 		$scope.authentication = Authentication;
 
 		// Create file uploader instance
@@ -16,6 +17,74 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
+			
+			$scope.essentialDetails.overallStandards = '';
+
+			$scope.essentialDetails.overallSubjects = '';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.litDetails.subjectName + ' , ';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.mathDetails.subjectName + ' , ';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.scienceDetails.subjectName + ' , ';
+			$scope.essentialDetails.overallSubjects += $scope.essentialDetails.ssDetails.subjectName + ' , ';
+
+			if($scope.essentialDetails.litDetails.standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.litDetails.standards + ', ';
+			}
+			if($scope.essentialDetails.mathDetails.standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.mathDetails.standards + ', ';
+			}
+			if($scope.essentialDetails.scienceDetails.standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.scienceDetails.standards + ', ';
+			}
+			if($scope.essentialDetails.ssDetails.standards !== undefined){
+				$scope.essentialDetails.overallStandards += $scope.essentialDetails.ssDetails.standards + ', ';
+			}
+			if(typeof $scope.essentialDetails.otherSubject !== 'undefined'){
+				if(typeof $scope.essentialDetails.otherSubject[0] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[0].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[0].subjectName + ' , ';
+					}
+					if($scope.essentialDetails.otherSubject[0].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[0].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[1] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[1].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[1].subjectName + ' , ';
+					}
+					if($scope.essentialDetails.otherSubject[1].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[1].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[2] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[2].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[2].subjectName + ' , ';
+					}
+					if($scope.essentialDetails.otherSubject[2].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[2].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[3] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[3].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[3].subjectName + ' , ';
+					}
+					if($scope.essentialDetails.otherSubject[3].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[3].standards + ', ';
+					}
+				}
+				if(typeof $scope.essentialDetails.otherSubject[4] !== 'undefined'){
+					if($scope.essentialDetails.otherSubject[4].subjectName !== undefined){
+						$scope.essentialDetails.overallSubjects += $scope.essentialDetails.otherSubject[4].subjectName + ' , ';
+					}
+					if($scope.essentialDetails.otherSubject[4].standards !== undefined){
+						$scope.essentialDetails.overallStandards += $scope.essentialDetails.otherSubject[4].standards + ', ';
+					}
+				}
+				
+			}
+
+			$scope.essentialDetails.overallStandards = $scope.essentialDetails.overallStandards.slice(0, -2);
+			
+			
 			var project = new Projects ({
 				name: this.name,
 				created: this.created,
@@ -29,18 +98,19 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				essentialDetails: this.essentialDetails,
 				rating: null
 			});
+
 			
 			
 		$scope.additionalSubjects = ['Dance', 'English Language Development', 'Gifted', 'Health Education', 'Music', 'Physical Education',
 		'Special Skills', 'Technology', 'Theatre', 'Visual Art'];
-		
-		
+
 			// Redirect after save
 			project.$save(function(response) {
 
 				// Start upload of picture
 
 				if($scope.uploaderC.queue.length > 0) {
+
 					$scope.uploaderC.queue[0].url = '/api/projects/picture/' + response._id;
 					$scope.uploaderC.uploadAll();
 				}
@@ -76,8 +146,79 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			}
 		};
 
+		$scope.CombineStandards = function(){
+			//please note it will not only combine standards but also subjects
+			$scope.project.essentialDetails.overallStandards = '';
+
+			$scope.project.essentialDetails.overallSubjects = '';
+			$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.litDetails[0].subjectName + ' , ';
+			$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.mathDetails[0].subjectName + ' , ';
+			$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.scienceDetails[0].subjectName + ' , ';
+			$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.ssDetails[0].subjectName + ' , ';
+
+			if($scope.project.essentialDetails.litDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.litDetails[0].standards + ', ';
+			}
+			if($scope.project.essentialDetails.mathDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.mathDetails[0].standards + ', ';
+			}
+			if($scope.project.essentialDetails.scienceDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.scienceDetails[0].standards + ', ';
+			}
+			if($scope.project.essentialDetails.ssDetails[0].standards !== ''){
+				$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.ssDetails[0].standards + ', ';
+			}
+			if(typeof $scope.project.essentialDetails.otherSubject !== 'undefined'){
+				if(typeof $scope.project.essentialDetails.otherSubject[0] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[0].subjectName !== ''){
+						$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.otherSubject[0].subjectName + ' , ';
+					}
+					if($scope.project.essentialDetails.otherSubject[0].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[0].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[1] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[1].subjectName !== ''){
+						$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.otherSubject[1].subjectName + ' , ';
+					}
+					if($scope.project.essentialDetails.otherSubject[1].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[1].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[2] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[2].subjectName !== ''){
+						$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.otherSubject[2].subjectName + ' , ';
+					}
+					if($scope.project.essentialDetails.otherSubject[2].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[2].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[3] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[3].subjectName !== ''){
+						$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.otherSubject[3].subjectName + ' , ';
+					}
+					if($scope.project.essentialDetails.otherSubject[3].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[3].standards + ', ';
+					}
+				}
+				if(typeof $scope.project.essentialDetails.otherSubject[4] !== 'undefined'){
+					if($scope.project.essentialDetails.otherSubject[4].subjectName !== ''){
+						$scope.project.essentialDetails.overallSubjects += $scope.project.essentialDetails.otherSubject[4].subjectName + ' , ';
+					}
+					if($scope.project.essentialDetails.otherSubject[4].standards !== ''){
+						$scope.project.essentialDetails.overallStandards += $scope.project.essentialDetails.otherSubject[4].standards + ', ';
+					}
+				}
+				
+			}
+
+			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.overallStandards.slice(0, -2);
+		};
+
 		// Update existing Project
 		$scope.update = function() {
+            console.log('In $scope.update');
+            
 			var project = $scope.project;
 
 			project.imagine.plan = '';
@@ -89,7 +230,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				$scope.error = errorResponse.data.message;
 			});
 
-			if($scope.uploader.queue.length > 0) {
+			if ($scope.uploader.queue.length > 0) {
 				$scope.uploader.queue[0].url = '/api/projects/picture/' + project._id;
 				$scope.uploader.uploadAll();
 			}
@@ -121,6 +262,14 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				};
 			}
 		};
+
+		$scope.linkify = function(link) {
+			var text = linkify.normal(link);
+			if(text) {
+				text = text.replace(/<a href="www./gi, '<a href="http://www.');
+			}
+			return $sce.trustAsHtml(text);
+		}; 
 
 		$scope.uploaderC.onAfterAddingFile = function (fileItem) {
 			if ($window.FileReader) {

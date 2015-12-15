@@ -123,6 +123,14 @@ var ProjectSchema = new Schema({
 		ssDetails: {
 			type: [SubjectSchema]
 		},
+		overallStandards: {
+		type: String, //Should be a list of standards in the future
+		default: ''
+		},
+		overallSubjects: {
+		type: String, 
+		default: ''
+		},
 		otherSubject:{
 			type: [SubjectSchema]
 		},
