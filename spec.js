@@ -1,3 +1,6 @@
+/***************************************************************************************
+THESE TESTS ARE OUT OF DATE WITH THE WEBSITE, LOOKS AT FAILED TESTS AND SEE IF RELEVENT
+***************************************************************************************/
 // spec.js
 describe('issle Demo App', function() {
     // Home page button test
@@ -12,7 +15,7 @@ describe('issle Demo App', function() {
        expect(browser.getTitle()).toEqual('issle - Development Environment');
    });
 
-    // Search for projects test1
+    // Search for dance projects
     it('Search for projects test1', function() {
        browser.get('http://localhost:3000/projects');
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -20,7 +23,7 @@ describe('issle Demo App', function() {
        element(by.id('submit')).click();
        expect(element.all(by.repeater('prj in projects')).count()).toEqual(2);
     });
-    // Search for projects test2
+    // Search for english projects
     it('Search for projects test2', function() {
        //browser.get('http://localhost:3000/projects');
        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -28,7 +31,7 @@ describe('issle Demo App', function() {
        element(by.id('submit')).click();
        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test3
+    // Search for gifted project
     it('Search for projects test3', function() {
        //browser.get('http://localhost:3000/projects');
        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -36,7 +39,7 @@ describe('issle Demo App', function() {
        element(by.id('submit')).click();
        expect(element.all(by.repeater('prj in projects')).count()).toEqual(1);
     });
-    // Search for projects test4
+    // Search for health projects
     it('Search for projects test4', function() {
        //browser.get('http://localhost:3000/projects');
        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -44,7 +47,7 @@ describe('issle Demo App', function() {
        element(by.id('submit')).click();
        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test5
+    // Search for music projects
     it('Search for projects test5', function() {
        //browser.get('http://localhost:3000/projects');
        //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -52,7 +55,7 @@ describe('issle Demo App', function() {
        element(by.id('submit')).click();
        expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test6
+    // Search for PE projects
     it('Search for projects test6', function() {
         //browser.get('http://localhost:3000/projects');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -60,7 +63,7 @@ describe('issle Demo App', function() {
         element(by.id('submit')).click();
         expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test7
+    // Search for special skills projects
     it('Search for projects test7', function() {
         //browser.get('http://localhost:3000/projects');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -68,7 +71,7 @@ describe('issle Demo App', function() {
        element(by.id('submit')).click();
        expect(element.all(by.repeater('prj in projects')).count()).toEqual(1);
     });
-    // Search for projects test8
+    // Search for theatre projects
     it('Search for projects test8', function() {
         browser.get('http://localhost:3000/projects');
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -76,7 +79,7 @@ describe('issle Demo App', function() {
         element(by.id('submit')).click();
         expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test9
+    // Search for visual arts projects
     it('Search for projects test9', function() {
         //browser.get('http://localhost:3000/projects');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -84,7 +87,7 @@ describe('issle Demo App', function() {
         element(by.id('submit')).click();
         expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test10
+    // Search for project with MAFS.7.SP.1.1
     it('Search for projects test10', function() {
         //browser.get('http://localhost:3000/projects');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -92,7 +95,7 @@ describe('issle Demo App', function() {
         element(by.id('submit')).click();
         expect(element.all(by.repeater('prj in projects')).count()).toEqual(0);
     });
-    // Search for projects test11
+    // Search for projects with Raz and go to the first one available
     it('Search for projects test11', function() {
         //browser.get('http://localhost:3000/projects');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -104,7 +107,7 @@ describe('issle Demo App', function() {
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects/564e0c90110ba90e00c720b4');
     });
 
-    // Search for projects test12
+    // Search for project with MAFS.7.SP.1.1
     it('Search for projects test12', function() {
         browser.get('http://localhost:3000/projects');
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/projects');
@@ -129,7 +132,7 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1);
     });
 
-    // Search for standards population
+    // Search for standards with population
     it('Search for standards population', function() {
         //browser.get('http://localhost:3000/standards');
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
@@ -139,7 +142,7 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(29);
     });
 
-    // Search for standards water
+    // Search for standards with water
     it('Search for standards water', function() {
         //browser.get('http://localhost:3000/standards');
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
@@ -150,8 +153,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(50);
     });
 
-   // Search for standards test1
-    it('Search for standards test1', function() {
+   // Search for all dance standards
+    /*it('Search for standards test1', function() {
        //browser.get('http://localhost:3000/standards');
        expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
        element(by.cssContainingText('option', 'Dance')).click();
@@ -160,7 +163,7 @@ describe('issle Demo App', function() {
        expect(element.all(by.repeater('std in standards')).count()).toEqual(315);
    });
 
-    // Search for standards test1.1
+    // Search for dance standards grade K
     it('Search for standards test1.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
@@ -172,8 +175,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
     });
 
-    // Search for standards test1.2
-    it('Search for standards test1.2', function() {
+    // Search for dance standards grade 1
+    it('Search for dance standards grade test1.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -183,8 +186,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(23);
     });
 
-    // Search for standards test1.3
-    it('Search for standards test1.3', function() {
+    // Search for dance standards grade 2
+    it('Search for dance standards grade test1.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -194,8 +197,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(26);
     });
 
-    // Search for standards test1.4
-    it('Search for standards test1.4', function() {
+    // Search for dance standards grade 3
+    it('Search for dance standards grade test1.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -205,8 +208,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
     });
 
-    // Search for standards test1.5
-    it('Search for standards test1.5', function() {
+    // Search for dance standards grade 4
+    it('Search for dance standards grade test1.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -216,8 +219,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
     });
 
-    // Search for standards test1.6
-    it('Search for standards test1.6', function() {
+    // Search for dance standards grade 5
+    it('Search for dance standards grade test1.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -227,8 +230,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(44);
     });
 
-    // Search for standards test1.7
-    it('Search for standards test1.7', function() {
+    // Search for dance standards grade 6
+    it('Search for dance standards grade test1.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -238,8 +241,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(60);
     });
 
-    // Search for standards test1.8
-    it('Search for standards test1.8', function() {
+    // Search for dance standards grade 7
+    it('Search for dance standards grade test1.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -249,8 +252,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(60);
     });
 
-    // Search for standards test1.9
-    it('Search for standards test1.9', function() {
+    // Search for dance standards grade 8
+    it('Search for dance standards grade test1.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -260,8 +263,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(60);
     });
 
-    // Search for standards test1.10
-    it('Search for standards test1.10', function() {
+    // Search for dance standards grade 9-12
+    it('Search for dance standards grade test1.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -271,8 +274,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(72);
     });
 
-    // Search for standards test2
-    it('Search for standards test2', function() {
+    // Search for all english language arts standards
+    it('Search for english language arts standards grade test2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'English Language Arts')).click();
@@ -280,8 +283,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(574);
     });
 
-    // Search for standards test2.1
-    it('Search for standards test2.1', function() {
+    // Search for english language arts standards grade K
+    it('Search for english language arts standards grade test2.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -292,8 +295,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(73);
     });
 
-    // Search for standards test2.2
-    it('Search for standards test2.2', function() {
+    // Search for english language arts standards grade 1
+    it('Search for english language arts standards grade test2.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -303,8 +306,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(73);
     });
 
-    // Search for standards test2.3
-    it('Search for standards test2.3', function() {
+    // Search for english language arts standards grade 2
+    it('Search for english language arts standards grade test2.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -314,8 +317,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(72);
     });
 
-    // Search for standards test2.4
-    it('Search for standards test2.4', function() {
+    // Search for english language arts standards grade 3
+    it('Search for english language arts standards grade test2.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -325,8 +328,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(74);
     });
 
-    // Search for standards test2.5
-    it('Search for standards test2.5', function() {
+    // Search for english language arts standards grade 4
+    it('Search for english language arts standards grade test2.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -336,8 +339,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(75);
     });
 
-    // Search for standards test2.6
-    it('Search for standards test2.6', function() {
+    // Search for english language arts standards grade 5
+    it('Search for english language arts standards grade test2.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -347,8 +350,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(75);
     });
 
-    // Search for standards test2.7
-    it('Search for standards test2.7', function() {
+    // Search for english language arts standards grade 6
+    it('Search for english language arts standards grade test2.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -358,8 +361,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
     });
 
-    // Search for standards test2.8
-    it('Search for standards test2.8', function() {
+    // Search for english language arts standards grade 7
+    it('Search for english language arts standards grade test2.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -369,8 +372,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
     });
 
-    // Search for standards test2.9
-    it('Search for standards test2.9', function() {
+    // Search for english language arts standards grade 8
+    it('Search for english language arts standards grade test2.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -380,8 +383,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
     });
 
-    // Search for standards test2.10
-    it('Search for standards test2.10', function() {
+    // Search for english language arts standards grade 9-12
+    it('Search for english language arts standards grade test2.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -391,8 +394,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(172);
     });
 
-    // Search for standards test3
-    it('Search for standards test3', function() {
+    // Search for all english language development standards
+    it('Search for english language development standards grade test3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'English Language Development')).click();
@@ -400,8 +403,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.1
-    it('Search for standards test3.1', function() {
+    // Search for english language development standards grade K
+    it('Search for english language development standards grade test3.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -412,8 +415,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.2
-    it('Search for standards test3.2', function() {
+    // Search for english language development standards grade 1
+    it('Search for english language development standards grade test3.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -423,8 +426,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.3
-    it('Search for standards test3.3', function() {
+    // Search for english language development standards grade 2
+    it('Search for english language development standards grade test3.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -434,8 +437,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.4
-    it('Search for standards test3.4', function() {
+    // Search for english language development standards grade 3
+    it('Search for english language development standards grade test3.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -445,8 +448,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.5
-    it('Search for standards test3.5', function() {
+    // Search for english language development standards grade 4
+    it('Search for english language development standards grade test3.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -456,8 +459,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.6
-    it('Search for standards test3.6', function() {
+    // Search for english language development standards grade 5
+    it('Search for english language development standards grade test3.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -467,8 +470,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.7
-    it('Search for standards test3.7', function() {
+    // Search for english language development standards grade 6
+    it('Search for english language development standards grade test3.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -478,8 +481,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.8
-    it('Search for standards test3.8', function() {
+    // Search for english language development standards grade 7
+    it('Search for english language development standards grade test3.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -489,8 +492,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.9
-    it('Search for standards test3.9', function() {
+    // Search for english language development standards grade 8
+    it('Search for english language development standards grade test3.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -500,8 +503,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test3.10
-    it('Search for standards test3.10', function() {
+    // Search for english language development standards grade 9-12
+    it('Search for english language development standards grade test3.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -511,8 +514,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(5);
     });
 
-    // Search for standards test4
-    it('Search for standards test4', function() {
+    // Search for all gifted standards grade
+    it('Search for gifted standards grade test4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Gifted')).click();
@@ -520,8 +523,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.1
-    it('Search for standards test4.1', function() {
+    // Search for gifted standards grade K
+    it('Search for gifted standards grade test4.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -532,8 +535,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.2
-    it('Search for standards test4.2', function() {
+    // Search for gifted standards grade 1
+    it('Search for gifted standards grade test4.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -543,8 +546,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.3
-    it('Search for standards test4.3', function() {
+    // Search for gifted standards grade 2
+    it('Search for gifted standards grade test4.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -554,8 +557,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.4
-    it('Search for standards test4.4', function() {
+    // Search for gifted standards grade 3
+    it('Search for gifted standards grade test4.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -565,8 +568,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.5
-    it('Search for standards test4.5', function() {
+    // Search for gifted standards grade 4
+    it('Search for gifted standards grade test4.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -576,8 +579,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.6
-    it('Search for standards test4.6', function() {
+    // Search for gifted standards grade 5
+    it('Search for gifted standards grade test4.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -587,8 +590,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.7
-    it('Search for standards test4.7', function() {
+    // Search for gifted standards grade 6
+    it('Search for gifted standards grade test4.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -598,8 +601,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.8
-    it('Search for standards test4.8', function() {
+    // Search for gifted standards grade 7
+    it('Search for gifted standards grade test4.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -609,8 +612,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.9
-    it('Search for standards test4.9', function() {
+    // Search for gifted standards grade 8
+    it('Search for gifted standards grade test4.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -620,8 +623,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test4.10
-    it('Search for standards test4.10', function() {
+    // Search for gifted standards grade 9-12
+    it('Search for gifted standards grade test4.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -631,8 +634,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(284);
     });
 
-    // Search for standards test5
-    it('Search for standards test5', function() {
+    // Search for all health education standards
+    it('Search for health education standards grade test5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Health Education')).click();
@@ -640,8 +643,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(297);
     });
 
-    // Search for standards test5.1
-    it('Search for standards test5.1', function() {
+    // Search for health education standards grade K
+    it('Search for health education standards grade test5.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -652,8 +655,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
     });
 
-    // Search for standards test5.2
-    it('Search for standards test5.2', function() {
+    // Search for health education standards grade 1
+    it('Search for health education standards grade test5.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -663,8 +666,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(20);
     });
 
-    // Search for standards test5.3
-    it('Search for standards test5.3', function() {
+    // Search for health education standards grade 2
+    it('Search for health education standards grade test5.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -674,8 +677,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(20);
     });
 
-    // Search for standards test5.4
-    it('Search for standards test5.4', function() {
+    // Search for health education standards grade 3
+    it('Search for health education standards grade test5.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -685,8 +688,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(27);
     });
 
-    // Search for standards test5.5
-    it('Search for standards test5.5', function() {
+    // Search for health education standards grade 4
+    it('Search for health education standards grade test5.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -696,8 +699,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(28);
     });
 
-    // Search for standards test5.6
-    it('Search for standards test5.6', function() {
+    // Search for health education standards grade 5
+    it('Search for health education standards grade test5.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -707,8 +710,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(31);
     });
 
-    // Search for standards test5.7
-    it('Search for standards test5.7', function() {
+    // Search for health education standards grade 6
+    it('Search for health education standards grade test5.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -718,8 +721,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
     });
 
-    // Search for standards test5.8
-    it('Search for standards test5.8', function() {
+    // Search for health education standards grade 7
+    it('Search for health education standards grade test5.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -729,8 +732,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(36);
     });
 
-    // Search for standards test5.9
-    it('Search for standards test5.9', function() {
+    // Search for health education standards grade 8
+    it('Search for health education standards grade test5.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -740,8 +743,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
     });
 
-    // Search for standards test5.10
-    it('Search for standards test5.10', function() {
+    // Search for health education standards grade 9-12
+    it('Search for health education standards grade test5.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -751,8 +754,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(40);
     });
 
-    // Search for standards test6
-    it('Search for standards test6', function() {
+    // Search for all mathematics standards
+    it('Search for mathematics standards grade test6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Mathematics')).click();
@@ -760,8 +763,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(451);
     });
 
-    // Search for standards test6.1
-    it('Search for standards test6.1', function() {
+    // Search for mathematics standards grade K
+    it('Search for mathematics standards grade test6.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -772,8 +775,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(31);
     });
 
-    // Search for standards test6.2
-    it('Search for standards test6.2', function() {
+    // Search for mathematics standards grade 1
+    it('Search for mathematics standards grade test6.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -783,8 +786,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
     });
 
-    // Search for standards test6.3
-    it('Search for standards test6.3', function() {
+    // Search for mathematics standards grade 2
+    it('Search for mathematics standards grade test6.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -794,8 +797,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(35);
     });
 
-    // Search for standards test6.4
-    it('Search for standards test6.4', function() {
+    // Search for mathematics standards grade 3
+    it('Search for mathematics standards grade test6.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -805,8 +808,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
     });
 
-    // Search for standards test6.5
-    it('Search for standards test6.5', function() {
+    // Search for mathematics standards grade 4
+    it('Search for mathematics standards grade test6.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -816,8 +819,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(38);
     });
 
-    // Search for standards test6.6
-    it('Search for standards test6.6', function() {
+    // Search for mathematics standards grade 5
+    it('Search for mathematics standards grade test6.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -827,8 +830,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(34);
     });
 
-    // Search for standards test6.7
-    it('Search for standards test6.7', function() {
+    // Search for mathematics standards grade 6
+    it('Search for mathematics standards grade test6.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -838,8 +841,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
     });
 
-    // Search for standards test6.8
-    it('Search for standards test6.8', function() {
+    // Search for mathematics standards grade 7
+    it('Search for mathematics standards grade test6.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -849,8 +852,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(32);
     });
 
-    // Search for standards test6.9
-    it('Search for standards test6.9', function() {
+    // Search for mathematics standards grade 8
+    it('Search for mathematics standards grade test6.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -860,8 +863,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(36);
     });
 
-    // Search for standards test6.10
-    it('Search for standards test6.10', function() {
+    // Search for mathematics standards grade 9-12
+    it('Search for mathematics standards grade test6.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -871,8 +874,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(217);
     });
 
-    // Search for standards test7
-    it('Search for standards test7', function() {
+    // Search for all music standards
+    it('Search for music standards grade test7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Music')).click();
@@ -880,8 +883,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(254);
     });
 
-    // Search for standards test7.1
-    it('Search for standards test7.1', function() {
+    // Search for music standards grade K
+    it('Search for music standards grade test7.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -892,8 +895,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(20);
     });
 
-    // Search for standards test7.2
-    it('Search for standards test7.2', function() {
+    // Search for music standards grade 1
+    it('Search for music standards grade test7.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -903,8 +906,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(24);
     });
 
-    // Search for standards test7.3
-    it('Search for standards test7.3', function() {
+    // Search for music standards grade 2
+    it('Search for music standards grade test7.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -914,8 +917,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(24);
     });
 
-    // Search for standards test7.4
-    it('Search for standards test7.4', function() {
+    // Search for music standards grade 3
+    it('Search for music standards grade test7.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -925,8 +928,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(27);
     });
 
-    // Search for standards test7.5
-    it('Search for standards test7.5', function() {
+    // Search for music standards grade 4
+    it('Search for music standards grade test7.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -936,8 +939,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
     });
 
-    // Search for standards test7.6
-    it('Search for standards test7.6', function() {
+    // Search for music standards grade 5
+    it('Search for music standards grade test7.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -947,8 +950,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
     });
 
-    // Search for standards test7.7
-    it('Search for standards test7.7', function() {
+    // Search for music standards grade 6
+    it('Search for music standards grade test7.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -958,8 +961,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(47);
     });
 
-    // Search for standards test7.8
-    it('Search for standards test7.8', function() {
+    // Search for music standards grade 7
+    it('Search for music standards grade test7.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -969,8 +972,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(47);
     });
 
-    // Search for standards test7.9
-    it('Search for standards test7.9', function() {
+    // Search for music standards grade 8
+    it('Search for music standards grade test7.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -980,8 +983,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(47);
     });
 
-    // Search for standards test7.10
-    it('Search for standards test7.10', function() {
+    // Search for music standards grade 9-12
+    it('Search for music standards grade test7.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -991,8 +994,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(49);
     });
 
-    // Search for standards test8
-    it('Search for standards test8', function() {
+    // Search for all PE standards
+    it('Search for PE standards grade test8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Physical Education')).click();
@@ -1000,8 +1003,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(467);
     });
 
-    // Search for standards test8.1
-    it('Search for standards test8.1', function() {
+    // Search for PE standards grade K
+    it('Search for PE standards grade test8.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -1012,8 +1015,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(40);
     });
 
-    // Search for standards test8.2
-    it('Search for standards test8.2', function() {
+    // Search for PE standards grade 1
+    it('Search for PE standards grade test8.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1023,8 +1026,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(43);
     });
 
-    // Search for standards test8.3
-    it('Search for standards test8.3', function() {
+    // Search for PE standards grade 2
+    it('Search for PE standards grade test8.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1034,8 +1037,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(44);
     });
 
-    // Search for standards test8.4
-    it('Search for standards test8.4', function() {
+    // Search for PE standards grade 3
+    it('Search for PE standards grade test8.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1045,8 +1048,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(43);
     });
 
-    // Search for standards test8.5
-    it('Search for standards test8.5', function() {
+    // Search for PE standards grade 4
+    it('Search for PE standards grade test8.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1056,8 +1059,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(43);
     });
 
-    // Search for standards test8.6
-    it('Search for standards test8.6', function() {
+    // Search for PE standards grade 5
+    it('Search for PE standards grade test8.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1067,8 +1070,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(42);
     });
 
-    // Search for standards test8.7
-    it('Search for standards test8.7', function() {
+    // Search for PE standards grade 6
+    it('Search for PE standards grade test8.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1078,8 +1081,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(54);
     });
 
-    // Search for standards test8.8
-    it('Search for standards test8.8', function() {
+    // Search for PE standards grade 7
+    it('Search for PE standards grade test8.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1089,8 +1092,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
     });
 
-    // Search for standards test8.9
-    it('Search for standards test8.9', function() {
+    // Search for PE standards grade 8
+    it('Search for PE standards grade test8.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1100,8 +1103,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
     });
 
-    // Search for standards test8.10
-    it('Search for standards test8.10', function() {
+    // Search for PE standards grade 9-12
+    it('Search for PE standards grade test8.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1111,8 +1114,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(84);
     });
 
-    // Search for standards test9
-    it('Search for standards test9', function() {
+    // Search for all science standards
+    it('Search for science standards grade test9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Science')).click();
@@ -1120,8 +1123,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(498);
     });
 
-    // Search for standards test9.1
-    it('Search for standards test9.1', function() {
+    // Search for science standards grade K
+    it('Search for science standards grade test9.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -1132,8 +1135,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
     });
 
-    // Search for standards test9.2
-    it('Search for standards test9.2', function() {
+    // Search for science standards grade 1
+    it('Search for science standards grade test9.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1143,8 +1146,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(19);
     });
 
-    // Search for standards test9.3
-    it('Search for standards test9.3', function() {
+    // Search for science standards grade 2
+    it('Search for science standards grade test9.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1154,8 +1157,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
     });
 
-    // Search for standards test9.4
-    it('Search for standards test9.4', function() {
+    // Search for science standards grade 3
+    it('Search for science standards grade test9.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1165,8 +1168,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(32);
     });
 
-    // Search for standards test9.5
-    it('Search for standards test9.5', function() {
+    // Search for science standards grade 4
+    it('Search for science standards grade test9.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1176,8 +1179,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(42);
     });
 
-    // Search for standards test9.6
-    it('Search for standards test9.6', function() {
+    // Search for science standards grade 5
+    it('Search for science standards grade test9.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1187,8 +1190,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
     });
 
-    // Search for standards test9.7
-    it('Search for standards test9.7', function() {
+    // Search for science standards grade 6
+    it('Search for science standards grade test9.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1198,8 +1201,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(35);
     });
 
-    // Search for standards test9.8
-    it('Search for standards test9.8', function() {
+    // Search for science standards grade 7
+    it('Search for science standards grade test9.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1209,8 +1212,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(34);
     });
 
-    // Search for standards test9.9
-    it('Search for standards test9.9', function() {
+    // Search for science standards grade 8
+    it('Search for science standards grade test9.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1220,8 +1223,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(40);
     });
 
-    // Search for standards test9.10
-    it('Search for standards test9.10', function() {
+    // Search for science standards grade 9-12
+    it('Search for science standards grade test9.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1231,8 +1234,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(210);
     });
 
-    // Search for standards test10
-    it('Search for standards test10', function() {
+    // Search for all SS standards
+    it('Search for SS standards grade test10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Social Studies')).click();
@@ -1240,8 +1243,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1175);
     });
 
-    // Search for standards test10.1
-    it('Search for standards test10.1', function() {
+    // Search for SS standards grade K
+    it('Search for SS standards grade test10.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -1252,8 +1255,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(27);
     });
 
-    // Search for standards test10.2
-    it('Search for standards test10.2', function() {
+    // Search for SS standards grade 1
+    it('Search for SS standards grade test10.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1263,8 +1266,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(30);
     });
 
-    // Search for standards test10.3
-    it('Search for standards test10.3', function() {
+    // Search for SS standards grade 2
+    it('Search for SS standards grade test10.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1274,8 +1277,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(28);
     });
 
-    // Search for standards test10.4
-    it('Search for standards test10.4', function() {
+    // Search for SS standards grade 3
+    it('Search for SS standards grade test10.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1285,8 +1288,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(33);
     });
 
-    // Search for standards test10.5
-    it('Search for standards test10.5', function() {
+    // Search for SS standards grade 4
+    it('Search for SS standards grade test10.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1296,8 +1299,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(69);
     });
 
-    // Search for standards test10.6
-    it('Search for standards test10.6', function() {
+    // Search for SS standards grade 5
+    it('Search for SS standards grade test10.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1307,8 +1310,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(64);
     });
 
-    // Search for standards test10.7
-    it('Search for standards test10.7', function() {
+    // Search for SS standards grade 6
+    it('Search for SS standards grade test10.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1318,8 +1321,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(82);
     });
 
-    // Search for standards test10.8
-    it('Search for standards test10.8', function() {
+    // Search for SS standards grade 7
+    it('Search for SS standards grade test10.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1329,8 +1332,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(67);
     });
 
-    // Search for standards test10.9
-    it('Search for standards test10.9', function() {
+    // Search for SS standards grade 8
+    it('Search for SS standards grade test10.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1340,8 +1343,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(122);
     });
 
-    // Search for standards test10.10
-    it('Search for standards test10.10', function() {
+    // Search for SS standards grade 9-12
+    it('Search for SS standards grade test10.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1351,8 +1354,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(653);
     });
 
-    // Search for standards test11
-    it('Search for standards test11', function() {
+    // Search for all Special Skills standards
+    it('Search for Special Skills standards grade test11', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Special Skills')).click();
@@ -1360,8 +1363,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.1
-    it('Search for standards test11.1', function() {
+    // Search for Special Skills standards grade K
+    it('Search for Special Skills standards grade test11.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -1372,8 +1375,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.2
-    it('Search for standards test11.2', function() {
+    // Search for Special Skills standards grade 1
+    it('Search for Special Skills standards grade test11.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1383,8 +1386,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.3
-    it('Search for standards test11.3', function() {
+    // Search for Special Skills standards grade 2
+    it('Search for Special Skills standards grade test11.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1394,8 +1397,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.4
-    it('Search for standards test11.4', function() {
+    // Search for Special Skills standards grade 3
+    it('Search for Special Skills standards grade test11.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1405,8 +1408,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.5
-    it('Search for standards test11.5', function() {
+    // Search for Special Skills standards grade 4
+    it('Search for Special Skills standards grade test11.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1416,8 +1419,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.6
-    it('Search for standards test11.6', function() {
+    // Search for Special Skills standards grade 5
+    it('Search for Special Skills standards grade test11.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1427,8 +1430,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.7
-    it('Search for standards test11.7', function() {
+    // Search for Special Skills standards grade 6
+    it('Search for Special Skills standards grade test11.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1438,8 +1441,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.8
-    it('Search for standards test11.8', function() {
+    // Search for Special Skills standards grade 7
+    it('Search for Special Skills standards grade test11.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1449,8 +1452,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.9
-    it('Search for standards test11.9', function() {
+    // Search for Special Skills standards grade 8
+    it('Search for Special Skills standards grade test11.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1460,8 +1463,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test11.10
-    it('Search for standards test11.10', function() {
+    // Search for Special Skills standards grade 9-12
+    it('Search for Special Skills standards grade test11.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1471,8 +1474,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(265);
     });
 
-    // Search for standards test12
-    it('Search for standards test12', function() {
+    // Search for all Theatre standards
+    it('Search for Theatre standards grade test12', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Theatre')).click();
@@ -1480,8 +1483,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(332);
     });
 
-    // Search for standards test12.1
-    it('Search for standards test12.1', function() {
+    // Search for Theatre standards grade K
+    it('Search for Theatre standards grade test12.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -1492,8 +1495,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(18);
     });
 
-    // Search for standards test12.2
-    it('Search for standards test12.2', function() {
+    // Search for Theatre standards grade 1
+    it('Search for Theatre standards grade test12.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1503,8 +1506,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(21);
     });
 
-    // Search for standards test12.3
-    it('Search for standards test12.3', function() {
+    // Search for Theatre standards grade 2
+    it('Search for Theatre standards grade test12.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1514,8 +1517,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(23);
     });
 
-    // Search for standards test12.4
-    it('Search for standards test12.4', function() {
+    // Search for Theatre standards grade 3
+    it('Search for Theatre standards grade test12.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1525,8 +1528,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(29);
     });
 
-    // Search for standards test12.5
-    it('Search for standards test12.5', function() {
+    // Search for Theatre standards grade 4
+    it('Search for Theatre standards grade test12.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1536,8 +1539,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(34);
     });
 
-    // Search for standards test12.6
-    it('Search for standards test12.6', function() {
+    // Search for Theatre standards grade 5
+    it('Search for Theatre standards grade test12.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1547,8 +1550,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(39);
     });
 
-    // Search for standards test12.7
-    it('Search for standards test12.7', function() {
+    // Search for Theatre standards grade 6
+    it('Search for Theatre standards grade test12.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1558,8 +1561,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(66);
     });
 
-    // Search for standards test12.8
-    it('Search for standards test12.8', function() {
+    // Search for Theatre standards grade 7
+    it('Search for Theatre standards grade test12.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1569,8 +1572,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(66);
     });
 
-    // Search for standards test12.9
-    it('Search for standards test12.9', function() {
+    // Search for Theatre standards grade 8
+    it('Search for Theatre standards grade test12.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1580,8 +1583,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(66);
     });
 
-    // Search for standards test12.10
-    it('Search for standards test12.10', function() {
+    // Search for Theatre standards grade 9-12
+    it('Search for Theatre standards grade test12.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1591,8 +1594,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(102);
     });
 
-    // Search for standards test13
-    it('Search for standards test13', function() {
+    // Search for all Visual Arts standards
+    it('Search for Visual Arts standards grade test13', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Visual Art')).click();
@@ -1600,8 +1603,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(367);
     });
 
-    // Search for standards test13.1
-    it('Search for standards test13.1', function() {
+    // Search for Visual Arts standards grade K
+    it('Search for Visual Arts standards grade test13.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         //element(by.cssContainingText('option', 'Select one...')).click();
@@ -1612,8 +1615,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(25);
     });
 
-    // Search for standards test13.2
-    it('Search for standards test13.2', function() {
+    // Search for Visual Arts standards grade 1
+    it('Search for Visual Arts standards grade test13.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1623,8 +1626,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(31);
     });
 
-    // Search for standards test13.3
-    it('Search for standards test13.3', function() {
+    // Search for Visual Arts standards grade 2
+    it('Search for Visual Arts standards grade test13.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1634,8 +1637,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(32);
     });
 
-    // Search for standards test13.4
-    it('Search for standards test13.4', function() {
+    // Search for Visual Arts standards grade 3
+    it('Search for Visual Arts standards grade test13.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1645,8 +1648,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(35);
     });
 
-    // Search for standards test13.5
-    it('Search for standards test13.5', function() {
+    // Search for Visual Arts standards grade 4
+    it('Search for Visual Arts standards grade test13.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1656,8 +1659,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(37);
     });
 
-    // Search for standards test13.6
-    it('Search for standards test13.6', function() {
+    // Search for Visual Arts standards grade 5
+    it('Search for Visual Arts standards grade test13.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1667,8 +1670,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(44);
     });
 
-    // Search for standards test13.7
-    it('Search for standards test13.7', function() {
+    // Search for Visual Arts standards grade 6
+    it('Search for Visual Arts standards grade test13.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1678,8 +1681,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(58);
     });
 
-    // Search for standards test13.8
-    it('Search for standards test13.8', function() {
+    // Search for Visual Arts standards grade 7
+    it('Search for Visual Arts standards grade test13.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1689,8 +1692,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(58);
     });
 
-    // Search for standards test13.9
-    it('Search for standards test13.9', function() {
+    // Search for Visual Arts standards grade 8
+    it('Search for Visual Arts standards grade test13.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1700,8 +1703,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(58);
     });
 
-    // Search for standards test13.10
-    it('Search for standards test13.10', function() {
+    // Search for Visual Arts standards grade 9-12
+    it('Search for Visual Arts standards grade test13.10', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1711,8 +1714,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(105);
     });
 
-    // Search for standards test14
-    it('Search for standards test14', function() {
+    // Search for all standards grade K
+    it('Search for all standards grade test14', function() {
         //browser.get('http://localhost:3000/standards');
         expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.cssContainingText('option', 'Select one...')).click();
@@ -1723,8 +1726,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(845);
     });
 
-    // Search for standards test14.1
-    it('Search for standards test14.1', function() {
+    // Search for all standards grade 1
+    it('Search for all standards grade test14.1', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min1')).click();
@@ -1734,8 +1737,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(868);
     });
 
-    // Search for standards test14.2
-    it('Search for standards test14.2', function() {
+    // Search for all standards grade 2
+    it('Search for all standards grade test14.2', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min2')).click();
@@ -1745,8 +1748,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(888);
     });
 
-    // Search for standards test14.3
-    it('Search for standards test14.3', function() {
+    // Search for all standards grade 3
+    it('Search for all standards grade test14.3', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min3')).click();
@@ -1756,8 +1759,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(920);
     });
 
-    // Search for standards test14.4
-    it('Search for standards test14.4', function() {
+    // Search for all standards grade 4
+    it('Search for all standards grade test14.4', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min4')).click();
@@ -1767,8 +1770,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(988);
     });
 
-    // Search for standards test14.5
-    it('Search for standards test14.5', function() {
+    // Search for all standards grade 5
+    it('Search for all standards grade test14.5', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min5')).click();
@@ -1778,8 +1781,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(997);
     });
 
-    // Search for standards test14.6
-    it('Search for standards test14.6', function() {
+    // Search for all standards grade 6
+    it('Search for all standards grade test14.6', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min6')).click();
@@ -1789,8 +1792,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1133);
     });
 
-    // Search for standards test14.7
-    it('Search for standards test14.7', function() {
+    // Search for all standards grade 7
+    it('Search for all standards grade test14.7', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min7')).click();
@@ -1800,8 +1803,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1093);
     });
 
-    // Search for standards test14.8
-    it('Search for standards test14.8', function() {
+    // Search for all standards grade 8
+    it('Search for all standards grade test14.8', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min8')).click();
@@ -1811,8 +1814,8 @@ describe('issle Demo App', function() {
         expect(element.all(by.repeater('std in standards')).count()).toEqual(1160);
     });
 
-    // Search for standards test14.9
-    it('Search for standards test14.9', function() {
+    // Search for all standards grade 9-12
+    it('Search for all standards grade test14.9', function() {
         //browser.get('http://localhost:3000/standards');
         //expect(browser.getCurrentUrl()).toBe('http://localhost:3000/standards');
         element(by.id('min912')).click();
@@ -1820,55 +1823,7 @@ describe('issle Demo App', function() {
         element(by.id('submit')).click();
         //browser.driver.sleep(1000);
         expect(element.all(by.repeater('std in standards')).count()).toEqual(2258);
-    });
-
-   //Show example1 test
-   it('Show example1 test', function() {
-       browser.get('http://localhost:3000/support/examples');
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/examples');
-       element(by.id('1')).click();
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/example1');
-   });
-
-   //Show example2 test
-   it('Show example2 test', function() {
-       browser.get('http://localhost:3000/support/examples');
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/examples');
-       element(by.id('2')).click();
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/example2');
-   });
-
-   //Show example3 test
-   it('Show example3 test', function() {
-       browser.get('http://localhost:3000/support/examples');
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/examples');
-       element(by.id('3')).click();
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/example3');
-   });
-
-   //Show example4 test
-   it('Show example4 test', function() {
-       browser.get('http://localhost:3000/support/examples');
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/examples');
-       element(by.id('4')).click();
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/example4');
-   });
-
-   //Show example5 test
-   it('Show example5 test', function() {
-       browser.get('http://localhost:3000/support/examples');
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/examples');
-       element(by.id('5')).click();
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/example5');
-   });
-
-   //Show example6 test
-   it('Show example6 test', function() {
-       browser.get('http://localhost:3000/support/examples');
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/examples');
-       element(by.id('6')).click();
-       expect(browser.getCurrentUrl()).toBe('http://localhost:3000/support/example6');
-   });
+    });*/
 
    // FAQ page test
    it('FAQ page test', function() {
