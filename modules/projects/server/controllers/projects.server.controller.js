@@ -8,7 +8,7 @@
  mongoose = require('mongoose'),
  Project = mongoose.model('Project'),
  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
- knox = require(path.resolve('./config/lib/knox.js')),
+ knox = require(path.resolve('./config/lib/knox.js')), // S3 Connection
  knoxClient = knox.knoxClient;
 /**
  * Create a Project
@@ -55,7 +55,7 @@
  };
 
 /**
- * Delete an Project
+ * Delete a Project
  */
  exports.delete = function(req, res) {
  	var project = req.project ;
@@ -75,6 +75,13 @@
  * List of Projects
  */
  exports.list = function(req, res) {
+ 	//this is where the search querries for search by projects are created
+ 	//the way the search works is by a hiarchy
+    //if a project name is put in then that over takes all other search parameters
+    //if a standard is put in and but not a standard then that takes priority
+  	//if none of the text based search parameters are put in then it first checks if thier is a subject
+    //if there is put it in with the query if not, then just search by the min and max grade.
+
  	if (req.query.userId)
  	{
  		Project.find()
@@ -158,17 +165,20 @@
  exports.uploadDiagram = function (req,res){
 
 	 var project = req.project;
+	 // Upload Buffer from front-end client
 	 knoxClient.putBuffer(req.files.file.buffer, 'ProjectDrawings/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
 		 if (uploadError) {
 			 return res.status(400).send({
 				 message: 'Error occurred while uploading project drawing'
 			 });
 		 } else {
+			 // Delete previous existing image
 			 knoxClient.deleteFile(project.imagine.plan.substring(project.imagine.plan.search('ProjectDrawings/')),{'Content-Type': 'image/jpeg'}, function(err){
 				 if(err){
 					 return err.message;
 				 }
 			 });
+			 // Concatenate url onto image url
 			 project.imagine.plan = 'https://s3.amazonaws.com/isslepictures/ProjectDrawings/' + req.files.file.name;
 			 console.log('updating pic');
 			 project.save(function(err) {

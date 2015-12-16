@@ -4,6 +4,8 @@ angular.module('users').controller('SettingsController', ['$scope', 'Authenticat
   function ($scope, Authentication, Projects){
     $scope.user = Authentication.user;
 
+
+    // Grab projects that belong to this user
     $scope.getUserProjects = function(){
       Projects.query(
         {userId : $scope.user._id},
@@ -13,7 +15,7 @@ angular.module('users').controller('SettingsController', ['$scope', 'Authenticat
     );};
 
     $scope.deleteProject = function(project,$location){
-     if (confirm('Are you sure you want to delete this project?')) {	  
+     if (confirm('Are you sure you want to delete this project?')) { // Confirmation for deletion
 	  if ( project ) { project.$remove();
 
         for (var i in $scope.userProjects ) {

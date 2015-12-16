@@ -8,8 +8,8 @@
           <h3>Search by Main Subject</h3>
           <div class="panel panel-blue">
             <div class="panel-heading">I want projects with this subject...</div>
-            <div class="panel-body">                                      
-              <h4>Subject: 
+            <div class="panel-body">
+              <h4>Subject:
                 <select style="height:27px; width: 265px" ng-model="search.subject">
                   <option value="">Select one...</option>
                   <option value="Dance">Dance</option>
@@ -30,7 +30,7 @@
               </h4>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
       <div class="col-md-6"> <br>
         <div style="text-align:center">
@@ -39,7 +39,7 @@
           <div class="panel panel-blue">
             <div class="panel-heading">I want standards for the following grades...</div>
             <div class="panel-body">
-              <h4>Grade(s) : 
+              <h4>Grade(s) :
                 <select style="height:27px" ng-model="search.minGrade">
                   <option value="">Select one...</option>
                   <option value="0">K</option>
@@ -66,10 +66,10 @@
                   <option value="8">8</option>
                   <option value="912">9-12</option>
                 </select>
-              </h4>  
+              </h4>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
 
@@ -92,38 +92,42 @@
       <div class="panel-heading">  </div>
             <!-- <h2 class="panel-title"> Search Results </h2></div> -->
       <div class="panel-body">
-          <div class="row"> 
-              <div class="col-md-6 col-md-offset-3" style="text-align:center"> 
+          <div class="row">
+              <div class="col-md-6 col-md-offset-3" style="text-align:center">
                     <h3 class="search-results">Search Results: </h3>
               </div>
           </div>
 
           <div class="panel panel-blue" ng-repeat="prj in projects">
+                <!-- Displays all matching projects as a panel  -->
                 <div class="panel-heading" data-ui-sref="projects.view({projectId : prj._id})">
                       <div class="row">
                               <div class="col-xs-6 col-md-3">
                                   <a id="link" data-ui-sref="projects.view({projectId : prj._id})">
+                                    <!-- Title is a hyperlink -->
                                       <h4 class="gold" style="font-size:20">
-                                      {{prj.name}}</h4> 
-                                  </a> 
+                                      {{prj.name}}</h4>
+                                  </a>
                               </div>
+                              <!-- Shows author, grade range, and rating -->
                               <div class="col-xs-6 col-md-3"><h5>
                                   by <strong>{{prj.user.displayName}}</strong></h5></div>
-                              <div class="col-xs-6 col-md-3"><h5> 
+                              <div class="col-xs-6 col-md-3"><h5>
                                   For grades {{getGradeRange(prj.minGrade, prj.maxGrade)}}</h5></div>
                               <div class="col-xs-3-offset-3 col-md-3">
-                                    <h5> Rating: 
+                                    <h5> Rating: <!-- Shows rounded number of stars -->
                                         <div  class = "gold glyphicon glyphicon-star"
                                               style="font-size:1em"
-                                              ng-repeat="n in range(1,prj.rating.avg_rating,1)"> 
+                                              ng-repeat="n in range(1,prj.rating.avg_rating,1)">
                                         </div> {{noRatingCheck(prj.rating.avg_rating)}}
-                                    </h5> 
+                                    </h5>
                               </div>
                       </div>
                 </div>
 
                 <div class="panel-body">
                       <div class="row">
+                        <!-- Shows project summary as 2/3 of the panel width-->
                           <div class="col-md-8">
                               <div class="panel panel-default">
                                     <div class="panel-body">
@@ -133,7 +137,7 @@
                               </div>
 
                           </div>
-
+                          <!-- Shows standards met as 2/3 of the panel width-->
                           <div class="col-md-4">
                               <div class="panel panel-default">
                                     <div class="panel-body">
@@ -144,9 +148,9 @@
                           </div>
                       </div>
 
-                      
 
-                      
+
+
                 </div>
           </div>
 
@@ -172,7 +176,7 @@
             <td class = "line-break" style="width:110px;">
               <div  class = "gold glyphicon glyphicon-star"
                     style="font-size:1.5em"
-                    ng-repeat="n in range(1,prj.rating.avg_rating,1)"> 
+                    ng-repeat="n in range(1,prj.rating.avg_rating,1)">
               </div>
               {{noRatingCheck(prj.rating.avg_rating)}}
             </td>
