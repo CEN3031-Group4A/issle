@@ -54,7 +54,7 @@ User support in issle consists of an example page with framework designed for he
  
 ## How to run issle locally
 
-Install Mean.js onto your computer and download the necessary software using [this tutorial.](http://www.bossable.com/303/install-mean-stack/)
+Install MEAN.js onto your computer and download the necessary software using [this tutorial.](http://www.bossable.com/303/install-mean-stack/)
 
 Then, pull this repository into your local directory, go into this directory using command line, and type `grunt`.
 
