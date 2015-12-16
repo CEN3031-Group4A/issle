@@ -17,6 +17,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
+			//please note the next segment of code it will not only combine standards but also subjects
+			//the main function of the this next large block if if statements is do that
+			//when a project has been created the overall standards and subjects are calculated
+			//so that they can be searched by those subjects and standards
+			//most of the if statements are to check if either that element exists or if it is not undefined
+			//in the case of checking undefined typeof allows us to preform this check without causing a crash if the array doesnt exist
 
 			$scope.essentialDetails.overallStandards = '';
 
@@ -81,7 +87,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				}
 
 			}
-
+			//the slice is used to clean up so that the last standard does not have a quote and a space
+			//we do not need it for projects since overall projects will never be used to display to the user
 			$scope.essentialDetails.overallStandards = $scope.essentialDetails.overallStandards.slice(0, -2);
 
 
@@ -148,6 +155,11 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		$scope.CombineStandards = function(){
 			//please note it will not only combine standards but also subjects
+			//the combine standards function's main goal is to be used in the edit project page
+			//when a project has been edited the overall standards and subjects are calculated
+			//so that they can be searched by those subjects and standards
+			//most of the if statements are to check if either that element exists or if it is not undefined
+			//in the case of checking undefined typeof allows us to preform this check without causing a crash if the array doesnt exist
 			$scope.project.essentialDetails.overallStandards = '';
 
 			$scope.project.essentialDetails.overallSubjects = '';
@@ -211,7 +223,9 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				}
 
 			}
-
+			
+			//the slice is used to clean up so that the last standard does not have a quote and a space
+			//we do not need it for projects since overall projects will never be used to display to the user
 			$scope.project.essentialDetails.overallStandards = $scope.project.essentialDetails.overallStandards.slice(0, -2);
 		};
 
@@ -264,10 +278,16 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 
 		$scope.linkify = function(link) {
+			//The linkify function parses text and creates hyperlinks out of URL's anything with www. is valid
+			//the linkify function is only used in the view project page
 			var text = linkify.normal(link);
 			if(text) {
+				//this is for every browser but firefox (and will only execute for compatible browsers)
 				text = text.replace(/<a href="www./gi, '<a href="http://www.');
+				//this line is specificly for linkify for the firefox browser
+				text = text.replace(/<a target="_blank" href="www./gi, '<a target="_blank" href="http://www.');
 			}
+			//console.log(text); //used for debugging
 			return $sce.trustAsHtml(text);
 		};
 
