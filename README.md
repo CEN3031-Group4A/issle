@@ -20,35 +20,35 @@ https://deployissle.herokuapp.com/
   
 ## Features
 
-![alt text](https://github.com/CEN3031-Group4A/issle/raw/Develop/screenshots/homepage.JPG)
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/homepage.JPG)
 
 #### Engineering Design Frame page
 
-![alt text](https://github.com/CEN3031-Group4A/issle/raw/Develop/screenshots/designpage.JPG)
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/designpage.JPG)
 
 This page allows teachers to create their own engineering design projects, add multiple subjects to their projects, and link standards. These projects can be saved as drafts, and the user also has the option to mark a project as private (in which they will be the only user allowed to access the project).
 
 #### User Accounts
 
-![alt text](https://github.com/CEN3031-Group4A/issle/raw/Develop/screenshots/profilepage.jpg)
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/profilepage.jpg)
 
 issle also supports unique user accounts where each user can create, modify, and delete their own projects. Other settings associated with user accounts include changing user settings, such as school, username, email, and password, as well as changing a profile picture. Through the **My Projects** header in the user account page, users can also print out their projects to list them in their physical lesson plans.
 
 #### Search Standards
 
-![alt text](https://github.com/CEN3031-Group4A/issle/raw/Develop/screenshots/searchstandards.JPG)
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/searchstandards.JPG)
 
 A search standards system was also created, where teachers can look up Florida educational standards based on a grade and subject or by a keyword. The search will retrieve Florida common core standards to be referenced by the engineering design projects created by the user.
 
 #### Search Projects
 
-![alt text](https://github.com/CEN3031-Group4A/issle/raw/Develop/screenshots/searchprojects.JPG)
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/searchprojects.JPG)
 
 The search projects page provides a way for teachers to look up public projects that meet a certain standard, name, or keyword.
 
 #### User Support
 
-![alt text](https://github.com/CEN3031-Group4A/issle/raw/Develop/screenshots/supportpage.JPG)
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/supportpage.JPG)
 
 User support in issle consists of an example page with framework designed for helping teachers understand the process of generating their own project ideas. An FAQ also exists to address common website navigation questions, educational standards, and user settings, referenced in the sidebar of the design engineering frame.
  
