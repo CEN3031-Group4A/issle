@@ -8,7 +8,7 @@
  mongoose = require('mongoose'),
  Project = mongoose.model('Project'),
  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
- knox = require(path.resolve('./config/lib/knox.js')),
+ knox = require(path.resolve('./config/lib/knox.js')), // S3 Connection
  knoxClient = knox.knoxClient;
 /**
  * Create a Project
@@ -55,7 +55,7 @@
  };
 
 /**
- * Delete an Project
+ * Delete a Project
  */
  exports.delete = function(req, res) {
  	var project = req.project ;
@@ -158,17 +158,20 @@
  exports.uploadDiagram = function (req,res){
 
 	 var project = req.project;
+	 // Upload Buffer from front-end client
 	 knoxClient.putBuffer(req.files.file.buffer, 'ProjectDrawings/' + req.files.file.name,{'Content-Type': 'image/jpeg'},function(uploadError){
 		 if (uploadError) {
 			 return res.status(400).send({
 				 message: 'Error occurred while uploading project drawing'
 			 });
 		 } else {
+			 // Delete previous existing image
 			 knoxClient.deleteFile(project.imagine.plan.substring(project.imagine.plan.search('ProjectDrawings/')),{'Content-Type': 'image/jpeg'}, function(err){
 				 if(err){
 					 return err.message;
 				 }
 			 });
+			 // Concatenate url onto image url
 			 project.imagine.plan = 'https://s3.amazonaws.com/isslepictures/ProjectDrawings/' + req.files.file.name;
 			 console.log('updating pic');
 			 project.save(function(err) {
