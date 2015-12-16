@@ -1,5 +1,7 @@
 # issle :bulb:
 
+![alt text](https://github.com/CEN3031-Group4A/issle/blob/Develop/screenshots/issleteam.JPG)
+
 **CEN3031 Group 4A**
 
 **Members:** Raz Aloni, Salim Chaouqi, Juan Jauregui, Yayati Bagga, Logan Wood, Marie Urmano
