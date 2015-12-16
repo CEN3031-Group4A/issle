@@ -1,9 +1,10 @@
 # issle :bulb:
 
-CEN3031 Group 4A
-Members: Raz Aloni, Salim Chaouqi, Juan Jauregui, Yayati Bagga, Logan Wood, Marie Urmano
+**CEN3031 Group 4A**
 
-Client: Dr. Ruzycki
+**Members:** Raz Aloni, Salim Chaouqi, Juan Jauregui, Yayati Bagga, Logan Wood, Marie Urmano
+
+**Client:** Dr. Ruzycki
 
 Florida school teachers are required to develop and provide coursework that adheres to educational standards created by the Florida Department of Education. This deters teachers from creating curriculums based on engineering because it is not easy to immediately spot the standards that these topics would fall under. To help teachers create design engineering-based curriculums while staying in line with the standards, we created issle.
 Issle (which stands for “integrating standards for students learning engineering”) is planned to provide a simple interface for teachers to create lesson plans while letting them link standards to them as they work. Users will be given hints and examples for all fields inside of a lesson plan framework to ensure that they are able to easily create their projects. Additionally, users will be able to share lesson plans linked to their account as well as view other posted lesson plans.
@@ -41,8 +42,15 @@ User support in issle consists of an example page with framework designed for he
  
 ## How to run issle locally
 
+Install Mean.js onto your computer and download the necessary software using [this tutorial.](http://www.bossable.com/303/install-mean-stack/)
+
+Then, pull this repository into your local directory, go into this directory, and type 'grunt'.
+
+Type 'localhost:3000' into your browser, and issle should be running successfully locally,
 
 ## How to update database and server instructions
+
+In order to update the database and server, update the **local.js** file located in issle's directory. This file currently contains connections to issle's database and image server.
 
 
 
