@@ -56,9 +56,9 @@ User support in issle consists of an example page with framework designed for he
 
 Install Mean.js onto your computer and download the necessary software using [this tutorial.](http://www.bossable.com/303/install-mean-stack/)
 
-Then, pull this repository into your local directory, go into this directory, and type `grunt`.
+Then, pull this repository into your local directory, go into this directory using command line, and type `grunt`.
 
-Type `localhost:3000` into your browser, and issle should be running successfully locally,
+Type `localhost:3000` into your browser, and issle should be running successfully locally if MEAN communicates that the app is running.
 
 ## How to update database and server instructions
 
