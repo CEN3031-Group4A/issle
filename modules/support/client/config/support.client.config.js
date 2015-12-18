@@ -11,8 +11,8 @@ angular.module('supports').run(['Menus',
 		});
 
         Menus.addSubMenuItem('topbar', 'support', {
-            title: 'Examples',
-            state: 'support.examples'
+            title: 'Example',
+            state: 'support.example'
         });
 
 		// Add the dropdown list item

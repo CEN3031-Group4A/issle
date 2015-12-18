@@ -1,0 +1,17 @@
+'use strict';
+
+module.exports = {
+  db: {
+    uri: 'mongodb://ds051933.mongolab.com:51933/issle',
+    options: {
+      user: 'issleDatabase',
+      pass: 'issleformybizzle'
+    }
+  },
+
+  imageServer: {
+    key: 'AKIAIQIZVFFTPVUY66AQ',
+    secret: '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',
+    bucket: 'isslepictures'
+  }
+};
