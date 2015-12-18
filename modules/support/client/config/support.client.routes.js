@@ -14,7 +14,11 @@ angular.module('supports').config(['$stateProvider',
 			url: '/FAQ',
 			templateUrl: 'modules/support/views/faq.client.view.html'
 		}).
-			state('support.examples', {
+        state('support.example', {
+            url: '/example',
+            templateUrl: 'modules/support/views/example.client.view.html'
+        }).
+		state('support.examples', {
 			url: '/examples',
 			templateUrl: 'modules/support/views/examples.client.view.html'
 		}).
